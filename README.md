@@ -45,8 +45,40 @@ The software design is based on the following UML class diagram, which separates
     ```
 4.  **Run the program:**
     ```bash
-   ./solver
+    ./solver
     ```
+
+### Branch Types
+
+  * **`main`**: This is the production-ready branch. It must **always** contain a stable, working version of the code. No one should ever commit directly to `main`. Code is only merged from `develop` after a major milestone is completed and tested.
+  * **`develop`**: This is the main integration branch. All completed features are merged into this branch. It represents the most up-to-date state of the project's development.
+  * **`feature/*`**: All new work (e.g., implementing a class, fixing a bug) must be done on a dedicated feature branch. This isolates work-in-progress and keeps the `develop` branch stable.
+
+### Step-by-Step Workflow
+
+1.  **Start a New Task**: Assign a GitHub Issue to yourself.
+2.  **Create a Feature Branch**: Always branch off from the latest version of `develop`.
+    ```bash
+    # Switch to develop and pull the latest changes
+    git checkout develop
+    git pull origin develop
+
+    # Create your new feature branch
+    git checkout -b feature/issue-2-problem-definitions
+    ```
+3.  **Implement and Commit**: Write your code on the feature branch. Make small, logical commits with clear messages.
+    ```bash
+    git add.
+    git commit -m "Feat: Implement Problem definitions class"
+    ```
+4.  **Push and Create a Pull Request (PR)**: When your feature is complete and tested locally, push it to the remote repository.
+    ```bash
+    git push origin feature/issue-2-problem-definitions
+    ```
+    Then, go to GitHub and open a Pull Request to merge your feature branch into `develop`. In the PR description, link the issue it resolves (e.g., "Closes \#2").
+5.  **Code Review and Merge**: At least one other team member must review and approve the Pull Request. After approval, the PR can be merged into `develop`. The feature branch should be deleted after the merge.
+
+    
 
 ## Group Members
 
