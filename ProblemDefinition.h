@@ -5,30 +5,35 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef PROBLEMDEFINITION_H
+#define PROBLEMDEFINITION_H
+
 /****** Libraries and other inclusions ******/
 #include <iostream>
 #include <vector>
+using namespace std;
 
 /****** Declaration of class ProblemDefinition ******/
 class ProblemDefinition
 {
     private:
         // coordinates
-        double xMin;
-        double xMax;
-        double dx;
+        double xMin = 0.0;
+        double xMax = 0.0;
+        double dx = 0.0;
         // time
-        double tMax;
-        double dt;
+        double tMax = 0.0;
+        double dt = 0.0;
         // grid space
-        int N;
+        int N = 0;
         // temperatures
-        double Tin;
-        double Tsur;
+        double Tin = 0.0;
+        double Tsur = 0.0;
         // wall
-        double thickness;
+        double thickness = 0.0;
         // material
-        double D;
+        double D = 0.0;
     
     public:
         // default class contructor
@@ -64,3 +69,6 @@ class ProblemDefinition
         // method for the analytic solution
         vector<double> Analytic_Solution(double dx, int N, double tMax, double dt, double Tin, double Tsur, double thickness, double D);
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif

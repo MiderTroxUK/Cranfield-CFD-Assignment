@@ -10,6 +10,7 @@
 
 /****** Libraries and other inclusions ******/
 #include <cmath>
+#define M_PI 3.141592653589793
 #include <vector>
 using namespace std;
 
@@ -40,21 +41,21 @@ ProblemDefinition::ProblemDefinition()
 ProblemDefinition::ProblemDefinition(double xMin, double xMax, double dx, double tMax, double dt, int N, double Tin, double Tsur, double thickness, double D)
 {
     // coordinates
-    this->xMin += xMin;
-    this->xMax += xMax;
-    this->dx += dx;
+    this->xMin = xMin;
+    this->xMax = xMax;
+    this->dx = dx;
     // time
-    this->tMax += tMax;
-    this->dt += dt;
+    this->tMax = tMax;
+    this->dt = dt;
     // grid space
-    this->N += N;
+    this->N = N;
     // temperatures
-    this->Tin += Tin;
-    this->Tsur += Tsur;
+    this->Tin = Tin;
+    this->Tsur = Tsur;
     // wall
-    this->thickness += thickness;
+    this->thickness = thickness;
     // material
-    this->D += D;
+    this->D = D;
 }
 
 // methods to get attributes
@@ -162,7 +163,18 @@ void ProblemDefinition::Set_D(double value)
 // method for the analytic solution
 vector<double> ProblemDefinition::ProblemDefinition::Analytic_Solution(double dx, int N, double tMax, double dt, double Tin, double Tsur, double thickness, double D)
 {
-    // TO DO
-    vector<double> result;
+    vector<double> result(N);
+    double sum; // storage variable
+    
+    for (int i=1; i<=N; i++) { // index for the sum and the grid spacing
+        sum = 0.0;
+        for (double t = 0.0; t <= tMax; t += dt) { // timestep
+            for (double x = 0.0; x <= thickness; x += dx) { // spacestep
+                sum += exp(-D * pow((i * M_PI / thickness),2) * t)*((1 - pow(-1, i)) / (i * M_PI)) * sin(i * M_PI * x / thickness);
+            }
+        }
+        result[i-1] = Tsur + 2 * (Tin-Tsur) * sum ; // using index i-1 because the i start at 1 to avoid division by zero
+        cout << "debug | result[" << i-1 << "] = " << result[i-1] << endl;
+    }
     return result;
 }
