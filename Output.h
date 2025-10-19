@@ -5,8 +5,13 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef OUTPUT_H
+#define OUTPUT_H
+
 /****** Libraries and other inclusions ******/
 #include <iostream>
+#include <string>
 
 /****** Declaration of class Output ******/
 class Output
@@ -30,3 +35,6 @@ class Output
         // method to generate an output file
         void Generate_File(string filename);
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif
