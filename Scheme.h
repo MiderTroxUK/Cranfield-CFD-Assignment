@@ -5,6 +5,10 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef SCHEME_H
+#define SCHEME_H
+
 /****** Libraries and other inclusions ******/
 #include <iostream>
 
@@ -39,3 +43,6 @@ class Scheme
         void Set_dt(double value);
         void Set_D(double value);
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif
