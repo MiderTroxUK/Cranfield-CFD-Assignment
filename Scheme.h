@@ -11,6 +11,7 @@
 
 /****** Libraries and other inclusions ******/
 #include <iostream>
+using namespace std;
 
 /****** Declaration of class Scheme ******/
 class Scheme

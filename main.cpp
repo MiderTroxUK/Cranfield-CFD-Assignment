@@ -7,13 +7,13 @@
 
 /******* Inclusion of classes ******/
 #include "ProblemDefinition.h"
-/*#include "Scheme.h"
+#include "Scheme.h"
 #include "DufortFrankel_Scheme.h"
 #include "Richardson_Scheme.h"
 #include "Laasonen_Scheme.h"
 #include "CrankNicholson_Scheme.h"
 #include "Verification.h"
-#include "Output.h"*/
+#include "Output.h"
 
 /****** Libraries and other inclusions ******/
 #include <iostream>

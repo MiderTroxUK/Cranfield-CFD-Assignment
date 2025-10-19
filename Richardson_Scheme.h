@@ -5,9 +5,14 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef RICHARDSON_SCHEME_H
+#define RICHARDSON_SCHEME_H
+
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
 #include <iostream>
+using namespace std;
 
 /****** Declaration of class Richardson_Scheme ******/
 
@@ -25,3 +30,6 @@ class Richardson_Scheme : public Scheme
         // methods
         // TO DO
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif

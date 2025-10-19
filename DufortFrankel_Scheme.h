@@ -5,9 +5,14 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef DUFORTFRANKEL_SCHEME_H
+#define DUFORTFRANKEL_SCHEME_H
+
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
 #include <iostream>
+using namespace std;
 
 /****** Declaration of class DufortFrankel_Scheme ******/
 
@@ -25,3 +30,6 @@ class DufortFrankel_Scheme : public Scheme
         // methods
         // TO DO
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif

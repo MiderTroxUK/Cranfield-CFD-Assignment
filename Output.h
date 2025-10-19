@@ -12,6 +12,7 @@
 /****** Libraries and other inclusions ******/
 #include <iostream>
 #include <string>
+using namespace std;
 
 /****** Declaration of class Output ******/
 class Output
