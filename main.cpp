@@ -27,15 +27,26 @@ int main()
     /*** DEBUG ***/
 
     // debug for ProblemDefinition class
-    /*cout << "debug | Declaration of the object wallProblem" << endl;
-    ProblemDefinition wallProblem(0.0, 0.31, 0.05, 0.5, 0.01, 10, 38, 149, 0.31, 155e-6);
+    cout << "debug | Declaration of the object wallProblem" << endl;
+    double Tin = 38.0;
+    double Tsur = 149.0;
+    double D = 155e-6;
+    double L = 0.31;
+    double xMin = 0.0;
+    double dx = 0.05;
+    double tMax = 0.1;
+    double dt = 0.01;
+    int N = 100;
+    ProblemDefinition wallProblem(xMin, L, dx, tMax, dt, N, Tin, Tsur, D);
     cout << "debug | Storage of the analytic solution" << endl;
-    vector<double> solution = wallProblem.Analytic_Solution(0.05, 10, 0.5, 0.01, 38, 149, 0.31, 155e-6);
-    cout << "debug | Print of the results" << endl;
-    for (size_t i=0; i<solution.size(); i++) // size_t allows to have a counter based on the size of a vector
-    {
-        cout << "debug | analytic solution index " << i << ": " << solution[i] << endl;
-    }*/
+    vector<vector<double>> solution = wallProblem.Analytic_Solution();
+    int size_x = static_cast<int>(wallProblem.Get_thickness() / wallProblem.Get_dx()) + 1;
+    int size_t = static_cast<int>(wallProblem.Get_tMax() / wallProblem.Get_dt()) + 1;
+    for(int i=0; i<size_x; i++) {
+        for(int j=0; j<size_t; j++) {
+            cout << "debug | analytic solution (index i = " << i << ", index j = " << j << "): " << solution[i][j] << endl;
+        }
+    }
 
     // Proper way to finish main()
     return 0;
