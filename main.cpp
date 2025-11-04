@@ -27,7 +27,7 @@ int main()
     /*** DEBUG ***/
 
     // debug for ProblemDefinition class
-    cout << "debug | Declaration of the object wallProblem" << endl;
+    /*cout << "debug | Declaration of the object wallProblem" << endl;
     double Tin = 38.0;
     double Tsur = 149.0;
     double D = 155e-6;
@@ -46,7 +46,7 @@ int main()
         for(int j=0; j<size_t; j++) {
             cout << "debug | analytic solution (index i = " << i << ", index j = " << j << "): " << solution[i][j] << endl;
         }
-    }
+    }*/
 
     // Proper way to finish main()
     return 0;
