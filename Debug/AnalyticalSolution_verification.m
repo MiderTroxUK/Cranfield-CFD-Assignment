@@ -14,17 +14,19 @@ Tin = 38;
 Tsur = 149;
 D = 155e-6;
 L = 0.31;
-N = 10;
-x = 0:0.05:0.1;
+N = 100;
+x = 0:0.05:0.31;
 t = 0:0.01:0.1;
+
+% stability check
+CFL = D * 0.01/0.05;
+fprintf("CFL = %d\n", CFL);
 
 % initialisation
 term = 0.0;
 T = zeros(length(x), length(t));
 
 % algorithm
-
-    
 for j = 1:length(t)
     for i = 1:length(x)
         sumTerm = 0.0;

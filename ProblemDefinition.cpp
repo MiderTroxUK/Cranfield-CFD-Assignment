@@ -21,7 +21,6 @@ ProblemDefinition::ProblemDefinition()
 {
     // coordinates
     this->xMin = 0.0;
-    this->xMax = 0.0;
     this->dx = 0.0;
     // time
     this->tMax = 0.0;
@@ -38,11 +37,10 @@ ProblemDefinition::ProblemDefinition()
 }
 
 // class constructor with parameters
-ProblemDefinition::ProblemDefinition(double xMin, double xMax, double dx, double tMax, double dt, int N, double Tin, double Tsur, double thickness, double D)
+ProblemDefinition::ProblemDefinition(double xMin, double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D)
 {
     // coordinates
     this->xMin = xMin;
-    this->xMax = xMax;
     this->dx = dx;
     // time
     this->tMax = tMax;
@@ -62,11 +60,6 @@ ProblemDefinition::ProblemDefinition(double xMin, double xMax, double dx, double
 double ProblemDefinition::Get_xMin() const
 {
     return this->xMin;
-}
-
-double ProblemDefinition::Get_xMax() const
-{
-    return this->xMax;
 }
 
 double ProblemDefinition::Get_dx() const
@@ -115,11 +108,6 @@ void ProblemDefinition::Set_xMin(double value)
     this->xMin = value;
 }
 
-void ProblemDefinition::Set_xMax(double value)
-{
-    this->xMax = value;
-}
-
 void ProblemDefinition::Set_dx(double value)
 {
     this->dx = value;
@@ -161,20 +149,40 @@ void ProblemDefinition::Set_D(double value)
 }
 
 // method for the analytic solution
-vector<double> ProblemDefinition::ProblemDefinition::Analytic_Solution(double dx, int N, double tMax, double dt, double Tin, double Tsur, double thickness, double D)
+vector<vector<double>> ProblemDefinition::ProblemDefinition::Analytic_Solution()
 {
-    vector<double> result(N);
-    double sum; // storage variable
+    // size of the vector result
+    int size_x = static_cast<int>(Get_thickness() / Get_dx()) + 1;  // +1 to include endpoint
+    int size_t = static_cast<int>(Get_tMax() / Get_dt()) + 1;       // +1 to include endpoint
     
-    for (int i=1; i<=N; i++) { // index for the sum and the grid spacing
-        sum = 0.0;
-        for (double t = 0.0; t <= tMax; t += dt) { // timestep
-            for (double x = 0.0; x <= thickness; x += dx) { // spacestep
-                sum += exp(-D * pow((i * M_PI / thickness),2) * t)*((1 - pow(-1, i)) / (i * M_PI)) * sin(i * M_PI * x / thickness);
+    // vector for the storage of the result
+    vector<vector<double>> analytic_result(size_x, vector<double>(size_t, 0.0));
+
+    // initialisation of variables
+    double x = Get_xMin();
+    double t = 0.0;
+    double sum = 0.0;
+
+    // first loop to store the result for each x position
+    for (int i=0; i<size_x; i++) {
+        t = 0.0; // initialisation of the t
+
+        // second loop to calculte the sum for each t
+        for (int j=0; j<size_t; j++) {
+            sum = 0.0; // initialisation of the sum
+
+            // third loop to calculate the sum
+            for (int k=1; k<=Get_N(); k++) {
+                sum += exp(- Get_D() * pow((k*M_PI / Get_thickness()), 2) * t) * ((1-pow(-1, k))/(k*M_PI)) * sin(k*M_PI*x/Get_thickness());
             }
+
+            analytic_result[i][j] = Get_Tsur() + 2 * (Get_Tin() - Get_Tsur()) * sum;
+
+            t += Get_dt(); // increment the time
         }
-        result[i-1] = Tsur + 2 * (Tin-Tsur) * sum ; // using index i-1 because the i start at 1 to avoid division by zero
-        cout << "debug | result[" << i-1 << "] = " << result[i-1] << endl;
+
+        x += Get_dx(); // increment the position
     }
-    return result;
+
+    return analytic_result;
 }
