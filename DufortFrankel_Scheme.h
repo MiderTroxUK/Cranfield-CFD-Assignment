@@ -25,11 +25,10 @@ class DufortFrankel_Scheme : public Scheme
         DufortFrankel_Scheme();
 
         // class constructor with parameter
-        DufortFrankel_Scheme(double dx, double dt, double t_max, int N, double D); // TO DO
+        DufortFrankel_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur); // TO DO
 
         // methods
-        // TO DO
-        vector<vector<double>> LaxScheme();
+        // TO DO if it's necessary
 };
 
 /****** End of the prevention for mulitple definition ******/
