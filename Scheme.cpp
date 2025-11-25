@@ -20,6 +20,7 @@ Scheme::Scheme()
     this->N = 0;
     this->dt = 0.0;
     this->D = 0.0;
+    this->r = 0.0;
 }
 
 // class constructor with parameters
@@ -71,4 +72,11 @@ void Scheme::Set_dt(double value)
 void Scheme::Set_D(double value)
 {
     this->D = value;
+}
+
+// method to obtain the CFL number
+
+double Scheme::Get_CFL() {
+    this->r = this->D * this->dt / pow(this->dx, 2);
+    return this->r;
 }

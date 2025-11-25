@@ -24,6 +24,8 @@ class Scheme
         double dt;
         // material
         double D;
+        // CFL number
+        double r;
 
     public:
         // default class contructor
@@ -43,6 +45,9 @@ class Scheme
         void Set_N(int value);
         void Set_dt(double value);
         void Set_D(double value);
+
+        // method to get the CFL number
+        double Get_CFL();
 };
 
 /****** End of the prevention for mulitple definition ******/
