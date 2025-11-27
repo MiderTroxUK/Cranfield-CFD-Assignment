@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         ProblemDefinition.cpp
     @description:   ...
