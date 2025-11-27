@@ -1,6 +1,6 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
-    @date :         16/10/2025
+    @author :       Clémence-Philomène Hinot
+    @date :         25/11/2025
     @file :         DufortFrankel_Scheme.h
     @description:   ...
 */
@@ -21,14 +21,11 @@ class DufortFrankel_Scheme : public Scheme
     private:
         // TO DO if it's necessary
     public:
-        // default class constructor
-        DufortFrankel_Scheme();
-
         // class constructor with parameter
-        DufortFrankel_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur); // TO DO
+        DufortFrankel_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
 
         // methods
-        // TO DO if it's necessary
+        vector<vector<double>> dfSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
 };
 
 /****** End of the prevention for mulitple definition ******/
