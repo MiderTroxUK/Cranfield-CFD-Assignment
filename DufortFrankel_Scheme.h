@@ -12,6 +12,7 @@
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 /****** Declaration of class DufortFrankel_Scheme ******/
