@@ -7,12 +7,12 @@
 
 /******* Inclusion of classes ******/
 #include "DufortFrankel_Scheme.h"
+#include "ProblemDefinition.h"
 
 /****** Libraries and other inclusions ******/
 #include <cmath>
 #include <vector>
 using namespace std;
-#include "ProblemDefinition.h"
 
 /****** Methods for class DufortFrankel_Scheme ******/
 

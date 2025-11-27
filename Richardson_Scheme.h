@@ -12,6 +12,7 @@
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 /****** Declaration of class Richardson_Scheme ******/
@@ -21,14 +22,11 @@ class Richardson_Scheme : public Scheme
     private:
         // TO DO if it's necessary
     public:
-        // default class constructor
-        Richardson_Scheme();
-
         // class constructor with parameter
-        Richardson_Scheme(double param); // TO DO
+        Richardson_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
 
         // methods
-        // TO DO
+        vector<vector<double>> richardsonSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
 };
 
 /****** End of the prevention for mulitple definition ******/
