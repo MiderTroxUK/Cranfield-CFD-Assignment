@@ -12,6 +12,7 @@
 /****** Libraries and other inclusions ******/
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 /****** Declaration of class Output ******/
@@ -34,7 +35,10 @@ class Output
         void Set_filename(string value_filename);
 
         // method to generate an output file
-        void Generate_File(string filename);
+        void Generate_File(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N);
+
+        // method to visualise the solution
+        void Generate_Diagram(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N);
 };
 
 /****** End of the prevention for mulitple definition ******/

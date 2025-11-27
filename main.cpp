@@ -21,9 +21,6 @@
 #include <cmath>
 using namespace std;
 
-/****** Methods prototypes ******/
-void Visualisation(const std::vector<std::vector<double>>& solution, string methodName, double dx, double dt, double tMax, double L, int N);
-
 /****** Main function ******/
 int main() 
 {
@@ -55,110 +52,8 @@ int main()
 
     // debug for Visualisation Method
     /*Visualisation(solution, "AnalyticSolution", dx, dt, tMax, L, N);*/
+    // You need to use the Output class now to visualise the solution.
 
     // Proper way to finish main()
     return 0;
-}
-
-/****** Visualisation Method ******/
-
-void Visualisation(const std::vector<std::vector<double>>& solution, string methodName, double dx, double dt, double tMax, double L, int N) {
-    // ------ Initialisation ------
-    
-    // calculate x coordinates
-    vector<double> x_coordinates(N);
-    for (int i=0; i<N; i++) {
-        x_coordinates[i] = i * dx;
-    }
-
-    // get time indices
-    vector<int> indices;
-    vector<double> required_times = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5}; // these are the required times specified in the Assignement
-    int index = 0;
-    for (double t : required_times) { // for all the t in the range required_times
-        if (t <= 0.5) {
-            index = static_cast<int>(round(t / dt));
-            indices.push_back(index);
-        }
-    }
-
-    // ------ Data exportation ------
-
-    // export the solution to a gnuplot format
-    string dataFilename = methodName + ".dat";
-    ofstream file(dataFilename);
-    if (!file.is_open()) {
-        cout << "Error: Cannot open file " << dataFilename << endl;
-        return;
-    }
-
-    // header
-    file << "# x(cm)  ";
-    for (double t : required_times) {
-        file << "T(t=" << t << ")  ";
-    }
-    file << "\n";
-    
-    // data rows
-    int size_x = solution.size();
-    for (int i = 0; i < size_x; i++) {
-        file << x_coordinates[i] << "  ";
-        for (int idx : indices) {
-            file << solution[i][idx] << "  ";
-        }
-        file << "\n";
-    }
-
-    file.close();
-    cout << "Gnuplot data exported to " << dataFilename << endl;
-
-    // ------ Gnuplot visualisation ------
-
-    string scriptFilename = methodName + ".gp";
-    ofstream script(scriptFilename);
-
-    if (!script.is_open()) {
-        cout << "Error: Cannot create gnuplot script " << scriptFilename << endl;
-        return;
-    }
-
-    // gnuplot script
-    script << "# Gnuplot script for temperature distribution\n";
-    script << "set terminal png size 1200,800\n";
-    script << "set output '" << methodName << ".png'\n";
-    script << "set title '" << methodName << "'\n";
-    script << "set xlabel 'Position x (cm)'\n";
-    script << "set ylabel 'Temperature (°C)'\n";
-    script << "set grid\n";
-    script << "set key outside right\n\n";
-
-
-    // Plot command
-    script << "plot ";
-    for (size_t i = 0; i < indices.size(); i++) {
-        if (i > 0) script << ", \\\n     ";
-        
-        int col = i + 2;  // Column 1 is x, columns 2+ are temperatures
-        double time_val = required_times[i];
-        
-        script << "'" << dataFilename << "' using 1:" << col 
-               << " with linespoints title 't=" << time_val << " hrs'";
-    }
-    script << "\n";
-    
-    script.close();
-    
-    cout << "Gnuplot script created: " << scriptFilename << endl;
-    
-    
-    // ------ Execute Gnuplot ------
-
-    string command = "gnuplot " + scriptFilename;
-    int result = system(command.c_str());
-    if (result != 0) {
-        cout << "Error: Gnuplot execution failed." << endl;
-    } else { 
-        cout << "Plot generated successfully: " << methodName << ".png" << endl;
-    }
-
 }
