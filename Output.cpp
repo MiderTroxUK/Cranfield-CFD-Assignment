@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <cmath>
 using namespace std;
 
 /****** Methods for class ProblemDefinition ******/
