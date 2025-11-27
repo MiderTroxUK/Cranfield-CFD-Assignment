@@ -9,6 +9,7 @@
 #include "Scheme.h"
 
 /****** Libraries and other inclusions ******/
+#include <cmath>
 using namespace std;
 
 /****** Methods for class ProblemDefinition ******/
