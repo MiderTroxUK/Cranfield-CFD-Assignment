@@ -5,8 +5,13 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef SCHEME_H
+#define SCHEME_H
+
 /****** Libraries and other inclusions ******/
 #include <iostream>
+using namespace std;
 
 /****** Declaration of class Scheme ******/
 class Scheme
@@ -19,6 +24,8 @@ class Scheme
         double dt;
         // material
         double D;
+        // CFL number
+        double r;
 
     public:
         // default class contructor
@@ -38,4 +45,10 @@ class Scheme
         void Set_N(int value);
         void Set_dt(double value);
         void Set_D(double value);
+
+        // method to get the CFL number
+        double Get_CFL();
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif

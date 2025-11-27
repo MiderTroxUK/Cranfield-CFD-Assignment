@@ -5,8 +5,14 @@
     @description:   ...
 */
 
+/****** Prevention for mulitple definition ******/
+#ifndef VERIFICATION_H
+#define VERIFICATION_H
+
 /****** Libraries and other inclusions ******/
 #include <iostream>
+#include <vector>
+using namespace std;
 
 /****** Declaration of class Verification ******/
 class Verification
@@ -30,3 +36,6 @@ class Verification
         bool Verify_Stability(double CFL);
         double Calculation_Norm(vector<double>);
 };
+
+/****** End of the prevention for mulitple definition ******/
+#endif

@@ -5,15 +5,17 @@
     @description:   Header for the Crank-Nicholson implicit scheme.
 */
 
+/****** Prevention for mulitple definition ******/
 #ifndef CRANKNICHOLSON_SCHEME_H
 #define CRANKNICHOLSON_SCHEME_H
-
 
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
 #include "ProblemDefinition.h" // Nécessaire pour le constructeur
 #include <vector>
+#include <iostream>
 
+using namespace std;
 
 /****** Declaration of class CrankNicholson_Scheme ******/
 

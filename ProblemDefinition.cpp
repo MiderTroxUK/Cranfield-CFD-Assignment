@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         ProblemDefinition.cpp
     @description:   ...
@@ -10,6 +10,7 @@
 
 /****** Libraries and other inclusions ******/
 #include <cmath>
+#define M_PI 3.141592653589793
 #include <vector>
 using namespace std;
 
@@ -20,7 +21,6 @@ ProblemDefinition::ProblemDefinition()
 {
     // coordinates
     this->xMin = 0.0;
-    this->xMax = 0.0;
     this->dx = 0.0;
     // time
     this->tMax = 0.0;
@@ -37,35 +37,29 @@ ProblemDefinition::ProblemDefinition()
 }
 
 // class constructor with parameters
-ProblemDefinition::ProblemDefinition(double xMin, double xMax, double dx, double tMax, double dt, int N, double Tin, double Tsur, double thickness, double D)
+ProblemDefinition::ProblemDefinition(double xMin, double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D)
 {
     // coordinates
-    this->xMin += xMin;
-    this->xMax += xMax;
-    this->dx += dx;
+    this->xMin = xMin;
+    this->dx = dx;
     // time
-    this->tMax += tMax;
-    this->dt += dt;
+    this->tMax = tMax;
+    this->dt = dt;
     // grid space
-    this->N += N;
+    this->N = N;
     // temperatures
-    this->Tin += Tin;
-    this->Tsur += Tsur;
+    this->Tin = Tin;
+    this->Tsur = Tsur;
     // wall
-    this->thickness += thickness;
+    this->thickness = thickness;
     // material
-    this->D += D;
+    this->D = D;
 }
 
 // methods to get attributes
 double ProblemDefinition::Get_xMin() const
 {
     return this->xMin;
-}
-
-double ProblemDefinition::Get_xMax() const
-{
-    return this->xMax;
 }
 
 double ProblemDefinition::Get_dx() const
@@ -114,11 +108,6 @@ void ProblemDefinition::Set_xMin(double value)
     this->xMin = value;
 }
 
-void ProblemDefinition::Set_xMax(double value)
-{
-    this->xMax = value;
-}
-
 void ProblemDefinition::Set_dx(double value)
 {
     this->dx = value;
@@ -160,9 +149,40 @@ void ProblemDefinition::Set_D(double value)
 }
 
 // method for the analytic solution
-vector<double> ProblemDefinition::ProblemDefinition::Analytic_Solution(double dx, int N, double tMax, double dt, double Tin, double Tsur, double thickness, double D)
+vector<vector<double>> ProblemDefinition::ProblemDefinition::Analytic_Solution()
 {
-    // TO DO
-    vector<double> result;
-    return result;
+    // size of the vector result
+    int size_x = static_cast<int>(Get_thickness() / Get_dx()) + 1;  // +1 to include endpoint
+    int size_t = static_cast<int>(Get_tMax() / Get_dt()) + 1;       // +1 to include endpoint
+    
+    // vector for the storage of the result
+    vector<vector<double>> analytic_result(size_x, vector<double>(size_t, 0.0));
+
+    // initialisation of variables
+    double x = Get_xMin();
+    double t = 0.0;
+    double sum = 0.0;
+
+    // first loop to store the result for each x position
+    for (int i=0; i<size_x; i++) {
+        t = 0.0; // initialisation of the t
+
+        // second loop to calculte the sum for each t
+        for (int j=0; j<size_t; j++) {
+            sum = 0.0; // initialisation of the sum
+
+            // third loop to calculate the sum
+            for (int k=1; k<=Get_N(); k++) {
+                sum += exp(- Get_D() * pow((k*M_PI / Get_thickness()), 2) * t) * ((1-pow(-1, k))/(k*M_PI)) * sin(k*M_PI*x/Get_thickness());
+            }
+
+            analytic_result[i][j] = Get_Tsur() + 2 * (Get_Tin() - Get_Tsur()) * sum;
+
+            t += Get_dt(); // increment the time
+        }
+
+        x += Get_dx(); // increment the position
+    }
+
+    return analytic_result;
 }

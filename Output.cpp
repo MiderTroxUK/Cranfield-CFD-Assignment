@@ -9,6 +9,7 @@
 #include "Output.h"
 
 /****** Libraries and other inclusions ******/
+#include <string>
 using namespace std;
 
 /****** Methods for class ProblemDefinition ******/
