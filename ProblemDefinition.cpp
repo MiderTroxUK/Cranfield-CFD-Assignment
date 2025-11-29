@@ -147,7 +147,7 @@ vector<vector<double>> ProblemDefinition::ProblemDefinition::Analytic_Solution()
     vector<vector<double>> analytic_result(size_x, vector<double>(size_t, 0.0));
 
     // initialisation of variables
-    double x = Get_xMin();
+    double x = 0.0;
     double t = 0.0;
     double sum = 0.0;
 

@@ -11,6 +11,7 @@
 
 /****** Libraries and other inclusions ******/
 #include "Scheme.h"
+#include "ProblemDefinition.h"
 #include <iostream>
 #include <vector>
 using namespace std;
