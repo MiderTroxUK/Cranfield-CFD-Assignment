@@ -66,7 +66,7 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
     // ------ Data exportation ------
 
     // export the solution to a gnuplot format
-    string dataFilename = methodName + ".dat";
+    string dataFilename = methodName + ".csv";
     ofstream file(dataFilename);
     if (!file.is_open()) {
         cout << "Error: Cannot open file " << dataFilename << endl;
@@ -76,7 +76,7 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
     // header
     file << "# x(cm)  ";
     for (double t : required_times) {
-        file << "T(t=" << t << ")  ";
+        file << "," << "T(t=" << t << ") ";
     }
     file << "\n";
     
@@ -85,7 +85,7 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
     for (int i = 0; i < size_x; i++) {
         file << x_coordinates[i] << "  ";
         for (int idx : indices) {
-            file << solution[i][idx] << "  ";
+            file << "," << solution[i][idx];
         }
         file << "\n";
     }
