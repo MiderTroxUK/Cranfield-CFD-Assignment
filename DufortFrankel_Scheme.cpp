@@ -76,10 +76,6 @@ vector<vector<double>> DufortFrankel_Scheme::dfSolution() {
         // Update of the T_xxx
         T_prev = T_curr;
         T_curr = T_next;
-
-        // boundary conditions
-        T_next[0] = this->problem.Get_Tsur();
-        T_next[num_space_points-1] = this->problem.Get_Tsur();
     }
 
     return solution;
