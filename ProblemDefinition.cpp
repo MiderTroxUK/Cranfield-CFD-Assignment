@@ -20,7 +20,6 @@ using namespace std;
 ProblemDefinition::ProblemDefinition()
 {
     // coordinates
-    this->xMin = 0.0;
     this->dx = 0.0;
     // time
     this->tMax = 0.0;
@@ -37,10 +36,9 @@ ProblemDefinition::ProblemDefinition()
 }
 
 // class constructor with parameters
-ProblemDefinition::ProblemDefinition(double xMin, double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D)
+ProblemDefinition::ProblemDefinition(double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D)
 {
     // coordinates
-    this->xMin = xMin;
     this->dx = dx;
     // time
     this->tMax = tMax;
@@ -57,11 +55,6 @@ ProblemDefinition::ProblemDefinition(double xMin, double thickness, double dx, d
 }
 
 // methods to get attributes
-double ProblemDefinition::Get_xMin() const
-{
-    return this->xMin;
-}
-
 double ProblemDefinition::Get_dx() const
 {
     return this->dx;
@@ -103,11 +96,6 @@ double ProblemDefinition::Get_D() const
 }
 
 // methods to set attributes
-void ProblemDefinition::Set_xMin(double value)
-{
-    this->xMin = value;
-}
-
 void ProblemDefinition::Set_dx(double value)
 {
     this->dx = value;
