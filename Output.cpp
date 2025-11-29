@@ -74,7 +74,7 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
     }
 
     // header
-    file << "# x(cm)  ";
+    file << "x(cm)  ";
     for (double t : required_times) {
         file << "," << "T(t=" << t << ") ";
     }
@@ -95,7 +95,7 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
 }
 
 // method to visualise the solution
-void Generate_Diagram(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N) {
+void Output::Generate_Diagram(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N) {
     // ------ Initialisation ------
     
     // calculate x coordinates
@@ -127,6 +127,7 @@ void Generate_Diagram(const vector<vector<double>>& solution, string methodName,
 
     // gnuplot script
     script << "# Gnuplot script for temperature distribution\n";
+    script << "set datafile separator ','\n";
     script << "set terminal png size 1200,800\n";
     script << "set output '" << methodName << ".png'\n";
     script << "set title '" << methodName << "'\n";
@@ -144,7 +145,7 @@ void Generate_Diagram(const vector<vector<double>>& solution, string methodName,
         int col = i + 2;  // Column 1 is x, columns 2+ are temperatures
         double time_val = required_times[i];
         
-        script << "'" << methodName << "' using 1:" << col 
+        script << "'" << methodName << ".csv' using 1:" << col 
                << " with linespoints title 't=" << time_val << " hrs'";
     }
     script << "\n";
