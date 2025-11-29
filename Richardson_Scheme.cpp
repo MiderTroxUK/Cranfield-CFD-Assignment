@@ -17,10 +17,11 @@ using namespace std;
 /****** Methods for class Richardson_Scheme ******/
 
 // class constructor with parameters
-Richardson_Scheme::Richardson_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur)
-: Scheme(dx, N, dt, D) // use of the Scheme class
+Richardson_Scheme::Richardson_Scheme(const ProblemDefinition& problem)
+: Scheme(problem.Get_dx(), problem.Get_N(), problem.Get_dt(), problem.Get_D()) // use of the Scheme class
 {
-    // no additional initialization needed
+    // CFL number
+    this->r = this->Get_CFL();
 }
 
 // methods
@@ -30,9 +31,6 @@ vector<vector<double>> Richardson_Scheme::richardsonSolution(double dx, double d
     
     // solution matrix with a size compose of time_index and space_index
     vector<vector<double>> solution(num_time_steps, vector<double>(N, 0.0));
-    
-    // CFL number
-    double r = this->Get_CFL();
     
     // vectors to store the different T
     vector<double> T_prev(N); // T_n-1
@@ -57,7 +55,7 @@ vector<vector<double>> Richardson_Scheme::richardsonSolution(double dx, double d
     T_prev = solution[0];
 
     // Creation of the first time_step
-    ProblemDefinition initialisation(0, 0.31, dx, t_max, dt, N, T_in, T_sur, D);
+    ProblemDefinition initialisation(0.31, dx, t_max, dt, N, T_in, T_sur, D);
     vector<vector<double>> analytic = initialisation.Analytic_Solution(); // use of the analytical soluton
     T_curr = analytic[1];
 
@@ -68,7 +66,7 @@ vector<vector<double>> Richardson_Scheme::richardsonSolution(double dx, double d
     for (int t=2; t<num_time_steps; t++) { // time steps
         // loop to obtain the result for each x
         for (int i=1; i<N-1; i++) { // grid steps
-            T_next[i] = T_prev[i] + 2 * r * (T_curr[i+1] - 2 * T_curr[i] + T_curr[i-1]);
+            T_next[i] = T_prev[i] + 2 * this->r * (T_curr[i+1] - 2 * T_curr[i] + T_curr[i-1]);
         }
 
         // Storage of the current step

@@ -19,7 +19,6 @@ class ProblemDefinition
 {
     private:
         // coordinates
-        double xMin = 0.0;
         double dx = 0.0;
         // time
         double tMax = 0.0;
@@ -39,10 +38,9 @@ class ProblemDefinition
         ProblemDefinition();
         
         // class constructor with parameters
-        ProblemDefinition(double xMin, double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D);
+        ProblemDefinition(double thickness, double dx, double tMax, double dt, int N, double Tin, double Tsur, double D);
 
         // methods to get attributes
-        double Get_xMin() const;
         double Get_dx() const;
         double Get_tMax() const;
         double Get_dt() const;
@@ -53,7 +51,6 @@ class ProblemDefinition
         double Get_D() const;
 
         // methods to set attributes
-        void Set_xMin(double value);
         void Set_dx(double value);
         void Set_tMax(double value);
         void Set_dt(double value);
