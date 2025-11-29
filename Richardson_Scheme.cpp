@@ -41,8 +41,6 @@ vector<vector<double>> Richardson_Scheme::richardsonSolution() {
     // Boundary conditions
     T_curr[0] = this->problem.Get_Tsur();
     T_curr[num_space_points-1] = this->problem.Get_Tsur();
-    T_next[0] = this->problem.Get_Tsur();
-    T_next[num_space_points-1] = this->problem.Get_Tsur();
 
     // Initialisation of T_curr   
     for(int i=1; i<num_space_points-1; i++) {
@@ -68,7 +66,7 @@ vector<vector<double>> Richardson_Scheme::richardsonSolution() {
     for (int t=2; t<num_time_steps; t++) { // time steps
         // loop to obtain the result for each x
         for (int i=1; i<num_space_points-1; i++) { // grid steps
-            T_next[i] = T_prev[i] + 2 * this->r * (T_curr[i+1] - 2 * T_curr[i] + T_curr[i-1]);
+            T_next[i] = T_prev[i] + 2.0 * this->r * (T_curr[i+1] - 2.0 * T_curr[i] + T_curr[i-1]);
         }
 
         // Storage of the current step

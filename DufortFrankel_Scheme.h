@@ -22,12 +22,13 @@ class DufortFrankel_Scheme : public Scheme
 {
     private:
         double r = 0.0; // CFL number
+        ProblemDefinition problem;
     public:
         // class constructor with parameter
-        DufortFrankel_Scheme(const ProblemDefinition& proble);
+        DufortFrankel_Scheme(const ProblemDefinition& problem);
 
         // methods
-        vector<vector<double>> dfSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
+        vector<vector<double>> dfSolution();
 };
 
 /****** End of the prevention for mulitple definition ******/

@@ -54,7 +54,7 @@ int main()
 
     // Dufort-Frankel
     DufortFrankel_Scheme dufortFrankel(wallProblem);
-    //dufortFrankel.dfSolution();
+    vector<vector<double>> duforFrankelSolution = dufortFrankel.dfSolution();
 
     // Richardson
     Richardson_Scheme richardson(wallProblem);
@@ -74,6 +74,8 @@ int main()
     visualisation.Generate_Diagram(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
 
     // Dufort-Frankel
+    visualisation.Generate_File(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
 
     // Richardson
     visualisation.Generate_File(richardsonSolution, "Richardson", dx, dt, tMax, N);
