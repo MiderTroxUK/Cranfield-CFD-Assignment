@@ -21,13 +21,21 @@ using namespace std;
 class DufortFrankel_Scheme : public Scheme
 {
     private:
+        double dx = 0.0;
+        double L = 0.0;
+        double dt = 0.0;
+        double tMax = 0.0;
+        double N = 0.0;
+        double D = 0.0;
+        double T_in = 0.0;
+        double T_sur = 0.0;
         double r = 0.0; // CFL number
     public:
         // class constructor with parameter
         DufortFrankel_Scheme(const ProblemDefinition& proble);
 
         // methods
-        vector<vector<double>> dfSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
+        vector<vector<double>> dfSolution();
 };
 
 /****** End of the prevention for mulitple definition ******/
