@@ -22,12 +22,13 @@ class Richardson_Scheme : public Scheme
 {
     private:
         double r = 0.0; // CFL number
+        ProblemDefinition problem;
     public:
         // class constructor with parameter
         Richardson_Scheme(const ProblemDefinition& problem);
 
         // methods
-        vector<vector<double>> richardsonSolution(double dx, double L, double dt, double t_max, int N, double D, double T_in, double T_sur);
+        vector<vector<double>> richardsonSolution();
 };
 
 /****** End of the prevention for mulitple definition ******/
