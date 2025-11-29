@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       Clémence-Philomène Hinot & Copilot
     @date :         16/10/2025
     @file :         Output.cpp
     @description:   ...
@@ -9,9 +9,11 @@
 #include "Output.h"
 
 /****** Libraries and other inclusions ******/
+#include <cstdio> // for popen and pclose so use the gnuplot
+#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
-#include <fstream>
 #include <cmath>
 using namespace std;
 
@@ -98,70 +100,48 @@ void Output::Generate_File(const vector<vector<double>>& solution, string method
 void Output::Generate_Diagram(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N) {
     // ------ Initialisation ------
     
-    // calculate x coordinates
-    vector<double> x_coordinates(N);
-    for (int i=0; i<N; i++) {
-        x_coordinates[i] = i * dx;
-    }
+    int size_x_coord = solution.size();
+    int size_t_coord = solution[0].size();
 
-    // get time indices
-    vector<int> indices;
     vector<double> required_times = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5}; // these are the required times specified in the Assignement
-    int index = 0;
-    for (double t : required_times) { // for all the t in the range required_times
-        if (t <= 0.5) {
-            index = static_cast<int>(round(t / dt));
-            indices.push_back(index);
-        }
-    }
 
-    // ------ Gnuplot visualisation ------
+    // ------ Gnuplot script ------
 
-    string scriptFilename = methodName + ".gp";
-    ofstream script(scriptFilename);
-
-    if (!script.is_open()) {
-        cout << "Error: Cannot create gnuplot script " << scriptFilename << endl;
+    
+    FILE* gp = popen("gnuplot -persistent", "w");
+    if (!gp) {
+        std::cerr << "Error: gnuplot is not available.\n";
         return;
     }
 
-    // gnuplot script
-    script << "# Gnuplot script for temperature distribution\n";
-    script << "set datafile separator ','\n";
-    script << "set terminal png size 1200,800\n";
-    script << "set output '" << methodName << ".png'\n";
-    script << "set title '" << methodName << "'\n";
-    script << "set xlabel 'Position x (cm)'\n";
-    script << "set ylabel 'Temperature (°C)'\n";
-    script << "set grid\n";
-    script << "set key outside right\n\n";
+    // Gnuplot settings
+    fprintf(gp, "set title '%s'\n", methodName.c_str());
+    fprintf(gp, "set xlabel 'Position x (cm)'\n");
+    fprintf(gp, "set ylabel 'Temperature (°C)'\n");
+    fprintf(gp, "set grid\n");
+    fprintf(gp, "set key outside right\n");
+    fprintf(gp, "plot ");
 
-
-    // Plot command
-    script << "plot ";
-    for (size_t i = 0; i < indices.size(); i++) {
-        if (i > 0) script << ", \\\n     ";
-        
-        int col = i + 2;  // Column 1 is x, columns 2+ are temperatures
-        double time_val = required_times[i];
-        
-        script << "'" << methodName << ".csv' using 1:" << col 
-               << " with linespoints title 't=" << time_val << " hrs'";
+    
+    // Plot commands for each time curve
+    for (size_t i = 0; i < required_times.size(); i++) {
+        if (i > 0) fprintf(gp, ", ");
+        fprintf(gp, "'-' with lines title 't=%.1f hr'", required_times[i]);
     }
-    script << "\n";
-    
-    script.close();
-    
-    cout << "Gnuplot script created: " << scriptFilename << endl;
-    
-    
-    // ------ Execute Gnuplot ------
+    fprintf(gp, "\n");
 
-    string command = "gnuplot " + scriptFilename;
-    int result = system(command.c_str());
-    if (result != 0) {
-        cout << "Error: Gnuplot execution failed." << endl;
-    } else { 
-        cout << "Plot generated successfully: " << methodName << ".png" << endl;
+    // Send data for each curve
+    for (double t : required_times) {
+        int idx = static_cast<int>(round(t / dt));
+        if (idx >= size_t_coord) continue; // Bounds check
+        for (int i = 0; i < size_x_coord; i++) {
+            double x = i * dx; // dx in cm
+            if (x > 31.0) break; // Stop at 31 cm
+            fprintf(gp, "%f %f\n", x, solution[i][idx]);
+        }
+        fprintf(gp, "e\n");
     }
+
+    pclose(gp);
+    std::cout << "Analytical solution plot generated successfully.\n";
 }
