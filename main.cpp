@@ -58,7 +58,7 @@ int main()
 
     // Richardson
     Richardson_Scheme richardson(wallProblem);
-    //richardson.richardsonSolution();
+    vector<vector<double>> richardsonSolution = richardson.richardsonSolution();
 
     // Laasonen
     Laasonen_Scheme laasonen(wallProblem);
@@ -76,6 +76,8 @@ int main()
     // Dufort-Frankel
 
     // Richardson
+    visualisation.Generate_File(richardsonSolution, "Richardson", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(richardsonSolution, "Richardson", dx, dt, tMax, N);
 
     // Laasonen
 
