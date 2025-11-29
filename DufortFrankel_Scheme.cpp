@@ -7,21 +7,22 @@
 
 /******* Inclusion of classes ******/
 #include "DufortFrankel_Scheme.h"
+#include "ProblemDefinition.h"
 
 /****** Libraries and other inclusions ******/
 #include <cmath>
 #include <vector>
 using namespace std;
-#include "ProblemDefinition.h"
 
 /****** Methods for class DufortFrankel_Scheme ******/
 
 // class constructor with parameters
 // to do
-DufortFrankel_Scheme::DufortFrankel_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur)
-    : Scheme(dx, N, dt, D) // use of the Scheme class
+DufortFrankel_Scheme::DufortFrankel_Scheme(const ProblemDefinition& problem)
+    : Scheme(problem.Get_dx(), problem.Get_N(), problem.Get_dt(), problem.Get_D()) // use of the Scheme class
 {
-    // no additional initialization needed
+    // CFL number
+    this->r = this->Get_CFL();
 }
 
 vector<vector<double>> DufortFrankel_Scheme::dfSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur) {
@@ -29,10 +30,7 @@ vector<vector<double>> DufortFrankel_Scheme::dfSolution(double dx, double dt, do
     int num_time_steps = static_cast<int>(t_max / dt) + 1;
     
     // solution matrix with a size compose of time_index and space_index
-    vector<vector<double>> solution(num_time_steps, vector<double>(N, 0.0));
-    
-    // CFL number
-    double r = this->Get_CFL();
+    vector<vector<double>> solution(num_time_steps, vector<double>(N, 0.0)); 
     
     // vectors to store the different T
     vector<double> T_prev(N); // T_n-1
@@ -57,7 +55,7 @@ vector<vector<double>> DufortFrankel_Scheme::dfSolution(double dx, double dt, do
     T_prev = solution[0];
 
     // Creation of the first time_step
-    ProblemDefinition initialisation(0, 0.31, dx, t_max, dt, N, T_in, T_sur, D);
+    ProblemDefinition initialisation(0.31, dx, t_max, dt, N, T_in, T_sur, D);
     vector<vector<double>> analytic = initialisation.Analytic_Solution(); // use of the analytical soluton
     T_curr = analytic[1];
 
@@ -68,7 +66,7 @@ vector<vector<double>> DufortFrankel_Scheme::dfSolution(double dx, double dt, do
     for (int t=2; t<num_time_steps; t++) { // time steps
         // loop to obtain the result for each x
         for (int i=1; i<N-1; i++) { // grid steps
-            T_next[i] = ((1-2*r)/(1+2*r)) * T_prev[i] + (2*r/(1+2*r)) * (T_curr[i-1] + T_curr[i+1]);
+            T_next[i] = ((1-2*this->r)/(1+2*r)) * T_prev[i] + (2*r/(1+2*r)) * (T_curr[i-1] + T_curr[i+1]);
         }
 
         // Storage of the current step

@@ -17,36 +17,69 @@
 
 /****** Libraries and other inclusions ******/
 #include <iostream>
+#include <fstream>
+#include <cmath>
 using namespace std;
 
 /****** Main function ******/
 int main() 
 {
-    // TO DO
+    /****** Problem Parameters ******/
 
-    /*** DEBUG ***/
+    // Temperatures
+    double Tin = 38.0; // initial uniform temperature
+    double Tsur = 149.0; // surface temperature (on the two sides) suddenly increased an maintained
 
-    // debug for ProblemDefinition class
-    /*cout << "debug | Declaration of the object wallProblem" << endl;
-    double Tin = 38.0;
-    double Tsur = 149.0;
-    double D = 155e-6;
-    double L = 0.31;
-    double xMin = 0.0;
-    double dx = 0.05;
-    double tMax = 0.1;
-    double dt = 0.01;
-    int N = 100;
-    ProblemDefinition wallProblem(xMin, L, dx, tMax, dt, N, Tin, Tsur, D);
-    cout << "debug | Storage of the analytic solution" << endl;
-    vector<vector<double>> solution = wallProblem.Analytic_Solution();
-    int size_x = static_cast<int>(wallProblem.Get_thickness() / wallProblem.Get_dx()) + 1;
-    int size_t = static_cast<int>(wallProblem.Get_tMax() / wallProblem.Get_dt()) + 1;
-    for(int i=0; i<size_x; i++) {
-        for(int j=0; j<size_t; j++) {
-            cout << "debug | analytic solution (index i = " << i << ", index j = " << j << "): " << solution[i][j] << endl;
-        }
-    }*/
+    // Diffusivity of the material
+    double D = 93.0; // 93 cm^2/h
+
+    // Wall parameters
+    double L = 31.0; // thickness in cm
+
+    // Space griding
+    double dx = 0.05; // cm
+
+    // Time gridind
+    double dt = 0.01; // Be careful, in step 3 w will have to investigate the step size with 0.01, 0.025, 0.05, and 0.1
+    double tMax = 0.5;
+
+    // Number of steps
+    int N = tMax / dt;
+
+    /****** Schemes ******/
+
+    // Analytical Solution
+    ProblemDefinition wallProblem(L, dx, tMax, dt, N, Tin, Tsur, D);
+    vector<vector<double>> analyticSolution = wallProblem.Analytic_Solution();
+
+    // Dufort-Frankel
+    DufortFrankel_Scheme dufortFrankel(wallProblem);
+    //dufortFrankel.dfSolution();
+
+    // Richardson
+    Richardson_Scheme richardson(wallProblem);
+    //richardson.richardsonSolution();
+
+    // Laasonen
+    Laasonen_Scheme laasonen(wallProblem);
+
+    // Crank-Nicholson
+    CrankNicholson_Scheme crankNicholson(wallProblem);
+
+    /****** .csv file & diagram ******/
+    Output visualisation;
+
+    // Analytical Solutions
+    visualisation.Generate_File(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
+
+    // Dufort-Frankel
+
+    // Richardson
+
+    // Laasonen
+
+    // Crank-Nicholson
 
     // Proper way to finish main()
     return 0;
