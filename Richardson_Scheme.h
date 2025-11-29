@@ -20,10 +20,10 @@ using namespace std;
 class Richardson_Scheme : public Scheme
 {
     private:
-        // TO DO if it's necessary
+        double r = 0.0; // CFL number
     public:
         // class constructor with parameter
-        Richardson_Scheme(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
+        Richardson_Scheme(const ProblemDefinition& problem);
 
         // methods
         vector<vector<double>> richardsonSolution(double dx, double dt, double t_max, int N, double D, double T_in, double T_sur);
