@@ -1,5 +1,7 @@
 #include "Laasonen_Scheme.h"
 #include "CrankNicholson_Scheme.h"
+#include "DufortFrankel_Scheme.h"
+#include "Richardson_Scheme.h"
 #include "Verification.h"
 #include "Output.h"
 
@@ -91,7 +93,7 @@ int main()
     auto extract_column = [&](const vector<vector<double>>& sol) {
         vector<double> col(space_points);
         for(int i=0; i<space_points; ++i) {
-            if (time_index < sol[i].size())
+            if (static_cast<size_t>(time_index) < sol[i].size())
                 col[i] = sol[i][time_index];
             else
                 col[i] = 0.0; 
