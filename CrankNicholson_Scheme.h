@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       John Hoarau
     @date :         16/10/2025
     @file :         CrankNicholson_Scheme.h
     @description:   Header for the Crank-Nicholson implicit scheme.
@@ -43,7 +43,8 @@ class CrankNicholson_Scheme : public Scheme
     public:
         CrankNicholson_Scheme(const ProblemDefinition& problem);  // class constructor with parameters
 
-
+        vector<vector<double>> Solve();
+        
         void solve_step(std::vector<double>& T_current, double T_sur); // Method to perform one time step of the Crank-Nicholson scheme
 
 };

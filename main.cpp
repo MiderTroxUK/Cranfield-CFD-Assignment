@@ -62,9 +62,11 @@ int main()
 
     // Laasonen
     Laasonen_Scheme laasonen(wallProblem);
+    vector<vector<double>> laasonenSolution = laasonen.Solve(); // Now this works!
 
     // Crank-Nicholson
     CrankNicholson_Scheme crankNicholson(wallProblem);
+    vector<vector<double>> crankNicholsonSolution = crankNicholson.Solve();
 
     /****** .csv file & diagram ******/
     Output visualisation;
@@ -82,9 +84,11 @@ int main()
     visualisation.Generate_Diagram(richardsonSolution, "Richardson", dx, dt, tMax, N);
 
     // Laasonen
-
+    visualisation.Generate_File(laasonenSolution, "Laasonen", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(laasonenSolution, "Laasonen", dx, dt, tMax, N);
     // Crank-Nicholson
-
+    visualisation.Generate_File(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
     // Proper way to finish main()
     return 0;
 }

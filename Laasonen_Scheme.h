@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       John Hoarau
     @date :         27/11/2025
     @file :         Laasonen_Scheme.h
     @description:   Header for the Laasonen implicit scheme.
@@ -53,7 +53,8 @@ class Laasonen_Scheme : public Scheme
 
     public:
         Laasonen_Scheme(const ProblemDefinition& problem);
-
+        
+        vector<vector<double>> Solve();
         void solve_step(std::vector<double>& T_current, double T_sur);
 };
 
