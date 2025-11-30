@@ -1,15 +1,3 @@
-/*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
-    @date :         16/10/2025
-    @file :         main.cpp
-    @description:   ...
-*/
-
-/******* Inclusion of classes ******/
-#include "ProblemDefinition.h"
-#include "Scheme.h"
-#include "DufortFrankel_Scheme.h"
-#include "Richardson_Scheme.h"
 #include "Laasonen_Scheme.h"
 #include "CrankNicholson_Scheme.h"
 #include "Verification.h"
@@ -22,6 +10,10 @@
 using namespace std;
 
 /****** Main function ******/
+/**
+ * @brief Main entry point of the application.
+ * @return 0 on successful execution.
+ */
 int main() 
 {
     /****** Problem Parameters ******/
@@ -89,6 +81,52 @@ int main()
     // Crank-Nicholson
     visualisation.Generate_File(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
     visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
+
+    /****** Verification ******/
+    Verification verif;
+    int time_index = N; // Index for t = tMax
+    int space_points = analyticSolution.size();
+
+    // Helper to extract column
+    auto extract_column = [&](const vector<vector<double>>& sol) {
+        vector<double> col(space_points);
+        for(int i=0; i<space_points; ++i) {
+            if (time_index < sol[i].size())
+                col[i] = sol[i][time_index];
+            else
+                col[i] = 0.0; 
+        }
+        return col;
+    };
+
+    vector<double> T_analytic = extract_column(analyticSolution);
+
+    cout << "\n--- Verification Results (t = " << tMax << ") ---\n";
+
+    // Dufort-Frankel
+    vector<double> T_df = extract_column(duforFrankelSolution);
+    double norm_df = verif.Calculation_Norm(T_df, T_analytic);
+    cout << "Dufort-Frankel L2 Norm: " << norm_df << endl;
+    verif.Verify_Stability(dufortFrankel.Get_CFL(), "DufortFrankel");
+
+    // Richardson
+    vector<double> T_rich = extract_column(richardsonSolution);
+    double norm_rich = verif.Calculation_Norm(T_rich, T_analytic);
+    cout << "Richardson L2 Norm: " << norm_rich << endl;
+    verif.Verify_Stability(richardson.Get_CFL(), "Richardson");
+
+    // Laasonen
+    vector<double> T_laas = extract_column(laasonenSolution);
+    double norm_laas = verif.Calculation_Norm(T_laas, T_analytic);
+    cout << "Laasonen L2 Norm: " << norm_laas << endl;
+    verif.Verify_Stability(laasonen.Get_CFL(), "Laasonen");
+
+    // Crank-Nicholson
+    vector<double> T_cn = extract_column(crankNicholsonSolution);
+    double norm_cn = verif.Calculation_Norm(T_cn, T_analytic);
+    cout << "Crank-Nicholson L2 Norm: " << norm_cn << endl;
+    verif.Verify_Stability(crankNicholson.Get_CFL(), "CrankNicholson");
+
     // Proper way to finish main()
     return 0;
 }

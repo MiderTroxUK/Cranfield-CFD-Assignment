@@ -18,16 +18,29 @@ using namespace std;
 
 /****** Declaration of class DufortFrankel_Scheme ******/
 
+/**
+ * @class DufortFrankel_Scheme
+ * @brief Implements the Dufort-Frankel explicit numerical scheme.
+ * 
+ * The Dufort-Frankel scheme is an unconditionally stable explicit method.
+ * It is a modification of the Richardson scheme to improve stability.
+ */
 class DufortFrankel_Scheme : public Scheme
 {
     private:
-        double r = 0.0; // CFL number
-        ProblemDefinition problem;
+        double r = 0.0;             ///< CFL number
+        ProblemDefinition problem;  ///< Problem definition object
     public:
-        // class constructor with parameter
+        /**
+         * @brief Constructor.
+         * @param problem The problem definition containing physical parameters.
+         */
         DufortFrankel_Scheme(const ProblemDefinition& problem);
 
-        // methods
+        /**
+         * @brief Solves the heat equation using the Dufort-Frankel scheme.
+         * @return A 2D vector containing the temperature distribution over time and space.
+         */
         vector<vector<double>> dfSolution();
 };
 
