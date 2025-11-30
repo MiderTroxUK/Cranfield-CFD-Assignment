@@ -120,7 +120,7 @@ void Laasonen_Scheme::solve_step(std::vector<double>& T_current, double T_sur) {
 }
 
 vector<vector<double>> Laasonen_Scheme::Solve() {
-    int num_time_steps = static_cast<int>(Get_N()); 
+    int num_time_steps = static_cast<int>(Get_N()) + 1; 
     // Calculate spatial points based on thickness and dx
     // Using L = 31 cm (Hardcoded here or ideally passed via a getter if added to Scheme)
     // Since we don't have Get_L() in Scheme, we assume the calculation below is correct relative to the problem

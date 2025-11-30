@@ -133,7 +133,7 @@ void CrankNicholson_Scheme::solve_step(std::vector<double>& T_current, double T_
 }
 
 vector<vector<double>> CrankNicholson_Scheme::Solve() {
-    int num_time_steps = static_cast<int>(Get_N()); 
+    int num_time_steps = static_cast<int>(Get_N()) + 1; 
     // Calculate spatial points based on thickness and dx
     int num_space_points = static_cast<int>(31.0 / Get_dx()) + 1; 
 
