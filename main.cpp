@@ -46,14 +46,6 @@ int main()
     ProblemDefinition wallProblem(L, dx, tMax, dt, N, Tin, Tsur, D);
     vector<vector<double>> analyticSolution = wallProblem.Analytic_Solution();
 
-    // Dufort-Frankel
-    DufortFrankel_Scheme dufortFrankel(wallProblem);
-    vector<vector<double>> duforFrankelSolution = dufortFrankel.dfSolution();
-
-    // Richardson
-    Richardson_Scheme richardson(wallProblem);
-    vector<vector<double>> richardsonSolution = richardson.richardsonSolution();
-
     // Laasonen
     Laasonen_Scheme laasonen(wallProblem);
     vector<vector<double>> laasonenSolution = laasonen.Solve(); // Now this works!
@@ -62,12 +54,28 @@ int main()
     CrankNicholson_Scheme crankNicholson(wallProblem);
     vector<vector<double>> crankNicholsonSolution = crankNicholson.Solve();
 
+    // Dufort-Frankel
+    DufortFrankel_Scheme dufortFrankel(wallProblem);
+    vector<vector<double>> duforFrankelSolution = dufortFrankel.dfSolution(laasonenSolution);
+
+    // Richardson
+    Richardson_Scheme richardson(wallProblem);
+    vector<vector<double>> richardsonSolution = richardson.richardsonSolution(laasonenSolution);
+
     /****** .csv file & diagram ******/
     Output visualisation;
 
     // Analytical Solutions
     visualisation.Generate_File(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
     visualisation.Generate_Diagram(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
+
+    // Laasonen
+    visualisation.Generate_File(laasonenSolution, "Laasonen", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(laasonenSolution, "Laasonen", dx, dt, tMax, N);
+
+    // Crank-Nicholson
+    visualisation.Generate_File(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
+    visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
 
     // Dufort-Frankel
     visualisation.Generate_File(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
@@ -76,13 +84,6 @@ int main()
     // Richardson
     visualisation.Generate_File(richardsonSolution, "Richardson", dx, dt, tMax, N);
     visualisation.Generate_Diagram(richardsonSolution, "Richardson", dx, dt, tMax, N);
-
-    // Laasonen
-    visualisation.Generate_File(laasonenSolution, "Laasonen", dx, dt, tMax, N);
-    visualisation.Generate_Diagram(laasonenSolution, "Laasonen", dx, dt, tMax, N);
-    // Crank-Nicholson
-    visualisation.Generate_File(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
-    visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
 
     /****** Verification ******/
     Verification verif;
