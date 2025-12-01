@@ -24,7 +24,7 @@ DufortFrankel_Scheme::DufortFrankel_Scheme(const ProblemDefinition& problem)
     this->r = this->Get_CFL();
 }
 
-vector<vector<double>> DufortFrankel_Scheme::dfSolution() {
+vector<vector<double>> DufortFrankel_Scheme::dfSolution(vector<vector<double>> laasonen) {
     // size of the solution matrix
     int num_space_points = static_cast<int>(this->problem.Get_thickness() / this->problem.Get_dx()) + 1;
     int num_time_steps = static_cast<int>(this->problem.Get_tMax() / this->problem.Get_dt()) + 1;
@@ -55,9 +55,8 @@ vector<vector<double>> DufortFrankel_Scheme::dfSolution() {
     T_prev = T_curr;
 
     // Creation of the first time_step
-    vector<vector<double>> analytic = this->problem.Analytic_Solution(); // use of the analytical soluton
     for(int i=0; i<num_space_points; i++) {
-        T_curr[i] = analytic[i][1];
+        T_curr[i] = laasonen[i][1];
         solution[i][1] = T_curr[i];
     }
 
