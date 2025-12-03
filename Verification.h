@@ -55,7 +55,7 @@ class Verification
          * @param schemeName The name of the scheme (e.g., "Richardson", "Laasonen").
          * @return true if stable, false otherwise.
          */
-        bool Verify_Stability(double CFL, string schemeName);
+        bool Verify_Stability(double CFL, double L2_Norm, string schemeName = "Scheme");
 
         /**
          * @brief Calculates the L2 Norm (Root Mean Square Error) between numerical and analytical solutions.

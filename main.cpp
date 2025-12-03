@@ -110,25 +110,25 @@ int main()
     vector<double> T_df = extract_column(duforFrankelSolution);
     double norm_df = verif.Calculation_Norm(T_df, T_analytic);
     cout << "Dufort-Frankel L2 Norm: " << norm_df << endl;
-    verif.Verify_Stability(dufortFrankel.Get_CFL(), "DufortFrankel");
+    verif.Verify_Stability(dufortFrankel.Get_CFL(), norm_df, "DufortFrankel");
 
     // Richardson
     vector<double> T_rich = extract_column(richardsonSolution);
     double norm_rich = verif.Calculation_Norm(T_rich, T_analytic);
     cout << "Richardson L2 Norm: " << norm_rich << endl;
-    verif.Verify_Stability(richardson.Get_CFL(), "Richardson");
+    verif.Verify_Stability(richardson.Get_CFL(), norm_rich, "Richardson");
 
     // Laasonen
     vector<double> T_laas = extract_column(laasonenSolution);
     double norm_laas = verif.Calculation_Norm(T_laas, T_analytic);
     cout << "Laasonen L2 Norm: " << norm_laas << endl;
-    verif.Verify_Stability(laasonen.Get_CFL(), "Laasonen");
+    verif.Verify_Stability(laasonen.Get_CFL(), norm_laas, "Laasonen");
 
     // Crank-Nicholson
     vector<double> T_cn = extract_column(crankNicholsonSolution);
     double norm_cn = verif.Calculation_Norm(T_cn, T_analytic);
     cout << "Crank-Nicholson L2 Norm: " << norm_cn << endl;
-    verif.Verify_Stability(crankNicholson.Get_CFL(), "CrankNicholson");
+    verif.Verify_Stability(crankNicholson.Get_CFL(), norm_cn, "CrankNicholson");
 
     // Proper way to finish main()
     return 0;
