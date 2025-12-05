@@ -1,9 +1,85 @@
---- Verification Results (t = 0.5) ---
-Dufort-Frankel L2 Norm: 0
-DufortFrankel scheme is stable (L2 Norm 0 within tolerance).
-Richardson L2 Norm: 0
-Richardson scheme is stable (L2 Norm 0 within tolerance).
-Laasonen L2 Norm: 148.155
-Laasonen scheme is unstable or inconsistent (L2 Norm 148.155 > 100).
-Crank-Nicholson L2 Norm: 148.023
-CrankNicholson scheme is unstable or inconsistent (L2 Norm 148.023 > 100).
+   >>> VERIFICATION for dt = 0.05 <<<
+
+   --- Time t = 0 (Index: 0) ---
+   [Dufort-Frankel]
+      -> Relative Error: 45.4073 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 45.4073 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 45.4073 %
+      -> Status: UNSTABLE/INACCURATE
+   [Crank-Nicholson]
+      -> Relative Error: 45.4073 %
+      -> Status: UNSTABLE/INACCURATE
+
+   --- Time t = 0.1 (Index: 2) ---
+   [Dufort-Frankel]
+      -> Relative Error: 32.744 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 32.744 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 4.87998 %
+      -> Status: STABLE
+   [Crank-Nicholson]
+      -> Relative Error: 21.0977 %
+      -> Status: UNSTABLE/INACCURATE
+
+   --- Time t = 0.2 (Index: 4) ---
+   [Dufort-Frankel]
+      -> Relative Error: 88.6997 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 5.71237e+08 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 2.69141 %
+      -> Status: STABLE
+   [Crank-Nicholson]
+      -> Relative Error: 15.3882 %
+      -> Status: UNSTABLE/INACCURATE
+
+   --- Time t = 0.3 (Index: 6) ---
+   [Dufort-Frankel]
+      -> Relative Error: 136.064 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 6.75536e+16 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 1.69454 %
+      -> Status: STABLE
+   [Crank-Nicholson]
+      -> Relative Error: 12.6615 %
+      -> Status: UNSTABLE/INACCURATE
+
+   --- Time t = 0.4 (Index: 8) ---
+   [Dufort-Frankel]
+      -> Relative Error: 176.563 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 1.02924e+25 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 1.1219 %
+      -> Status: STABLE
+   [Crank-Nicholson]
+      -> Relative Error: 10.9563 %
+      -> Status: UNSTABLE/INACCURATE
+
+   --- Time t = 0.5 (Index: 10) ---
+   [Dufort-Frankel]
+      -> Relative Error: 211.383 %
+      -> Status: UNSTABLE/INACCURATE
+   [Richardson]
+      -> Relative Error: 1.73815e+33 %
+      -> Status: UNSTABLE/INACCURATE
+   [Laasonen]
+      -> Relative Error: 0.865697 %
+      -> Status: STABLE
+   [Crank-Nicholson]
+      -> Relative Error: 9.74657 %
+      -> Status: UNSTABLE/INACCURATE

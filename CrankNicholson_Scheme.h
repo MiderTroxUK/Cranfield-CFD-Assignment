@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau
+    @author :       John Hoarau, Github copilot
     @date :         16/10/2025
     @file :         CrankNicholson_Scheme.h
     @description:   Header for the Crank-Nicholson implicit scheme.

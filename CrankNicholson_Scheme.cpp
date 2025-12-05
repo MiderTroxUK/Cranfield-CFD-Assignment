@@ -1,5 +1,5 @@
 /* Computational Methods Assignment
-    @author :       John Hoarau
+    @author :       John Hoarau, Github copilot
     @date :         06/11/2025
     @file :         CrankNicholson_Scheme.cpp
     @description:   Implementation of the CrankNicholson_Scheme class.
