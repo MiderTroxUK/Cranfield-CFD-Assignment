@@ -6,12 +6,12 @@ This project is an object-oriented C++ implementation for solving the one-dimens
 
 The project aims to compute the temperature distribution over time within a 31cm thick wall.
 
-- **Governing Equation:** $\frac{\partial T}{\partial t}=D\frac{\partial^{2}T}{\partial x^{2}}$
+- **Governing Equation:** \f$\frac{\partial T}{\partial t}=D\frac{\partial^{2}T}{\partial x^{2}}\f$
 - **Physical Properties:**
-    - Wall Thickness ($L$): 31 cm
-    - Thermal Diffusivity ($D$): 93 cm²/hr
-    - Uniform Initial Temperature ($T_{in}$): 38°C
-    - Maintained Surface Temperature ($T_{sur}$): 149°C
+    - Wall Thickness (\f$L\f$): 31 cm
+    - Thermal Diffusivity (\f$D\f$): 93 cm²/hr
+    - Uniform Initial Temperature (\f$T_{in}\f$): 38°C
+    - Maintained Surface Temperature (\f$T_{sur}\f$): 149°C
 - **Numerical Methods to Implement:**
   1.  DuFort-Frankel (Explicit)
   2.  Richardson (Explicit)
@@ -20,16 +20,19 @@ The project aims to compute the temperature distribution over time within a 31cm
 
 ## Software Architecture (UML)
 
-The software design is based on the following UML class diagram, which separates responsibilities into distinct modules:
+The software design allows for modularity and extensibility. Below is the UML class diagram representing the project structure.
 
-*UML*
+![UML Class Diagram](https://kroki.io/mermaid/svg/eNrtV19v0zAQf9-n8MumlrV74BEhJFgYPIyC1onXyHXc1ZoTV7ZTdRrbZ-ecOIkT29kKDPFAH9r0_v3ufHe-C-FYqYThG4nzIwSf42N0RTnWTBRqw7aqIi7JhuYUvf0xn6NziYvbBSMbwZUo0prlSSXlWkh9YWQpjwldYgwmaNTIFaBgmQ1gqq-gF-js7B36JsWK0zyha1YwEwZ6g0pF60BCbqFXABXSIiLfClX9q5QH7j6N5vn_bKgmFR-woujc5KiiEPPUHNF9RTKfeSZKMImyfUdihUYLX0J7pMSjyJZyWkNNph6lRZyhCmmGWoT2MXHUPlGdZvvJ1PL6jAXQwcpAWkekkwB9WZu3wDvMSzrtcxcT42eIA0AjekmMaVw5v7jsO_Nw1GQuoZLtaFYnj7rpC5eun02Z9rNZlHkKv1QWmKeFyKhyBHaUaCEfa9VHhOOsVZxF4qwszrpOleClKV1HRlFdblO9ETlWKRF0vWaE0UIrp5askNyotDY5IXDpQJJ69k8AgJRSgnJbWQBZSteQ4DvaoGF-IyTTm9wt2-ChWzyvIU_Qtia5tWAgINnWub6Pj51c7YrSdDs5KA5bOXWJBK-p-5FGnfuXig2h8yxk9JATyNZLm-dJ-BAQtxfk6Cn1Ah1eqf-74EW7YHDc_2z9-4Pzd4vfs3hI7LJV_pMdAEPiM-VbKgMzwo9ofNpbkv6C96MzP7wVXLPCp0FmfPsbRm4LareR8BZx6vnuVqDPHJruNol9-2ji6m0Y_Z0D_O-ewe_DNxADEGFF95Dg1gKuRMSNYzH0JvY_uvFUMY3wx_ee-L5kQhxRrOIcc6sN9le2rvdw7d9pRtK2E58_bL6Weltqt5OUlqy4QWvGaYFz53RrUbdwLWWgMaivhgxO1YL9qFq2tVIFlwZtFVRiTdML4PXnwSDKE9SMnZmFRDmFEZAtwGKolZz9vO6qqpVC2Pat8O_B95L1HfZnmJY4cvnB5t257Mq6OevRO8Wnlvg2X4YTqcPK9F261HjFONN3jRyVUnT3jxYczrIgdIpWQnBnHcWclPVbdnr5Ol0ImUfGPuw7AEUwn6GwALYdYSTa8_bjcRHrF3wY0x-Nty8H_PAT2EEWoA==)
 
+Detailed caller and collaboration graphs are available in the generated Doxygen documentation (see `docs/html/index.html`).
 
-- **Problem definitions:** Encapsulates all physical and numerical parameters of the problem.
-- **Scheme (Mother Class):** An abstract base class defining the common interface for all numerical methods.
-- **DuFortFrankel, Richardson, Laasonen, CrankNicholson:** Concrete implementations of each numerical scheme, inheriting from `Scheme`.
-- **Output:** Manages writing results to output files for analysis and visualization.
-- **Verif:** A class dedicated to verifying stability (e.g., CFL criterion) and calculating the analytical solution for validation.
+**Key Classes:**
+
+- **`ProblemDefinition`**: Encapsulates all physical and numerical parameters of the problem (diffusivity, dimensions, grid spacing, etc.).
+- **`Scheme` (Base Class)**: An abstract base class defining the common interface (`Solve()`) for all numerical methods.
+- **`DufortFrankel_Scheme`, `Richardson_Scheme`, `Laasonen_Scheme`, `CrankNicholson_Scheme`**: Concrete implementations of each numerical scheme, inheriting from `Scheme`.
+- **`Output`**: Handles data export to CSV files for analysis.
+- **`Verification`**: Provides utilities for verifying stability (L2 Norm, Relative Error calculation) and comparing numerical results against the analytical solution.
 
 ## Build and Run Instructions
 
@@ -48,37 +51,7 @@ The software design is based on the following UML class diagram, which separates
     ./solver
     ```
 
-### Branch Types
 
-  * **`main`**: This is the production-ready branch. It must **always** contain a stable, working version of the code. No one should ever commit directly to `main`. Code is only merged from `develop` after a major milestone is completed and tested.
-  * **`develop`**: This is the main integration branch. All completed features are merged into this branch. It represents the most up-to-date state of the project's development.
-  * **`feature/*`**: All new work (e.g., implementing a class, fixing a bug) must be done on a dedicated feature branch. This isolates work-in-progress and keeps the `develop` branch stable.
-
-### Step-by-Step Workflow
-
-1.  **Start a New Task**: Assign a GitHub Issue to yourself.
-2.  **Create a Feature Branch**: Always branch off from the latest version of `develop`.
-    ```bash
-    # Switch to develop and pull the latest changes
-    git checkout develop
-    git pull origin develop
-
-    # Create your new feature branch
-    git checkout -b feature/issue-2-problem-definitions
-    ```
-3.  **Implement and Commit**: Write your code on the feature branch. Make small, logical commits with clear messages.
-    ```bash
-    git add.
-    git commit -m "Feat: Implement Problem definitions class"
-    ```
-4.  **Push and Create a Pull Request (PR)**: When your feature is complete and tested locally, push it to the remote repository.
-    ```bash
-    git push origin feature/issue-2-problem-definitions
-    ```
-    Then, go to GitHub and open a Pull Request to merge your feature branch into `develop`. In the PR description, link the issue it resolves (e.g., "Closes \#2").
-5.  **Code Review and Merge**: At least one other team member must review and approve the Pull Request. After approval, the PR can be merged into `develop`. The feature branch should be deleted after the merge.
-
-    
 
 ## Group Members
 

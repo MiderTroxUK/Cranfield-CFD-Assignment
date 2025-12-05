@@ -1,0 +1,228 @@
+\doxysection{Output Class Reference}
+\hypertarget{class_output}{}\label{class_output}\index{Output@{Output}}
+
+
+Handles data export and visualization.  
+
+
+
+
+{\ttfamily \#include $<$Output.\+h$>$}
+
+
+
+Collaboration diagram for Output\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_a428c663520336477a12f1a33504eb067}{Output}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_output_a3542b0ddee1c94fe7e625e4966488c64}{Output}} (string \mbox{\hyperlink{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}{filename}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_output_a95f7f624bf31acf0f0606367a80c846e}{Get\+\_\+filename}} () const
+\begin{DoxyCompactList}\small\item\em Get filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_a0e4d225c2a696f87f139ed87dc062d48}{Set\+\_\+filename}} (string value\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em Set filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_af16c676425108a684c0e1336055fcb47}{Generate\+\_\+\+File}} (const vector$<$ vector$<$ double $>$ $>$ \&solution, string method\+Name, double dx, double dt, double t\+Max, int N)
+\begin{DoxyCompactList}\small\item\em Generates a CSV file containing the simulation results. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_a5e941576e7ac6018be45373958ed9710}{Generate\+\_\+\+Diagram}} (const vector$<$ vector$<$ double $>$ $>$ \&solution, string method\+Name, double dx, double dt, double t\+Max, int N)
+\begin{DoxyCompactList}\small\item\em Generates a plot of the solution using Gnuplot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}{filename}}
+\begin{DoxyCompactList}\small\item\em Base filename for output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles data export and visualization. 
+
+This class provides methods to export simulation results to CSV files and generate plots using Gnuplot. 
+
+Definition at line \mbox{\hyperlink{_output_8h_source_l00024}{24}} of file \mbox{\hyperlink{_output_8h_source}{Output.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_output_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_output_a428c663520336477a12f1a33504eb067}\index{Output@{Output}!Output@{Output}}
+\index{Output@{Output}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Output()}{Output()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_output_a428c663520336477a12f1a33504eb067} 
+Output\+::\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_output_8h_source_l00027}{filename}}.
+
+\Hypertarget{class_output_a3542b0ddee1c94fe7e625e4966488c64}\index{Output@{Output}!Output@{Output}}
+\index{Output@{Output}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Output()}{Output()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_output_a3542b0ddee1c94fe7e625e4966488c64} 
+Output\+::\+Output (\begin{DoxyParamCaption}\item[{string}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Base filename for output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_output_8h_source_l00027}{filename}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_output_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_a5e941576e7ac6018be45373958ed9710}\index{Output@{Output}!Generate\_Diagram@{Generate\_Diagram}}
+\index{Generate\_Diagram@{Generate\_Diagram}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Generate\_Diagram()}{Generate\_Diagram()}}
+{\footnotesize\ttfamily \label{class_output_a5e941576e7ac6018be45373958ed9710} 
+void Output\+::\+Generate\+\_\+\+Diagram (\begin{DoxyParamCaption}\item[{const vector$<$ vector$<$ double $>$ $>$ \&}]{solution}{, }\item[{string}]{method\+Name}{, }\item[{double}]{dx}{, }\item[{double}]{dt}{, }\item[{double}]{t\+Max}{, }\item[{int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Generates a plot of the solution using Gnuplot. 
+
+This method pipes commands to a Gnuplot process to visualize the temperature profiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & The 2D vector containing the solution \mbox{[}space\mbox{]}\mbox{[}time\mbox{]} \\
+\hline
+{\em method\+Name} & The name of the numerical method (used for plot title) \\
+\hline
+{\em dx} & Spatial grid spacing \\
+\hline
+{\em dt} & Time step size \\
+\hline
+{\em t\+Max} & Maximum simulation time \\
+\hline
+{\em N} & Number of time steps \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+\Hypertarget{class_output_af16c676425108a684c0e1336055fcb47}\index{Output@{Output}!Generate\_File@{Generate\_File}}
+\index{Generate\_File@{Generate\_File}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Generate\_File()}{Generate\_File()}}
+{\footnotesize\ttfamily \label{class_output_af16c676425108a684c0e1336055fcb47} 
+void Output\+::\+Generate\+\_\+\+File (\begin{DoxyParamCaption}\item[{const vector$<$ vector$<$ double $>$ $>$ \&}]{solution}{, }\item[{string}]{method\+Name}{, }\item[{double}]{dx}{, }\item[{double}]{dt}{, }\item[{double}]{t\+Max}{, }\item[{int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Generates a CSV file containing the simulation results. 
+
+The file format is compatible with Gnuplot and other plotting tools. It includes columns for position and temperature at selected time steps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & The 2D vector containing the solution \mbox{[}space\mbox{]}\mbox{[}time\mbox{]} \\
+\hline
+{\em method\+Name} & The name of the numerical method (used for filename) \\
+\hline
+{\em dx} & Spatial grid spacing \\
+\hline
+{\em dt} & Time step size \\
+\hline
+{\em t\+Max} & Maximum simulation time \\
+\hline
+{\em N} & Number of time steps \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{class_output_a95f7f624bf31acf0f0606367a80c846e}\index{Output@{Output}!Get\_filename@{Get\_filename}}
+\index{Get\_filename@{Get\_filename}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Get\_filename()}{Get\_filename()}}
+{\footnotesize\ttfamily \label{class_output_a95f7f624bf31acf0f0606367a80c846e} 
+string Output\+::\+Get\+\_\+filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get filename. 
+
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_output_8h_source_l00027}{filename}}.
+
+\Hypertarget{class_output_a0e4d225c2a696f87f139ed87dc062d48}\index{Output@{Output}!Set\_filename@{Set\_filename}}
+\index{Set\_filename@{Set\_filename}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{Set\_filename()}{Set\_filename()}}
+{\footnotesize\ttfamily \label{class_output_a0e4d225c2a696f87f139ed87dc062d48} 
+void Output\+::\+Set\+\_\+filename (\begin{DoxyParamCaption}\item[{string}]{value\+\_\+filename}{}\end{DoxyParamCaption})}
+
+
+
+Set filename. 
+
+
+
+Definition at line \mbox{\hyperlink{_output_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_output_8cpp_source}{Output.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_output_8h_source_l00027}{filename}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_output_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}\index{Output@{Output}!filename@{filename}}
+\index{filename@{filename}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{class_output_a696151c33e1b4cb22d3f1b656d65dbfd} 
+string Output\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base filename for output. 
+
+
+
+Definition at line \mbox{\hyperlink{_output_8h_source_l00027}{27}} of file \mbox{\hyperlink{_output_8h_source}{Output.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_output_8cpp_source_l00034}{Get\+\_\+filename()}}, \mbox{\hyperlink{_output_8cpp_source_l00022}{Output()}}, \mbox{\hyperlink{_output_8cpp_source_l00028}{Output()}}, and \mbox{\hyperlink{_output_8cpp_source_l00040}{Set\+\_\+filename()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_output_8h}{Output.\+h}}\item 
+\mbox{\hyperlink{_output_8cpp}{Output.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+digraph "CrankNicholson_Scheme::setup_thomas_coefficients"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="CrankNicholson_Scheme\l::setup_thomas_coefficients",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Sets up the constant coefficients of the tridiagonal matrix. Crank-Nicholson: a = -r/2,..."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CrankNicholson_Scheme\l::CrankNicholson_Scheme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_crank_nicholson___scheme.html#afe6019997e8115f1d90097b6696f7062",tooltip="Constructor."];
+}

@@ -1,0 +1,266 @@
+\doxysection{Verification Class Reference}
+\hypertarget{class_verification}{}\label{class_verification}\index{Verification@{Verification}}
+
+
+Provides methods for verifying numerical results and conditions.  
+
+
+
+
+{\ttfamily \#include $<$Verification.\+h$>$}
+
+
+
+Collaboration diagram for Verification\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_verification_a1088cb096de23fbab9132f3595661d7b}{Verification}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_verification_a280dacad1868f980c2ca3b67459d8c33}{Verification}} (double \mbox{\hyperlink{class_verification_a6f24a797e921560378275268b368795c}{CFL}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_verification_acb67f43e45b979e110db864cb6170977}{Get\+\_\+\+CFL}} () const
+\begin{DoxyCompactList}\small\item\em Get CFL number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_verification_aaeee00cae418338ef1b5c65a7a488823}{Set\+\_\+\+CFL}} (double value)
+\begin{DoxyCompactList}\small\item\em Set CFL number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_verification_afb0acfcda5efbd2917c19a6e802ca1ce}{Verify\+\_\+\+Stability}} (double error, double tolerance)
+\begin{DoxyCompactList}\small\item\em Verifies the stability of a numerical scheme based on error and tolerance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_verification_a31695c0c3a295c19bd8b73c3884913ca}{Calculation\+\_\+\+L2\+\_\+\+Norm}} (const vector$<$ double $>$ \&numerical, const vector$<$ double $>$ \&analytical, double dx)
+\begin{DoxyCompactList}\small\item\em Calculates the L2 Norm (Discrete Integral) between numerical and analytical solutions. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_verification_a374e1af4acfb6458ba92a15fe2715460}{Calculation\+\_\+\+Relative\+\_\+\+Error}} (const vector$<$ double $>$ \&numerical, const vector$<$ double $>$ \&analytical, double dx)
+\begin{DoxyCompactList}\small\item\em Calculates the Relative L2 Error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_verification_a6f24a797e921560378275268b368795c}{CFL}}
+\begin{DoxyCompactList}\small\item\em Courant-\/\+Friedrichs-\/\+Lewy number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides methods for verifying numerical results and conditions. 
+
+This class includes utilities to check the stability of numerical schemes and calculate error norms (e.\+g., L2 norm) by comparing numerical results with analytical solutions. 
+
+Definition at line \mbox{\hyperlink{_verification_8h_source_l00026}{26}} of file \mbox{\hyperlink{_verification_8h_source}{Verification.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_verification_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_verification_a1088cb096de23fbab9132f3595661d7b}\index{Verification@{Verification}!Verification@{Verification}}
+\index{Verification@{Verification}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Verification()}{Verification()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_verification_a1088cb096de23fbab9132f3595661d7b} 
+Verification\+::\+Verification (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_verification_8h_source_l00029}{CFL}}.
+
+\Hypertarget{class_verification_a280dacad1868f980c2ca3b67459d8c33}\index{Verification@{Verification}!Verification@{Verification}}
+\index{Verification@{Verification}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Verification()}{Verification()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_verification_a280dacad1868f980c2ca3b67459d8c33} 
+Verification\+::\+Verification (\begin{DoxyParamCaption}\item[{double}]{CFL}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CFL} & The CFL number to check. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_verification_8h_source_l00029}{CFL}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_verification_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_verification_a31695c0c3a295c19bd8b73c3884913ca}\index{Verification@{Verification}!Calculation\_L2\_Norm@{Calculation\_L2\_Norm}}
+\index{Calculation\_L2\_Norm@{Calculation\_L2\_Norm}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Calculation\_L2\_Norm()}{Calculation\_L2\_Norm()}}
+{\footnotesize\ttfamily \label{class_verification_a31695c0c3a295c19bd8b73c3884913ca} 
+double Verification\+::\+Calculation\+\_\+\+L2\+\_\+\+Norm (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{numerical}{, }\item[{const vector$<$ double $>$ \&}]{analytical}{, }\item[{double}]{dx}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the L2 Norm (Discrete Integral) between numerical and analytical solutions. 
+
+Formula\+: sqrt( sum( (num\mbox{[}i\mbox{]} -\/ ana\mbox{[}i\mbox{]})\texorpdfstring{$^\wedge$}{\string^}2 ) \texorpdfstring{$\ast$}{*} dx )
+
+
+\begin{DoxyParams}{Parameters}
+{\em numerical} & Vector containing the numerical solution. \\
+\hline
+{\em analytical} & Vector containing the analytical solution. \\
+\hline
+{\em dx} & The spatial grid spacing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated L2 Norm. Returns -\/1.\+0 if vector sizes do not match. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_verification_8cpp_source_l00081}{Calculation\+\_\+\+Relative\+\_\+\+Error()}}, and \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{class_verification_a374e1af4acfb6458ba92a15fe2715460}\index{Verification@{Verification}!Calculation\_Relative\_Error@{Calculation\_Relative\_Error}}
+\index{Calculation\_Relative\_Error@{Calculation\_Relative\_Error}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Calculation\_Relative\_Error()}{Calculation\_Relative\_Error()}}
+{\footnotesize\ttfamily \label{class_verification_a374e1af4acfb6458ba92a15fe2715460} 
+double Verification\+::\+Calculation\+\_\+\+Relative\+\_\+\+Error (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{numerical}{, }\item[{const vector$<$ double $>$ \&}]{analytical}{, }\item[{double}]{dx}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the Relative L2 Error. 
+
+Formula\+: L2\+\_\+\+Norm(num -\/ ana) / L2\+\_\+\+Norm(ana)
+
+
+\begin{DoxyParams}{Parameters}
+{\em numerical} & Vector containing the numerical solution. \\
+\hline
+{\em analytical} & Vector containing the analytical solution. \\
+\hline
+{\em dx} & The spatial grid spacing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated Relative Error. Returns -\/1.\+0 if vector sizes do not match or analytical norm is 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_verification_8cpp_source_l00062}{Calculation\+\_\+\+L2\+\_\+\+Norm()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_verification_acb67f43e45b979e110db864cb6170977}\index{Verification@{Verification}!Get\_CFL@{Get\_CFL}}
+\index{Get\_CFL@{Get\_CFL}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Get\_CFL()}{Get\_CFL()}}
+{\footnotesize\ttfamily \label{class_verification_acb67f43e45b979e110db864cb6170977} 
+double Verification\+::\+Get\+\_\+\+CFL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_verification_8h_source_l00029}{CFL}}.
+
+\Hypertarget{class_verification_aaeee00cae418338ef1b5c65a7a488823}\index{Verification@{Verification}!Set\_CFL@{Set\_CFL}}
+\index{Set\_CFL@{Set\_CFL}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Set\_CFL()}{Set\_CFL()}}
+{\footnotesize\ttfamily \label{class_verification_aaeee00cae418338ef1b5c65a7a488823} 
+void Verification\+::\+Set\+\_\+\+CFL (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_verification_8h_source_l00029}{CFL}}.
+
+\Hypertarget{class_verification_afb0acfcda5efbd2917c19a6e802ca1ce}\index{Verification@{Verification}!Verify\_Stability@{Verify\_Stability}}
+\index{Verify\_Stability@{Verify\_Stability}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{Verify\_Stability()}{Verify\_Stability()}}
+{\footnotesize\ttfamily \label{class_verification_afb0acfcda5efbd2917c19a6e802ca1ce} 
+bool Verification\+::\+Verify\+\_\+\+Stability (\begin{DoxyParamCaption}\item[{double}]{error}{, }\item[{double}]{tolerance}{}\end{DoxyParamCaption})}
+
+
+
+Verifies the stability of a numerical scheme based on error and tolerance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The calculated error (e.\+g., L2 Norm). \\
+\hline
+{\em tolerance} & The acceptable error threshold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if stable (error \texorpdfstring{$<$}{<}= tolerance and not Na\+N/\+Inf), false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_verification_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_verification_8cpp_source}{Verification.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\label{doc-variable-members}
+\Hypertarget{class_verification_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_verification_a6f24a797e921560378275268b368795c}\index{Verification@{Verification}!CFL@{CFL}}
+\index{CFL@{CFL}!Verification@{Verification}}
+\doxysubsubsection{\texorpdfstring{CFL}{CFL}}
+{\footnotesize\ttfamily \label{class_verification_a6f24a797e921560378275268b368795c} 
+double Verification\+::\+CFL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Courant-\/\+Friedrichs-\/\+Lewy number. 
+
+
+
+Definition at line \mbox{\hyperlink{_verification_8h_source_l00029}{29}} of file \mbox{\hyperlink{_verification_8h_source}{Verification.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_verification_8cpp_source_l00033}{Get\+\_\+\+CFL()}}, \mbox{\hyperlink{_verification_8cpp_source_l00039}{Set\+\_\+\+CFL()}}, \mbox{\hyperlink{_verification_8cpp_source_l00021}{Verification()}}, and \mbox{\hyperlink{_verification_8cpp_source_l00027}{Verification()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_verification_8h}{Verification.\+h}}\item 
+\mbox{\hyperlink{_verification_8cpp}{Verification.\+cpp}}\end{DoxyCompactItemize}

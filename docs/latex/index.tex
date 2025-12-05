@@ -1,0 +1,55 @@
+\chapter{1D Heat Equation Solver -\/ Cranfield Assignment }
+\hypertarget{index}{}\label{index}\index{1D Heat Equation Solver -\/ Cranfield Assignment@{1D Heat Equation Solver -\/ Cranfield Assignment}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+This project is an object-\/oriented C++ implementation for solving the one-\/dimensional heat equation using various finite difference methods, as part of the Cranfield University "{}\+Computational Methods \& C++"{} assignment.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Problem Description}{Problem Description}}\label{index_autotoc_md1}
+The project aims to compute the temperature distribution over time within a 31cm thick wall.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Governing Equation\+:}} $\frac{\partial T}{\partial t}=D\frac{\partial^{2}T}{\partial x^{2}}$
+\item {\bfseries{Physical Properties\+:}}
+\begin{DoxyItemize}
+\item Wall Thickness ( $L$)\+: 31 cm
+\item Thermal Diffusivity ( $D$)\+: 93 cm²/hr
+\item Uniform Initial Temperature ( $T_{in}$)\+: 38°C
+\item Maintained Surface Temperature ( $T_{sur}$)\+: 149°C
+\end{DoxyItemize}
+\item {\bfseries{Numerical Methods to Implement\+:}}
+\begin{DoxyEnumerate}
+\item Du\+Fort-\/\+Frankel (Explicit)
+\item Richardson (Explicit)
+\item Laasonen (Implicit)
+\item Crank-\/\+Nicholson (Implicit)
+\end{DoxyEnumerate}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Software Architecture (UML)}{Software Architecture (UML)}}\label{index_autotoc_md2}
+The software design allows for modularity and extensibility. Below is the UML class diagram representing the project structure.
+
+
+
+Detailed caller and collaboration graphs are available in the generated Doxygen documentation (see {\ttfamily docs/html/index.\+html}).
+
+{\bfseries{Key Classes\+:}}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily \doxylink{class_problem_definition}{Problem\+Definition}}}}\+: Encapsulates all physical and numerical parameters of the problem (diffusivity, dimensions, grid spacing, etc.).
+\item {\bfseries{{\ttfamily \doxylink{class_scheme}{Scheme}} (Base Class)}}\+: An abstract base class defining the common interface ({\ttfamily Solve()}) for all numerical methods.
+\item {\bfseries{{\ttfamily \doxylink{class_dufort_frankel___scheme}{Dufort\+Frankel\+\_\+\+Scheme}}, {\ttfamily \doxylink{class_richardson___scheme}{Richardson\+\_\+\+Scheme}}, {\ttfamily \doxylink{class_laasonen___scheme}{Laasonen\+\_\+\+Scheme}}, {\ttfamily \doxylink{class_crank_nicholson___scheme}{Crank\+Nicholson\+\_\+\+Scheme}}}}\+: Concrete implementations of each numerical scheme, inheriting from {\ttfamily \doxylink{class_scheme}{Scheme}}.
+\item {\bfseries{{\ttfamily \doxylink{class_output}{Output}}}}\+: Handles data export to CSV files for analysis.
+\item {\bfseries{{\ttfamily \doxylink{class_verification}{Verification}}}}\+: Provides utilities for verifying stability (L2 Norm, Relative Error calculation) and comparing numerical results against the analytical solution.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Build and Run Instructions}{Build and Run Instructions}}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Prerequisites\+:}} A C++ compiler (supporting C++17 or higher), such as g++.
+\item {\bfseries{Clone the repository\+:}} {\ttfamily bash git clone \texorpdfstring{$<$}{<}your-\/repo-\/url\texorpdfstring{$>$}{>} cd \texorpdfstring{$<$}{<}your-\/repo-\/name\texorpdfstring{$>$}{>} }
+\item {\bfseries{Compile the project\+:}} {\ttfamily bash g++ -\/std=c++17 -\/o solver \doxylink{main_8cpp}{main.\+cpp} problem\+\_\+definitions.\+cpp \doxylink{_scheme_8cpp}{scheme.\+cpp} \doxylink{_output_8cpp}{output.\+cpp} verif.\+cpp \#... and other.\+cpp files }
+\item {\bfseries{Run the program\+:}} {\ttfamily bash ./solver }
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Group Members}{Group Members}}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Clémence-\/\+Philomène Hinot
+\item John Hoarau 
+\end{DoxyItemize}

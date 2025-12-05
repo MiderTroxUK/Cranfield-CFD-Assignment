@@ -1,0 +1,38 @@
+\doxysection{Richardson\+\_\+\+Scheme.\+h}
+\hypertarget{_richardson___scheme_8h_source}{}\label{_richardson___scheme_8h_source}\mbox{\hyperlink{_richardson___scheme_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00001}00001\ \textcolor{comment}{/*\ \ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ John\ Hoarau,\ Clémence-\/Philomène\ Hinot}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 16/10/2025}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ Richardson\_Scheme.h}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ @description:\ \ \ Header\ for\ the\ Richardson\ Scheme}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00008}00008\ \textcolor{comment}{/******\ Prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ RICHARDSON\_SCHEME\_H}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ RICHARDSON\_SCHEME\_H}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00012}00012\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scheme_8h}{Scheme.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_problem_definition_8h}{ProblemDefinition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00019}00019\ \textcolor{comment}{/******\ Declaration\ of\ class\ Richardson\_Scheme\ ******/}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00028}\mbox{\hyperlink{class_richardson___scheme}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_richardson___scheme_a416f82c12779f83571de1ccbf8ff2e06}{Richardson\_Scheme}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00031}\mbox{\hyperlink{class_richardson___scheme_a96c129c98cabfe95a4c260fcffc2b40b}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_richardson___scheme_a96c129c98cabfe95a4c260fcffc2b40b}{r}}\ =\ 0.0;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00032}\mbox{\hyperlink{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}{00032}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_problem_definition}{ProblemDefinition}}\ \mbox{\hyperlink{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}{problem}};\ \ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_richardson___scheme_a416f82c12779f83571de1ccbf8ff2e06}{Richardson\_Scheme}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_problem_definition}{ProblemDefinition}}\&\ \mbox{\hyperlink{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}{problem}});}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ vector<vector<double>>\ \mbox{\hyperlink{class_richardson___scheme_ad37ffdc6cf035da6dddbb1c97109afd1}{richardsonSolution}}(vector<vector<double>>\ laasonen);}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00047}00047\ \textcolor{comment}{/******\ End\ of\ the\ prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_richardson___scheme_8h_source_l00048}00048\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,175 @@
+\doxysection{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}
+\hypertarget{_crank_nicholson___scheme_8cpp_source}{}\label{_crank_nicholson___scheme_8cpp_source}\mbox{\hyperlink{_crank_nicholson___scheme_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ John\ Hoarau,\ Github\ copilot}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 06/11/2025}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ CrankNicholson\_Scheme.cpp}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00005}00005\ \textcolor{comment}{\ \ \ \ @description:\ \ \ Implementation\ of\ the\ CrankNicholson\_Scheme\ class.}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00008}00008\ \textcolor{comment}{/*******\ Inclusion\ of\ classes\ ******/}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_crank_nicholson___scheme_8h}{CrankNicholson\_Scheme.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_problem_definition_8h}{ProblemDefinition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00012}00012\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00019}00019\ \textcolor{comment}{/******\ Methods\ for\ class\ CrankNicholson\_Scheme\ ******/}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00021}\mbox{\hyperlink{class_crank_nicholson___scheme_afe6019997e8115f1d90097b6696f7062}{00021}}\ \mbox{\hyperlink{class_crank_nicholson___scheme_afe6019997e8115f1d90097b6696f7062}{CrankNicholson\_Scheme::CrankNicholson\_Scheme}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_problem_definition}{ProblemDefinition}}\&\ problem)}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Call\ the\ base\ class\ 'Scheme'\ constructor}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00023}00023\ \ \ \ \ :\ \mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}}(problem.\mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\_dx}}(),\ problem.\mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\_N}}(),\ problem.\mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\_dt}}(),\ problem.\mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\_D}}())\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ 'r'\ parameter}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00026}00026\ \ \ \ \ this-\/>\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ =\ (\mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\_D}}()\ *\ \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\_dt}}())\ /\ (\mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\_dx}}()\ *\ \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\_dx}}());}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ FIX:\ Calculate\ spatial\ nodes\ based\ on\ geometry,\ NOT\ time\ steps\ (N)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_space\_points\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(problem.\mbox{\hyperlink{class_problem_definition_a735fe3db21638f8a510007a506ee1e23}{Get\_thickness}}()\ /\ problem.\mbox{\hyperlink{class_problem_definition_a81f52567e17cf8f884f4a58cfbba70d2}{Get\_dx}}())\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ The\ tridiagonal\ system\ only\ applies\ to\ INTERNAL\ nodes}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00032}00032\ \ \ \ \ this-\/>num\_internal\_nodes\_\ =\ num\_space\_points\ -\/\ 2;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Resize\ vectors\ to\ fit\ the\ internal\ nodes}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00035}00035\ \ \ \ \ if\ (\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}{a\_}}.resize(\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}});}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\_}}.resize(\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}});}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a}{c\_}}.resize(\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}});}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\_}}.resize(\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}});}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\_solution\_}}.resize(\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}});}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ up\ the\ (constant)\ matrix\ A\ coefficients}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e}{setup\_thomas\_coefficients}}();}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00044}00044\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ the\ case\ where\ there\ are\ no\ internal\ nodes\ (e.g.,\ N=2)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Number\ of\ spatial\ nodes\ must\ be\ >\ 2."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00050}\mbox{\hyperlink{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e}{00050}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e}{CrankNicholson\_Scheme::setup\_thomas\_coefficients}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{double}\ val\_a\ =\ -\/\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{double}\ val\_b\ =\ 1.0\ +\ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}};}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{double}\ val\_c\ =\ -\/\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}{a\_}}[i]\ =\ val\_a;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\_}}[i]\ =\ val\_b;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a}{c\_}}[i]\ =\ val\_c;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00062}00062\ \textcolor{comment}{//\ Sets\ up\ the\ RHS\ vector\ 'd\_'\ based\ on\ the\ current\ temperature\ distribution\ and\ boundary\ conditions\ }}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00063}\mbox{\hyperlink{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203}{CrankNicholson\_Scheme::setup\_rhs\_vector}}(\textcolor{keyword}{const}\ std::vector<double>\&\ T\_current,\ \textcolor{keywordtype}{double}\ T\_sur)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ 1.\ Middle\ internal\ nodes\ (from\ i\_int\ =\ 1\ to\ N-\/4)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ (corresponding\ to\ physical\ nodes\ j=2\ to\ N-\/3)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\_int\ =\ 1;\ i\_int\ <\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ -\/\ 1;\ ++i\_int)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\_phys\ =\ i\_int\ +\ 1;\ \textcolor{comment}{//\ Corresponding\ physical\ node}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\_}}[i\_int]\ =\ (\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0)\ *\ T\_current[j\_phys\ -\/\ 1]\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1.0\ -\/\ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}})\ *\ T\_current[j\_phys]\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0)\ *\ T\_current[j\_phys\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ 2.\ Handle\ the\ first\ internal\ node\ (i\_int\ =\ 0,\ j\_phys\ =\ 1)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\_}}[0]\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ *\ T\_sur\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1.0\ -\/\ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}})\ *\ T\_current[1]\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0)\ *\ T\_current[2];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ 3.\ Handle\ the\ last\ internal\ node\ (i\_int\ =\ N-\/3,\ j\_phys\ =\ N-\/2)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ >\ 1)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\_last\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ -\/\ 1;\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\_last\ =\ i\_last\ +\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\_}}[i\_last]\ =\ (\mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ /\ 2.0)\ *\ T\_current[j\_last\ -\/\ 1]\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1.0\ -\/\ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}})\ *\ T\_current[j\_last]\ +\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\_}}\ *\ T\_sur;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00093}00093\ \textcolor{comment}{//\ Solves\ the\ tridiagonal\ system\ using\ the\ Thomas\ algorithm}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00094}\mbox{\hyperlink{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8}{00094}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8}{CrankNicholson\_Scheme::solve\_thomas\_algorithm}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ Create\ temporary\ copies\ for\ the\ elimination\ pass}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00098}00098\ \ \ \ \ vector<double>\ c\_prime\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a}{c\_}};}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00099}00099\ \ \ \ \ vector<double>\ d\_prime\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\_}};\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ 1.\ Forward\ Elimination\ pass}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00102}00102\ \ \ \ \ c\_prime[0]\ =\ c\_prime[0]\ /\ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\_}}[0];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00103}00103\ \ \ \ \ d\_prime[0]\ =\ d\_prime[0]\ /\ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\_}}[0];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\_}}[i]\ -\/\ \mbox{\hyperlink{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}{a\_}}[i]\ *\ c\_prime[i\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(m)\ <\ 1e-\/10)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Thomas\ algorithm\ unstable\ (division\ by\ zero)."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ c\_prime[i]\ =\ c\_prime[i]\ /\ m;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ d\_prime[i]\ =\ (d\_prime[i]\ -\/\ \mbox{\hyperlink{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}{a\_}}[i]\ *\ d\_prime[i\ -\/\ 1])\ /\ m;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ 2.\ Backward\ Substitution\ pass}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\_solution\_}}[\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ -\/\ 1]\ =\ d\_prime[\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ -\/\ 2;\ i\ >=\ 0;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\_solution\_}}[i]\ =\ d\_prime[i]\ -\/\ c\_prime[i]\ *\ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\_solution\_}}[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00123}00123\ \textcolor{comment}{//\ Performs\ one\ time\ step\ of\ the\ Crank-\/Nicholson\ scheme}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00124}\mbox{\hyperlink{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af}{00124}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af}{CrankNicholson\_Scheme::solve\_step}}(std::vector<double>\&\ T\_current,\ \textcolor{keywordtype}{double}\ T\_sur)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}}\ <=\ 0)\ \textcolor{keywordflow}{return};\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203}{setup\_rhs\_vector}}(T\_current,\ T\_sur);}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8}{solve\_thomas\_algorithm}}();}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\_internal\_nodes\_}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ T\_current[i\ +\ 1]\ =\ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\_solution\_}}[i];\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00135}\mbox{\hyperlink{class_crank_nicholson___scheme_a8aa303226cfc810d8e990e29c2f5b542}{00135}}\ vector<vector<double>>\ \mbox{\hyperlink{class_crank_nicholson___scheme_a8aa303226cfc810d8e990e29c2f5b542}{CrankNicholson\_Scheme::Solve}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_time\_steps\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\_N}}())\ +\ 1;\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{comment}{//\ Calculate\ spatial\ points\ based\ on\ thickness\ and\ dx}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_space\_points\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(31.0\ /\ \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\_dx}}())\ +\ 1;\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ Initialize\ solution\ matrix\ [space\ x\ time]}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00141}00141\ \ \ \ \ vector<vector<double>>\ solution(num\_space\_points,\ vector<double>(num\_time\_steps,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Current\ temperature\ profile}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00144}00144\ \ \ \ \ vector<double>\ T\_curr(num\_space\_points);}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ 1.\ Set\ Initial\ Conditions\ (t=0)}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_space\_points;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ T\_curr[i]\ =\ 38.0;\ \textcolor{comment}{//\ Tin}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{comment}{//\ Boundary\ Conditions}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00152}00152\ \ \ \ \ T\_curr[0]\ =\ 149.0;\ \textcolor{comment}{//\ Tsur}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00153}00153\ \ \ \ \ T\_curr[num\_space\_points\ -\/\ 1]\ =\ 149.0;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{comment}{//\ Store\ IC\ into\ solution\ column\ 0}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_space\_points;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ solution[i][0]\ =\ T\_curr[i];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//\ 2.\ Time\ Loop}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 1;\ t\ <\ num\_time\_steps;\ ++t)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af}{solve\_step}}(T\_curr,\ 149.0);}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_space\_points;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ solution[i][t]\ =\ T\_curr[i];}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{return}\ solution;}
+\DoxyCodeLine{\Hypertarget{_crank_nicholson___scheme_8cpp_source_l00170}00170\ \}}
+
+\end{DoxyCode}

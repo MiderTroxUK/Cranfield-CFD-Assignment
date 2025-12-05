@@ -1,0 +1,401 @@
+\doxysection{Crank\+Nicholson\+\_\+\+Scheme Class Reference}
+\hypertarget{class_crank_nicholson___scheme}{}\label{class_crank_nicholson___scheme}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+
+
+Implements the Crank-\/\+Nicholson implicit numerical scheme.  
+
+
+
+
+{\ttfamily \#include $<$Crank\+Nicholson\+\_\+\+Scheme.\+h$>$}
+
+
+
+Inheritance diagram for Crank\+Nicholson\+\_\+\+Scheme\+:
+% FIG 0
+
+
+Collaboration diagram for Crank\+Nicholson\+\_\+\+Scheme\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crank_nicholson___scheme_afe6019997e8115f1d90097b6696f7062}{Crank\+Nicholson\+\_\+\+Scheme}} (const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&problem)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_a8aa303226cfc810d8e990e29c2f5b542}{Solve}} ()
+\begin{DoxyCompactList}\small\item\em Solves the heat equation using the Crank-\/\+Nicholson scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af}{solve\+\_\+step}} (std\+::vector$<$ double $>$ \&T\+\_\+current, double T\+\_\+sur)
+\begin{DoxyCompactList}\small\item\em Performs a single time step of the Crank-\/\+Nicholson scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scheme}{Scheme}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scheme_a0de8cc4bdc3485dfb1969749888db453}{Scheme}} (double \mbox{\hyperlink{class_scheme_af097b27699e98362836ef4632e3bc4ea}{dx}}, int \mbox{\hyperlink{class_scheme_a800bedf8ff6c66727d2b1a4d759fdad9}{N}}, double \mbox{\hyperlink{class_scheme_a88ae9a45d790879c3cb6059a3110c908}{dt}}, double \mbox{\hyperlink{class_scheme_a4048ad2b7e1ad2d269ee7ad6aab70ab4}{D}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
+\begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
+\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Get thermal diffusivity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
+\begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
+\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
+\begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
+\begin{DoxyCompactList}\small\item\em Set thermal diffusivity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\+\_\+\+CFL}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the CFL number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e}{setup\+\_\+thomas\+\_\+coefficients}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the constant coefficients of the tridiagonal matrix. Crank-\/\+Nicholson\+: a = -\/r/2, b = 1+r, c = -\/r/2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203}{setup\+\_\+rhs\+\_\+vector}} (const std\+::vector$<$ double $>$ \&T\+\_\+current, double T\+\_\+sur)
+\begin{DoxyCompactList}\small\item\em Computes the RHS vector \textquotesingle{}d\textquotesingle{}. Crank-\/\+Nicholson RHS involves T\texorpdfstring{$^\wedge$}{\string^}n terms\+: d\+\_\+i = (r/2)T\+\_\+\{i-\/1\}\texorpdfstring{$^\wedge$}{\string^}n + (1-\/r)T\+\_\+i\texorpdfstring{$^\wedge$}{\string^}n + (r/2)T\+\_\+\{i+1\}\texorpdfstring{$^\wedge$}{\string^}n. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8}{solve\+\_\+thomas\+\_\+algorithm}} ()
+\begin{DoxyCompactList}\small\item\em Solves the tridiagonal system using Thomas algorithm. Updates T\+\_\+solution\+\_\+ with the new temperature values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}{r\+\_\+}}
+\begin{DoxyCompactList}\small\item\em CFL number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}{num\+\_\+internal\+\_\+nodes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of internal nodes (N-\/1). \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}{a\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Sub-\/diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}{b\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Main diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a}{c\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Super-\/diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}{d\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Right-\/hand side vector. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}{T\+\_\+solution\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temporary vector to store the solution from Thomas algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Crank-\/\+Nicholson implicit numerical scheme. 
+
+The Crank-\/\+Nicholson scheme is a semi-\/implicit method (average of forward and backward time steps). It is unconditionally stable and second-\/order accurate in both time and space. It requires solving a tridiagonal system of linear equations at each time step. 
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00030}{30}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crank_nicholson___scheme_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crank_nicholson___scheme_afe6019997e8115f1d90097b6696f7062}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{CrankNicholson\_Scheme()}{CrankNicholson\_Scheme()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_afe6019997e8115f1d90097b6696f7062} 
+Crank\+Nicholson\+\_\+\+Scheme\+::\+Crank\+Nicholson\+\_\+\+Scheme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&}]{problem}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem} & The problem definition containing physical parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00037}{a\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00038}{b\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00039}{c\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00041}{d\+\_\+}}, \mbox{\hyperlink{_scheme_8cpp_source_l00051}{Scheme\+::\+Get\+\_\+\+D()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00046}{Scheme\+::\+Get\+\_\+dt()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00059}{Problem\+Definition\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00089}{Problem\+Definition\+::\+Get\+\_\+thickness()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{num\+\_\+internal\+\_\+nodes\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00033}{r\+\_\+}}, \mbox{\hyperlink{_scheme_8cpp_source_l00017}{Scheme\+::\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\label{doc-func-members}
+\Hypertarget{class_crank_nicholson___scheme_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!setup\_rhs\_vector@{setup\_rhs\_vector}}
+\index{setup\_rhs\_vector@{setup\_rhs\_vector}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{setup\_rhs\_vector()}{setup\_rhs\_vector()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a72342d3c64c2c553bad828c0f16a3203} 
+void Crank\+Nicholson\+\_\+\+Scheme\+::setup\+\_\+rhs\+\_\+vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{T\+\_\+current}{, }\item[{double}]{T\+\_\+sur}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the RHS vector \textquotesingle{}d\textquotesingle{}. Crank-\/\+Nicholson RHS involves T\texorpdfstring{$^\wedge$}{\string^}n terms\+: d\+\_\+i = (r/2)T\+\_\+\{i-\/1\}\texorpdfstring{$^\wedge$}{\string^}n + (1-\/r)T\+\_\+i\texorpdfstring{$^\wedge$}{\string^}n + (r/2)T\+\_\+\{i+1\}\texorpdfstring{$^\wedge$}{\string^}n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+\_\+current} & The temperature distribution at the current time step. \\
+\hline
+{\em T\+\_\+sur} & The surface temperature (boundary condition). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00041}{d\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00033}{r\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{solve\+\_\+step()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!setup\_thomas\_coefficients@{setup\_thomas\_coefficients}}
+\index{setup\_thomas\_coefficients@{setup\_thomas\_coefficients}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{setup\_thomas\_coefficients()}{setup\_thomas\_coefficients()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a43e1ba49bbf1daab75a134ea124c188e} 
+void Crank\+Nicholson\+\_\+\+Scheme\+::setup\+\_\+thomas\+\_\+coefficients (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up the constant coefficients of the tridiagonal matrix. Crank-\/\+Nicholson\+: a = -\/r/2, b = 1+r, c = -\/r/2. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00037}{a\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00038}{b\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00039}{c\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00033}{r\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{class_crank_nicholson___scheme_a8aa303226cfc810d8e990e29c2f5b542}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!Solve@{Solve}}
+\index{Solve@{Solve}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a8aa303226cfc810d8e990e29c2f5b542} 
+vector$<$ vector$<$ double $>$ $>$ Crank\+Nicholson\+\_\+\+Scheme\+::\+Solve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solves the heat equation using the Crank-\/\+Nicholson scheme. 
+
+\begin{DoxyReturn}{Returns}
+A 2D vector containing the temperature distribution over time and space. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{solve\+\_\+step()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!solve\_step@{solve\_step}}
+\index{solve\_step@{solve\_step}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{solve\_step()}{solve\_step()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_ab2548ffabd3ac6384dadca0fd61c06af} 
+void Crank\+Nicholson\+\_\+\+Scheme\+::solve\+\_\+step (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{T\+\_\+current}{, }\item[{double}]{T\+\_\+sur}{}\end{DoxyParamCaption})}
+
+
+
+Performs a single time step of the Crank-\/\+Nicholson scheme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+\_\+current} & The current temperature distribution (input/output). \\
+\hline
+{\em T\+\_\+sur} & The surface temperature (boundary condition). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{num\+\_\+internal\+\_\+nodes\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00063}{setup\+\_\+rhs\+\_\+vector()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00135}{Solve()}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!solve\_thomas\_algorithm@{solve\_thomas\_algorithm}}
+\index{solve\_thomas\_algorithm@{solve\_thomas\_algorithm}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{solve\_thomas\_algorithm()}{solve\_thomas\_algorithm()}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a50755629c3d44d0a21482f0dd1693ee8} 
+void Crank\+Nicholson\+\_\+\+Scheme\+::solve\+\_\+thomas\+\_\+algorithm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solves the tridiagonal system using Thomas algorithm. Updates T\+\_\+solution\+\_\+ with the new temperature values. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00037}{a\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00038}{b\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00039}{c\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00041}{d\+\_\+}}, \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{solve\+\_\+step()}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crank_nicholson___scheme_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!a\_@{a\_}}
+\index{a\_@{a\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{a\_}{a\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a70d20901208800658e904eda5d3f8e30} 
+std\+::vector$<$double$>$ Crank\+Nicholson\+\_\+\+Scheme\+::a\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sub-\/diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00037}{37}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!b\_@{b\_}}
+\index{b\_@{b\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{b\_}{b\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_aa732ab89972756ce8bf42a7547c15681} 
+std\+::vector$<$double$>$ Crank\+Nicholson\+\_\+\+Scheme\+::b\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00038}{38}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!c\_@{c\_}}
+\index{c\_@{c\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{c\_}{c\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a05badded76ef38050b82f57c0fe0559a} 
+std\+::vector$<$double$>$ Crank\+Nicholson\+\_\+\+Scheme\+::c\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Super-\/diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00039}{39}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!d\_@{d\_}}
+\index{d\_@{d\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{d\_}{d\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_abd32526857e583949f203899399cd30d} 
+std\+::vector$<$double$>$ Crank\+Nicholson\+\_\+\+Scheme\+::d\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Right-\/hand side vector. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00041}{41}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00063}{setup\+\_\+rhs\+\_\+vector()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!num\_internal\_nodes\_@{num\_internal\_nodes\_}}
+\index{num\_internal\_nodes\_@{num\_internal\_nodes\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{num\_internal\_nodes\_}{num\_internal\_nodes\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_a59d371818187d5aac4dbbedb7bffd500} 
+int Crank\+Nicholson\+\_\+\+Scheme\+::num\+\_\+internal\+\_\+nodes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of internal nodes (N-\/1). 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00034}{34}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00063}{setup\+\_\+rhs\+\_\+vector()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{solve\+\_\+step()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!r\_@{r\_}}
+\index{r\_@{r\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{r\_}{r\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_ac9802c25e9d00d114871d564cbc11136} 
+double Crank\+Nicholson\+\_\+\+Scheme\+::r\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00033}{33}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00063}{setup\+\_\+rhs\+\_\+vector()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00050}{setup\+\_\+thomas\+\_\+coefficients()}}.
+
+\Hypertarget{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06}\index{CrankNicholson\_Scheme@{CrankNicholson\_Scheme}!T\_solution\_@{T\_solution\_}}
+\index{T\_solution\_@{T\_solution\_}!CrankNicholson\_Scheme@{CrankNicholson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{T\_solution\_}{T\_solution\_}}
+{\footnotesize\ttfamily \label{class_crank_nicholson___scheme_ad60a03b80c8fb70e9645e56151cfbc06} 
+std\+::vector$<$double$>$ Crank\+Nicholson\+\_\+\+Scheme\+::\+T\+\_\+solution\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary vector to store the solution from Thomas algorithm. 
+
+
+
+Definition at line \mbox{\hyperlink{_crank_nicholson___scheme_8h_source_l00043}{43}} of file \mbox{\hyperlink{_crank_nicholson___scheme_8h_source}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme()}}, \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00124}{solve\+\_\+step()}}, and \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00094}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_crank_nicholson___scheme_8h}{Crank\+Nicholson\+\_\+\+Scheme.\+h}}\item 
+\mbox{\hyperlink{_crank_nicholson___scheme_8cpp}{Crank\+Nicholson\+\_\+\+Scheme.\+cpp}}\end{DoxyCompactItemize}

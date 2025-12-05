@@ -1,0 +1,176 @@
+\doxysection{Richardson\+\_\+\+Scheme Class Reference}
+\hypertarget{class_richardson___scheme}{}\label{class_richardson___scheme}\index{Richardson\_Scheme@{Richardson\_Scheme}}
+
+
+Implements the Richardson explicit numerical scheme.  
+
+
+
+
+{\ttfamily \#include $<$Richardson\+\_\+\+Scheme.\+h$>$}
+
+
+
+Inheritance diagram for Richardson\+\_\+\+Scheme\+:
+% FIG 0
+
+
+Collaboration diagram for Richardson\+\_\+\+Scheme\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_richardson___scheme_a416f82c12779f83571de1ccbf8ff2e06}{Richardson\+\_\+\+Scheme}} (const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&\mbox{\hyperlink{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}{problem}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_richardson___scheme_ad37ffdc6cf035da6dddbb1c97109afd1}{richardson\+Solution}} (vector$<$ vector$<$ double $>$ $>$ laasonen)
+\begin{DoxyCompactList}\small\item\em Solves the heat equation using the Richardson scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scheme}{Scheme}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scheme_a0de8cc4bdc3485dfb1969749888db453}{Scheme}} (double \mbox{\hyperlink{class_scheme_af097b27699e98362836ef4632e3bc4ea}{dx}}, int \mbox{\hyperlink{class_scheme_a800bedf8ff6c66727d2b1a4d759fdad9}{N}}, double \mbox{\hyperlink{class_scheme_a88ae9a45d790879c3cb6059a3110c908}{dt}}, double \mbox{\hyperlink{class_scheme_a4048ad2b7e1ad2d269ee7ad6aab70ab4}{D}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
+\begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
+\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Get thermal diffusivity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
+\begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
+\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
+\begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
+\begin{DoxyCompactList}\small\item\em Set thermal diffusivity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\+\_\+\+CFL}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the CFL number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_richardson___scheme_a96c129c98cabfe95a4c260fcffc2b40b}{r}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em CFL number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \mbox{\hyperlink{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}{problem}}
+\begin{DoxyCompactList}\small\item\em Problem definition object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Richardson explicit numerical scheme. 
+
+The Richardson scheme is a second-\/order accurate explicit method in both time and space. However, it is unconditionally unstable for the 1D diffusion equation. 
+
+Definition at line \mbox{\hyperlink{_richardson___scheme_8h_source_l00028}{28}} of file \mbox{\hyperlink{_richardson___scheme_8h_source}{Richardson\+\_\+\+Scheme.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_richardson___scheme_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_richardson___scheme_a416f82c12779f83571de1ccbf8ff2e06}\index{Richardson\_Scheme@{Richardson\_Scheme}!Richardson\_Scheme@{Richardson\_Scheme}}
+\index{Richardson\_Scheme@{Richardson\_Scheme}!Richardson\_Scheme@{Richardson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{Richardson\_Scheme()}{Richardson\_Scheme()}}
+{\footnotesize\ttfamily \label{class_richardson___scheme_a416f82c12779f83571de1ccbf8ff2e06} 
+Richardson\+\_\+\+Scheme\+::\+Richardson\+\_\+\+Scheme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&}]{problem}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem} & The problem definition containing physical parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_richardson___scheme_8cpp_source}{Richardson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_scheme_8cpp_source_l00079}{Scheme\+::\+Get\+\_\+\+CFL()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00051}{Scheme\+::\+Get\+\_\+\+D()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00046}{Scheme\+::\+Get\+\_\+dt()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, \mbox{\hyperlink{_richardson___scheme_8h_source_l00032}{problem}}, \mbox{\hyperlink{_richardson___scheme_8h_source_l00031}{r}}, and \mbox{\hyperlink{_scheme_8cpp_source_l00017}{Scheme\+::\+Scheme()}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\label{doc-func-members}
+\Hypertarget{class_richardson___scheme_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_richardson___scheme_ad37ffdc6cf035da6dddbb1c97109afd1}\index{Richardson\_Scheme@{Richardson\_Scheme}!richardsonSolution@{richardsonSolution}}
+\index{richardsonSolution@{richardsonSolution}!Richardson\_Scheme@{Richardson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{richardsonSolution()}{richardsonSolution()}}
+{\footnotesize\ttfamily \label{class_richardson___scheme_ad37ffdc6cf035da6dddbb1c97109afd1} 
+vector$<$ vector$<$ double $>$ $>$ Richardson\+\_\+\+Scheme\+::richardson\+Solution (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ double $>$ $>$}]{laasonen}{}\end{DoxyParamCaption})}
+
+
+
+Solves the heat equation using the Richardson scheme. 
+
+\begin{DoxyReturn}{Returns}
+A 2D vector containing the temperature distribution over time and space. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_richardson___scheme_8cpp_source}{Richardson\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_richardson___scheme_8h_source_l00032}{problem}}, and \mbox{\hyperlink{_richardson___scheme_8h_source_l00031}{r}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\label{doc-variable-members}
+\Hypertarget{class_richardson___scheme_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006}\index{Richardson\_Scheme@{Richardson\_Scheme}!problem@{problem}}
+\index{problem@{problem}!Richardson\_Scheme@{Richardson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{problem}{problem}}
+{\footnotesize\ttfamily \label{class_richardson___scheme_a36e9b646e07f5e18c725d14c59923006} 
+\mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} Richardson\+\_\+\+Scheme\+::problem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Problem definition object. 
+
+
+
+Definition at line \mbox{\hyperlink{_richardson___scheme_8h_source_l00032}{32}} of file \mbox{\hyperlink{_richardson___scheme_8h_source}{Richardson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00020}{Richardson\+\_\+\+Scheme()}}, and \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00028}{richardson\+Solution()}}.
+
+\Hypertarget{class_richardson___scheme_a96c129c98cabfe95a4c260fcffc2b40b}\index{Richardson\_Scheme@{Richardson\_Scheme}!r@{r}}
+\index{r@{r}!Richardson\_Scheme@{Richardson\_Scheme}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \label{class_richardson___scheme_a96c129c98cabfe95a4c260fcffc2b40b} 
+double Richardson\+\_\+\+Scheme\+::r = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_richardson___scheme_8h_source_l00031}{31}} of file \mbox{\hyperlink{_richardson___scheme_8h_source}{Richardson\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00020}{Richardson\+\_\+\+Scheme()}}, and \mbox{\hyperlink{_richardson___scheme_8cpp_source_l00028}{richardson\+Solution()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_richardson___scheme_8h}{Richardson\+\_\+\+Scheme.\+h}}\item 
+\mbox{\hyperlink{_richardson___scheme_8cpp}{Richardson\+\_\+\+Scheme.\+cpp}}\end{DoxyCompactItemize}

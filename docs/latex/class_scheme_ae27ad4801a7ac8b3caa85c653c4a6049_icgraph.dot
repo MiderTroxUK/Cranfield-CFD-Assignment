@@ -1,0 +1,18 @@
+digraph "Scheme::Get_D"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Scheme::Get_D",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Get thermal diffusivity."];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CrankNicholson_Scheme\l::CrankNicholson_Scheme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_crank_nicholson___scheme.html#afe6019997e8115f1d90097b6696f7062",tooltip="Constructor."];
+  Node1 -> Node3 [id="edge6_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="DufortFrankel_Scheme\l::DufortFrankel_Scheme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_dufort_frankel___scheme.html#aaa7e8abfcb78113cdf47103791a28b21",tooltip="Constructor."];
+  Node1 -> Node4 [id="edge7_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Laasonen_Scheme::Laasonen\l_Scheme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_laasonen___scheme.html#afc37faa15bcae253809dd7bb08f5c480",tooltip="Constructor."];
+  Node1 -> Node5 [id="edge8_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Richardson_Scheme::\lRichardson_Scheme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_richardson___scheme.html#a416f82c12779f83571de1ccbf8ff2e06",tooltip="Constructor."];
+}

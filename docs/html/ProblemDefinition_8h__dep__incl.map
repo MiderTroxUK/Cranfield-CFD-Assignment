@@ -1,0 +1,24 @@
+<map id="ProblemDefinition.h" name="ProblemDefinition.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="533,5,683,31"/>
+<area shape="rect" id="Node000002" href="$CrankNicholson__Scheme_8cpp.html" title=" " alt="" coords="5,152,216,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="519,22,416,25,303,34,203,52,165,65,138,81,125,97,118,116,113,152,108,152,113,115,121,94,134,77,162,60,202,47,303,29,416,20,519,17"/>
+<area shape="rect" id="Node000003" href="$CrankNicholson__Scheme_8h.html" title=" " alt="" coords="148,79,343,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="537,36,305,81,304,76,536,31"/>
+<area shape="rect" id="Node000005" href="$DufortFrankel__Scheme_8cpp.html" title=" " alt="" coords="379,152,575,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="525,36,453,55,425,67,407,80,403,90,403,99,414,118,434,135,457,150,454,154,431,140,410,121,398,100,398,88,403,77,422,62,451,50,524,31"/>
+<area shape="rect" id="Node000006" href="$DufortFrankel__Scheme_8h.html" title=" " alt="" coords="417,79,599,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="582,41,526,81,523,76,579,36"/>
+<area shape="rect" id="Node000007" href="$Laasonen__Scheme_8cpp.html" title=" " alt="" coords="623,79,793,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="637,36,693,76,690,81,634,41"/>
+<area shape="rect" id="Node000008" href="$ProblemDefinition_8cpp.html" title=" " alt="" coords="818,79,985,104"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="669,31,854,76,853,81,668,36"/>
+<area shape="rect" id="Node000009" href="$Richardson__Scheme_8cpp.html" title=" " alt="" coords="993,152,1173,177"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="697,24,864,44,942,58,997,76,1023,93,1045,113,1077,150,1073,153,1041,117,1020,97,995,81,941,64,864,49,697,29"/>
+<area shape="rect" id="Node000010" href="$Richardson__Scheme_8h.html" title=" " alt="" coords="1060,79,1225,104"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="698,28,1060,76,1059,82,697,34"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="213,113,134,154,131,149,210,108"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="240,152,323,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="260,115,278,151,273,153,255,117"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="500,118,485,153,480,151,495,116"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="1126,116,1094,154,1090,150,1122,113"/>
+</map>

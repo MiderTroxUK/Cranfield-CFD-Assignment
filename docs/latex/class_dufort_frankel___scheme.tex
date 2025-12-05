@@ -1,0 +1,176 @@
+\doxysection{Dufort\+Frankel\+\_\+\+Scheme Class Reference}
+\hypertarget{class_dufort_frankel___scheme}{}\label{class_dufort_frankel___scheme}\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+
+
+Implements the Dufort-\/\+Frankel explicit numerical scheme.  
+
+
+
+
+{\ttfamily \#include $<$Dufort\+Frankel\+\_\+\+Scheme.\+h$>$}
+
+
+
+Inheritance diagram for Dufort\+Frankel\+\_\+\+Scheme\+:
+% FIG 0
+
+
+Collaboration diagram for Dufort\+Frankel\+\_\+\+Scheme\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dufort_frankel___scheme_aaa7e8abfcb78113cdf47103791a28b21}{Dufort\+Frankel\+\_\+\+Scheme}} (const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_dufort_frankel___scheme_ae9bf38e38f0935a189385cfd657410d8}{df\+Solution}} (vector$<$ vector$<$ double $>$ $>$ laasonen)
+\begin{DoxyCompactList}\small\item\em Solves the heat equation using the Dufort-\/\+Frankel scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scheme}{Scheme}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scheme_a0de8cc4bdc3485dfb1969749888db453}{Scheme}} (double \mbox{\hyperlink{class_scheme_af097b27699e98362836ef4632e3bc4ea}{dx}}, int \mbox{\hyperlink{class_scheme_a800bedf8ff6c66727d2b1a4d759fdad9}{N}}, double \mbox{\hyperlink{class_scheme_a88ae9a45d790879c3cb6059a3110c908}{dt}}, double \mbox{\hyperlink{class_scheme_a4048ad2b7e1ad2d269ee7ad6aab70ab4}{D}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
+\begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
+\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Get thermal diffusivity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
+\begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
+\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
+\begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
+\begin{DoxyCompactList}\small\item\em Set thermal diffusivity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\+\_\+\+CFL}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the CFL number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em CFL number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}
+\begin{DoxyCompactList}\small\item\em Problem definition object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Dufort-\/\+Frankel explicit numerical scheme. 
+
+The Dufort-\/\+Frankel scheme is an unconditionally stable explicit method. It is a modification of the Richardson scheme to improve stability. 
+
+Definition at line \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00028}{28}} of file \mbox{\hyperlink{_dufort_frankel___scheme_8h_source}{Dufort\+Frankel\+\_\+\+Scheme.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_dufort_frankel___scheme_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dufort_frankel___scheme_aaa7e8abfcb78113cdf47103791a28b21}\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}!DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}!DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+\doxysubsubsection{\texorpdfstring{DufortFrankel\_Scheme()}{DufortFrankel\_Scheme()}}
+{\footnotesize\ttfamily \label{class_dufort_frankel___scheme_aaa7e8abfcb78113cdf47103791a28b21} 
+Dufort\+Frankel\+\_\+\+Scheme\+::\+Dufort\+Frankel\+\_\+\+Scheme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&}]{problem}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem} & The problem definition containing physical parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source}{Dufort\+Frankel\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_scheme_8cpp_source_l00079}{Scheme\+::\+Get\+\_\+\+CFL()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00051}{Scheme\+::\+Get\+\_\+\+D()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00046}{Scheme\+::\+Get\+\_\+dt()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00032}{problem}}, \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00031}{r}}, and \mbox{\hyperlink{_scheme_8cpp_source_l00017}{Scheme\+::\+Scheme()}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\label{doc-func-members}
+\Hypertarget{class_dufort_frankel___scheme_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dufort_frankel___scheme_ae9bf38e38f0935a189385cfd657410d8}\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}!dfSolution@{dfSolution}}
+\index{dfSolution@{dfSolution}!DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+\doxysubsubsection{\texorpdfstring{dfSolution()}{dfSolution()}}
+{\footnotesize\ttfamily \label{class_dufort_frankel___scheme_ae9bf38e38f0935a189385cfd657410d8} 
+vector$<$ vector$<$ double $>$ $>$ Dufort\+Frankel\+\_\+\+Scheme\+::df\+Solution (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ double $>$ $>$}]{laasonen}{}\end{DoxyParamCaption})}
+
+
+
+Solves the heat equation using the Dufort-\/\+Frankel scheme. 
+
+\begin{DoxyReturn}{Returns}
+A 2D vector containing the temperature distribution over time and space. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source}{Dufort\+Frankel\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00032}{problem}}, and \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00031}{r}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\label{doc-variable-members}
+\Hypertarget{class_dufort_frankel___scheme_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}!problem@{problem}}
+\index{problem@{problem}!DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+\doxysubsubsection{\texorpdfstring{problem}{problem}}
+{\footnotesize\ttfamily \label{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da} 
+\mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} Dufort\+Frankel\+\_\+\+Scheme\+::problem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Problem definition object. 
+
+
+
+Definition at line \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00032}{32}} of file \mbox{\hyperlink{_dufort_frankel___scheme_8h_source}{Dufort\+Frankel\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00027}{df\+Solution()}}, and \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00021}{Dufort\+Frankel\+\_\+\+Scheme()}}.
+
+\Hypertarget{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}\index{DufortFrankel\_Scheme@{DufortFrankel\_Scheme}!r@{r}}
+\index{r@{r}!DufortFrankel\_Scheme@{DufortFrankel\_Scheme}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \label{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada} 
+double Dufort\+Frankel\+\_\+\+Scheme\+::r = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_dufort_frankel___scheme_8h_source_l00031}{31}} of file \mbox{\hyperlink{_dufort_frankel___scheme_8h_source}{Dufort\+Frankel\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00027}{df\+Solution()}}, and \mbox{\hyperlink{_dufort_frankel___scheme_8cpp_source_l00021}{Dufort\+Frankel\+\_\+\+Scheme()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dufort_frankel___scheme_8h}{Dufort\+Frankel\+\_\+\+Scheme.\+h}}\item 
+\mbox{\hyperlink{_dufort_frankel___scheme_8cpp}{Dufort\+Frankel\+\_\+\+Scheme.\+cpp}}\end{DoxyCompactItemize}

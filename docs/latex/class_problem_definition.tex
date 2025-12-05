@@ -1,0 +1,680 @@
+\doxysection{Problem\+Definition Class Reference}
+\hypertarget{class_problem_definition}{}\label{class_problem_definition}\index{ProblemDefinition@{ProblemDefinition}}
+
+
+{\ttfamily \#include $<$Problem\+Definition.\+h$>$}
+
+
+
+Collaboration diagram for Problem\+Definition\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9}{Problem\+Definition}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes all parameters to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_problem_definition_aab85c62af465489eb3703305418911ef}{Problem\+Definition}} (double \mbox{\hyperlink{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}{thickness}}, double \mbox{\hyperlink{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}{dx}}, double \mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}{t\+Max}}, double \mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{dt}}, int \mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{N}}, double \mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{Tin}}, double \mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{Tsur}}, double \mbox{\hyperlink{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}{D}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a81f52567e17cf8f884f4a58cfbba70d2}{Get\+\_\+dx}} () const
+\begin{DoxyCompactList}\small\item\em Gets the spatial grid spacing. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a93d01ea5e210572201134edec25c8ce2}{Get\+\_\+t\+Max}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum simulation time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_abc00f7ffadf6b7161d0d4970d85f5d40}{Get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Gets the time step size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_problem_definition_abfc0b0e53aa6d4c397ef88f01fa00340}{Get\+\_\+N}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of grid points. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_ab7eba20460cb33049ff560929f3a814a}{Get\+\_\+\+Tin}} () const
+\begin{DoxyCompactList}\small\item\em Gets the initial temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_ac5ff94241dd1492051fb625dd691e270}{Get\+\_\+\+Tsur}} () const
+\begin{DoxyCompactList}\small\item\em Gets the surface temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a735fe3db21638f8a510007a506ee1e23}{Get\+\_\+thickness}} () const
+\begin{DoxyCompactList}\small\item\em Gets the material thickness. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_ac8dff0fa44e02aee5c97d06003e341f2}{Get\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Gets the thermal diffusivity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_a47050f4401f6f922b4291160c1022a3c}{Set\+\_\+dx}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the spatial grid spacing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_a36985eda4c05a6923dd954cc8e333b78}{Set\+\_\+t\+Max}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the maximum simulation time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_a68ba18a3dd8f098ccc84189ce4ca4bb6}{Set\+\_\+dt}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the time step size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_aac8093d1a76e0ed5e5cfc1b955fd6ea8}{Set\+\_\+N}} (int value)
+\begin{DoxyCompactList}\small\item\em Sets the number of grid points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_ace797691f89806353f5dc3064cf75572}{Set\+\_\+\+Tin}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the initial temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_a52cb31747cad9f9e398562f1f5ba8a07}{Set\+\_\+\+Tsur}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the surface temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_acaf3aec504d0f4a72f4f65d0059f94f8}{Set\+\_\+thickness}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the material thickness. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_problem_definition_a922be315792d5d48197cc168a9eb9910}{Set\+\_\+D}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the thermal diffusivity. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_problem_definition_a47e5ba92858b8644e0d7cd98e7ee247f}{Analytic\+\_\+\+Solution}} ()
+\begin{DoxyCompactList}\small\item\em Computes the analytic solution for the heat equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}{dx}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Spatial grid spacing \mbox{[}m\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}{t\+Max}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Maximum simulation time \mbox{[}s\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{dt}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Time step size \mbox{[}s\mbox{]}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{N}} = 0
+\begin{DoxyCompactList}\small\item\em Number of grid points. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{Tin}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Initial temperature \mbox{[}K\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{Tsur}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Surface temperature \mbox{[}K\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}{thickness}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Material thickness \mbox{[}m\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}{D}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Thermal diffusivity \mbox{[}m\texorpdfstring{$^\wedge$}{\string^}2/s\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00017}{17}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_problem_definition_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9}\index{ProblemDefinition@{ProblemDefinition}!ProblemDefinition@{ProblemDefinition}}
+\index{ProblemDefinition@{ProblemDefinition}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{ProblemDefinition()}{ProblemDefinition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9} 
+Problem\+Definition\+::\+Problem\+Definition (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initializes all parameters to zero. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00028}{D}}, \mbox{\hyperlink{_problem_definition_8h_source_l00023}{dt}}, \mbox{\hyperlink{_problem_definition_8h_source_l00021}{dx}}, \mbox{\hyperlink{_problem_definition_8h_source_l00024}{N}}, \mbox{\hyperlink{_problem_definition_8h_source_l00027}{thickness}}, \mbox{\hyperlink{_problem_definition_8h_source_l00025}{Tin}}, \mbox{\hyperlink{_problem_definition_8h_source_l00022}{t\+Max}}, and \mbox{\hyperlink{_problem_definition_8h_source_l00026}{Tsur}}.
+
+\Hypertarget{class_problem_definition_aab85c62af465489eb3703305418911ef}\index{ProblemDefinition@{ProblemDefinition}!ProblemDefinition@{ProblemDefinition}}
+\index{ProblemDefinition@{ProblemDefinition}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{ProblemDefinition()}{ProblemDefinition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_problem_definition_aab85c62af465489eb3703305418911ef} 
+Problem\+Definition\+::\+Problem\+Definition (\begin{DoxyParamCaption}\item[{double}]{thickness}{, }\item[{double}]{dx}{, }\item[{double}]{t\+Max}{, }\item[{double}]{dt}{, }\item[{int}]{N}{, }\item[{double}]{Tin}{, }\item[{double}]{Tsur}{, }\item[{double}]{D}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & Material thickness \mbox{[}m\mbox{]} \\
+\hline
+{\em dx} & Spatial grid spacing \mbox{[}m\mbox{]} \\
+\hline
+{\em t\+Max} & Maximum simulation time \mbox{[}s\mbox{]} \\
+\hline
+{\em dt} & Time step size \mbox{[}s\mbox{]} \\
+\hline
+{\em N} & Number of grid points \\
+\hline
+{\em Tin} & Initial temperature \mbox{[}K\mbox{]} \\
+\hline
+{\em Tsur} & Surface temperature \mbox{[}K\mbox{]} \\
+\hline
+{\em D} & Thermal diffusivity \mbox{[}m\texorpdfstring{$^\wedge$}{\string^}2/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00028}{D}}, \mbox{\hyperlink{_problem_definition_8h_source_l00023}{dt}}, \mbox{\hyperlink{_problem_definition_8h_source_l00021}{dx}}, \mbox{\hyperlink{_problem_definition_8h_source_l00024}{N}}, \mbox{\hyperlink{_problem_definition_8h_source_l00027}{thickness}}, \mbox{\hyperlink{_problem_definition_8h_source_l00025}{Tin}}, \mbox{\hyperlink{_problem_definition_8h_source_l00022}{t\+Max}}, and \mbox{\hyperlink{_problem_definition_8h_source_l00026}{Tsur}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_problem_definition_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_problem_definition_a47e5ba92858b8644e0d7cd98e7ee247f}\index{ProblemDefinition@{ProblemDefinition}!Analytic\_Solution@{Analytic\_Solution}}
+\index{Analytic\_Solution@{Analytic\_Solution}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Analytic\_Solution()}{Analytic\_Solution()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a47e5ba92858b8644e0d7cd98e7ee247f} 
+vector$<$ vector$<$ double $>$ $>$ Problem\+Definition\+::\+Analytic\+\_\+\+Solution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes the analytic solution for the heat equation. 
+
+\begin{DoxyReturn}{Returns}
+A 2D vector representing the temperature distribution over time and space. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{class_problem_definition_ac8dff0fa44e02aee5c97d06003e341f2}\index{ProblemDefinition@{ProblemDefinition}!Get\_D@{Get\_D}}
+\index{Get\_D@{Get\_D}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_D()}{Get\_D()}}
+{\footnotesize\ttfamily \label{class_problem_definition_ac8dff0fa44e02aee5c97d06003e341f2} 
+double Problem\+Definition\+::\+Get\+\_\+D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the thermal diffusivity. 
+
+\begin{DoxyReturn}{Returns}
+D \mbox{[}m\texorpdfstring{$^\wedge$}{\string^}2/s\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00028}{D}}.
+
+\Hypertarget{class_problem_definition_abc00f7ffadf6b7161d0d4970d85f5d40}\index{ProblemDefinition@{ProblemDefinition}!Get\_dt@{Get\_dt}}
+\index{Get\_dt@{Get\_dt}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_dt()}{Get\_dt()}}
+{\footnotesize\ttfamily \label{class_problem_definition_abc00f7ffadf6b7161d0d4970d85f5d40} 
+double Problem\+Definition\+::\+Get\+\_\+dt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the time step size. 
+
+\begin{DoxyReturn}{Returns}
+dt \mbox{[}s\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00023}{dt}}.
+
+\Hypertarget{class_problem_definition_a81f52567e17cf8f884f4a58cfbba70d2}\index{ProblemDefinition@{ProblemDefinition}!Get\_dx@{Get\_dx}}
+\index{Get\_dx@{Get\_dx}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_dx()}{Get\_dx()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a81f52567e17cf8f884f4a58cfbba70d2} 
+double Problem\+Definition\+::\+Get\+\_\+dx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the spatial grid spacing. 
+
+\begin{DoxyReturn}{Returns}
+dx \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00021}{dx}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme\+::\+Crank\+Nicholson\+\_\+\+Scheme()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme\+::\+Laasonen\+\_\+\+Scheme()}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{class_problem_definition_abfc0b0e53aa6d4c397ef88f01fa00340}\index{ProblemDefinition@{ProblemDefinition}!Get\_N@{Get\_N}}
+\index{Get\_N@{Get\_N}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_N()}{Get\_N()}}
+{\footnotesize\ttfamily \label{class_problem_definition_abfc0b0e53aa6d4c397ef88f01fa00340} 
+int Problem\+Definition\+::\+Get\+\_\+N (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of grid points. 
+
+\begin{DoxyReturn}{Returns}
+N 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00024}{N}}.
+
+\Hypertarget{class_problem_definition_a735fe3db21638f8a510007a506ee1e23}\index{ProblemDefinition@{ProblemDefinition}!Get\_thickness@{Get\_thickness}}
+\index{Get\_thickness@{Get\_thickness}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_thickness()}{Get\_thickness()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a735fe3db21638f8a510007a506ee1e23} 
+double Problem\+Definition\+::\+Get\+\_\+thickness (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the material thickness. 
+
+\begin{DoxyReturn}{Returns}
+thickness \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00027}{thickness}}.
+
+
+
+Referenced by \mbox{\hyperlink{_crank_nicholson___scheme_8cpp_source_l00021}{Crank\+Nicholson\+\_\+\+Scheme\+::\+Crank\+Nicholson\+\_\+\+Scheme()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme\+::\+Laasonen\+\_\+\+Scheme()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_problem_definition_ab7eba20460cb33049ff560929f3a814a}\index{ProblemDefinition@{ProblemDefinition}!Get\_Tin@{Get\_Tin}}
+\index{Get\_Tin@{Get\_Tin}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_Tin()}{Get\_Tin()}}
+{\footnotesize\ttfamily \label{class_problem_definition_ab7eba20460cb33049ff560929f3a814a} 
+double Problem\+Definition\+::\+Get\+\_\+\+Tin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the initial temperature. 
+
+\begin{DoxyReturn}{Returns}
+Tin \mbox{[}K\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00025}{Tin}}.
+
+\Hypertarget{class_problem_definition_a93d01ea5e210572201134edec25c8ce2}\index{ProblemDefinition@{ProblemDefinition}!Get\_tMax@{Get\_tMax}}
+\index{Get\_tMax@{Get\_tMax}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_tMax()}{Get\_tMax()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a93d01ea5e210572201134edec25c8ce2} 
+double Problem\+Definition\+::\+Get\+\_\+t\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the maximum simulation time. 
+
+\begin{DoxyReturn}{Returns}
+t\+Max \mbox{[}s\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00022}{t\+Max}}.
+
+\Hypertarget{class_problem_definition_ac5ff94241dd1492051fb625dd691e270}\index{ProblemDefinition@{ProblemDefinition}!Get\_Tsur@{Get\_Tsur}}
+\index{Get\_Tsur@{Get\_Tsur}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Get\_Tsur()}{Get\_Tsur()}}
+{\footnotesize\ttfamily \label{class_problem_definition_ac5ff94241dd1492051fb625dd691e270} 
+double Problem\+Definition\+::\+Get\+\_\+\+Tsur (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the surface temperature. 
+
+\begin{DoxyReturn}{Returns}
+Tsur \mbox{[}K\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00026}{Tsur}}.
+
+\Hypertarget{class_problem_definition_a922be315792d5d48197cc168a9eb9910}\index{ProblemDefinition@{ProblemDefinition}!Set\_D@{Set\_D}}
+\index{Set\_D@{Set\_D}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_D()}{Set\_D()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a922be315792d5d48197cc168a9eb9910} 
+void Problem\+Definition\+::\+Set\+\_\+D (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the thermal diffusivity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & D \mbox{[}m\texorpdfstring{$^\wedge$}{\string^}2/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00028}{D}}.
+
+\Hypertarget{class_problem_definition_a68ba18a3dd8f098ccc84189ce4ca4bb6}\index{ProblemDefinition@{ProblemDefinition}!Set\_dt@{Set\_dt}}
+\index{Set\_dt@{Set\_dt}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_dt()}{Set\_dt()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a68ba18a3dd8f098ccc84189ce4ca4bb6} 
+void Problem\+Definition\+::\+Set\+\_\+dt (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the time step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & dt \mbox{[}s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00023}{dt}}.
+
+\Hypertarget{class_problem_definition_a47050f4401f6f922b4291160c1022a3c}\index{ProblemDefinition@{ProblemDefinition}!Set\_dx@{Set\_dx}}
+\index{Set\_dx@{Set\_dx}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_dx()}{Set\_dx()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a47050f4401f6f922b4291160c1022a3c} 
+void Problem\+Definition\+::\+Set\+\_\+dx (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the spatial grid spacing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & dx \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00021}{dx}}.
+
+\Hypertarget{class_problem_definition_aac8093d1a76e0ed5e5cfc1b955fd6ea8}\index{ProblemDefinition@{ProblemDefinition}!Set\_N@{Set\_N}}
+\index{Set\_N@{Set\_N}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_N()}{Set\_N()}}
+{\footnotesize\ttfamily \label{class_problem_definition_aac8093d1a76e0ed5e5cfc1b955fd6ea8} 
+void Problem\+Definition\+::\+Set\+\_\+N (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the number of grid points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & N \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00024}{N}}.
+
+\Hypertarget{class_problem_definition_acaf3aec504d0f4a72f4f65d0059f94f8}\index{ProblemDefinition@{ProblemDefinition}!Set\_thickness@{Set\_thickness}}
+\index{Set\_thickness@{Set\_thickness}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_thickness()}{Set\_thickness()}}
+{\footnotesize\ttfamily \label{class_problem_definition_acaf3aec504d0f4a72f4f65d0059f94f8} 
+void Problem\+Definition\+::\+Set\+\_\+thickness (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the material thickness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & thickness \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00027}{thickness}}.
+
+\Hypertarget{class_problem_definition_ace797691f89806353f5dc3064cf75572}\index{ProblemDefinition@{ProblemDefinition}!Set\_Tin@{Set\_Tin}}
+\index{Set\_Tin@{Set\_Tin}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_Tin()}{Set\_Tin()}}
+{\footnotesize\ttfamily \label{class_problem_definition_ace797691f89806353f5dc3064cf75572} 
+void Problem\+Definition\+::\+Set\+\_\+\+Tin (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the initial temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Tin \mbox{[}K\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00025}{Tin}}.
+
+\Hypertarget{class_problem_definition_a36985eda4c05a6923dd954cc8e333b78}\index{ProblemDefinition@{ProblemDefinition}!Set\_tMax@{Set\_tMax}}
+\index{Set\_tMax@{Set\_tMax}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_tMax()}{Set\_tMax()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a36985eda4c05a6923dd954cc8e333b78} 
+void Problem\+Definition\+::\+Set\+\_\+t\+Max (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the maximum simulation time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & t\+Max \mbox{[}s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00022}{t\+Max}}.
+
+\Hypertarget{class_problem_definition_a52cb31747cad9f9e398562f1f5ba8a07}\index{ProblemDefinition@{ProblemDefinition}!Set\_Tsur@{Set\_Tsur}}
+\index{Set\_Tsur@{Set\_Tsur}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Set\_Tsur()}{Set\_Tsur()}}
+{\footnotesize\ttfamily \label{class_problem_definition_a52cb31747cad9f9e398562f1f5ba8a07} 
+void Problem\+Definition\+::\+Set\+\_\+\+Tsur (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the surface temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Tsur \mbox{[}K\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{_problem_definition_8cpp_source}{Problem\+Definition.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_problem_definition_8h_source_l00026}{Tsur}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_problem_definition_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}\index{ProblemDefinition@{ProblemDefinition}!D@{D}}
+\index{D@{D}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily \label{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b} 
+double Problem\+Definition\+::D = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thermal diffusivity \mbox{[}m\texorpdfstring{$^\wedge$}{\string^}2/s\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00028}{28}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00094}{Get\+\_\+\+D()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00135}{Set\+\_\+\+D()}}.
+
+\Hypertarget{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}\index{ProblemDefinition@{ProblemDefinition}!dt@{dt}}
+\index{dt@{dt}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \label{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876} 
+double Problem\+Definition\+::dt = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time step size \mbox{[}s\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00023}{23}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00069}{Get\+\_\+dt()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00110}{Set\+\_\+dt()}}.
+
+\Hypertarget{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}\index{ProblemDefinition@{ProblemDefinition}!dx@{dx}}
+\index{dx@{dx}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily \label{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6} 
+double Problem\+Definition\+::dx = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spatial grid spacing \mbox{[}m\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00021}{21}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00059}{Get\+\_\+dx()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00100}{Set\+\_\+dx()}}.
+
+\Hypertarget{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}\index{ProblemDefinition@{ProblemDefinition}!N@{N}}
+\index{N@{N}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13} 
+int Problem\+Definition\+::N = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of grid points. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00024}{24}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00074}{Get\+\_\+\+N()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00115}{Set\+\_\+\+N()}}.
+
+\Hypertarget{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}\index{ProblemDefinition@{ProblemDefinition}!thickness@{thickness}}
+\index{thickness@{thickness}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{thickness}{thickness}}
+{\footnotesize\ttfamily \label{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0} 
+double Problem\+Definition\+::thickness = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Material thickness \mbox{[}m\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00027}{27}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00089}{Get\+\_\+thickness()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00130}{Set\+\_\+thickness()}}.
+
+\Hypertarget{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}\index{ProblemDefinition@{ProblemDefinition}!Tin@{Tin}}
+\index{Tin@{Tin}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Tin}{Tin}}
+{\footnotesize\ttfamily \label{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b} 
+double Problem\+Definition\+::\+Tin = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial temperature \mbox{[}K\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00025}{25}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00079}{Get\+\_\+\+Tin()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00120}{Set\+\_\+\+Tin()}}.
+
+\Hypertarget{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}\index{ProblemDefinition@{ProblemDefinition}!tMax@{tMax}}
+\index{tMax@{tMax}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{tMax}{tMax}}
+{\footnotesize\ttfamily \label{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4} 
+double Problem\+Definition\+::t\+Max = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum simulation time \mbox{[}s\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00022}{22}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00064}{Get\+\_\+t\+Max()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00105}{Set\+\_\+t\+Max()}}.
+
+\Hypertarget{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}\index{ProblemDefinition@{ProblemDefinition}!Tsur@{Tsur}}
+\index{Tsur@{Tsur}!ProblemDefinition@{ProblemDefinition}}
+\doxysubsubsection{\texorpdfstring{Tsur}{Tsur}}
+{\footnotesize\ttfamily \label{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece} 
+double Problem\+Definition\+::\+Tsur = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Surface temperature \mbox{[}K\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{_problem_definition_8h_source_l00026}{26}} of file \mbox{\hyperlink{_problem_definition_8h_source}{Problem\+Definition.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_problem_definition_8cpp_source_l00084}{Get\+\_\+\+Tsur()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00021}{Problem\+Definition()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00040}{Problem\+Definition()}}, and \mbox{\hyperlink{_problem_definition_8cpp_source_l00125}{Set\+\_\+\+Tsur()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_problem_definition_8h}{Problem\+Definition.\+h}}\item 
+\mbox{\hyperlink{_problem_definition_8cpp}{Problem\+Definition.\+cpp}}\end{DoxyCompactItemize}
