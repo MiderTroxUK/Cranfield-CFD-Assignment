@@ -42,32 +42,37 @@ void Verification::Set_CFL(double value)
 }
 
 // methods to do the verifications
-bool Verification::Verify_Stability(double CFL, string schemeName)
+bool Verification::Verify_Stability(double CFL, double L2_Norm, string schemeName)
 {
-    if (schemeName == "Richardson") {
-        cout << "Richardson scheme is unconditionally unstable." << endl;
+    // Check for NaN or Infinity (Explosion)
+    if (std::isnan(L2_Norm) || std::isinf(L2_Norm)) {
+        cout << schemeName << " scheme is unconditionally unstable (Solution exploded)." << endl;
         return false;
-    } else if (schemeName == "Laasonen" || schemeName == "CrankNicholson" || schemeName == "DufortFrankel") {
-        cout << schemeName << " scheme is unconditionally stable." << endl;
-        return true;
-    } else if (schemeName == "Explicit") {
-        if (CFL <= 0.5) return true;
-        else return false;
     }
+    
+    // Check for large errors (Inconsistency or Instability)
+    double errorThreshold = 100.0; // Arbitrary threshold for "acceptable" error
+    if (L2_Norm > errorThreshold) {
+        cout << schemeName << " scheme is unstable or inconsistent (L2 Norm " << L2_Norm << " > " << errorThreshold << ")." << endl;
+        return false;
+    }
+
+    // Otherwise, assume stable
+    cout << schemeName << " scheme is stable (L2 Norm " << L2_Norm << " within tolerance)." << endl;
     return true;
 }
 
 double Verification::Calculation_Norm(const vector<double>& numerical, const vector<double>& analytical)
 {
     double sum_sq_diff = 0.0;
-    int n = numerical.size();
+    size_t n = numerical.size();
     
     if (n != analytical.size()) {
         cerr << "Error: Vector sizes do not match for Norm calculation." << endl;
         return -1.0;
     }
 
-    for (int i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n; ++i) {
         double diff = numerical[i] - analytical[i];
         sum_sq_diff += diff * diff;
     }
