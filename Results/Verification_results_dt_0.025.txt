@@ -1,0 +1,9 @@
+--- Verification Results (t = 0.5) ---
+Dufort-Frankel L2 Norm: 0
+DufortFrankel scheme is stable (L2 Norm 0 within tolerance).
+Richardson L2 Norm: 0
+Richardson scheme is stable (L2 Norm 0 within tolerance).
+Laasonen L2 Norm: 140.577
+Laasonen scheme is unstable or inconsistent (L2 Norm 140.577 > 100).
+Crank-Nicholson L2 Norm: 140.671
+CrankNicholson scheme is unstable or inconsistent (L2 Norm 140.671 > 100).
