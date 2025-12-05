@@ -1,0 +1,76 @@
+\doxysection{Problem\+Definition.\+h}
+\hypertarget{_problem_definition_8h_source}{}\label{_problem_definition_8h_source}\mbox{\hyperlink{_problem_definition_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00001}00001\ \textcolor{comment}{/*\ \ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ Clémence-\/Philomène\ Hinot}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 16/10/2025}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ ProblemDefinition.h}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00005}00005\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00007}00007\ \textcolor{comment}{/******\ Prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ PROBLEMDEFINITION\_H}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ PROBLEMDEFINITION\_H}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00011}00011\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00016}00016\ \textcolor{comment}{/******\ Declaration\ of\ class\ ProblemDefinition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00017}\mbox{\hyperlink{class_problem_definition}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9}{ProblemDefinition}}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00021}\mbox{\hyperlink{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}{dx}}\ =\ 0.0;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00022}\mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}{tMax}}\ =\ 0.0;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00023}\mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{dt}}\ =\ 0.0;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00024}\mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{N}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00025}\mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{Tin}}\ =\ 0.0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00026}\mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{Tsur}}\ =\ 0.0;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00027}\mbox{\hyperlink{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}{thickness}}\ =\ 0.0;\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00028}\mbox{\hyperlink{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}{D}}\ =\ 0.0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00029}00029\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9}{ProblemDefinition}}();}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_problem_definition_ad5d05724dd7de8e362f0c8db129744f9}{ProblemDefinition}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a9fc544f5ed2ffc4bdb79d6519a82a6e0}{thickness}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a25b1f838d3fdc2aa8c4df6ddee07afc6}{dx}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7e4}{tMax}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{dt}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{N}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{Tin}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{Tsur}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ad865b4ea27af6b5d26514e8253a3091b}{D}});}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a81f52567e17cf8f884f4a58cfbba70d2}{Get\_dx}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a93d01ea5e210572201134edec25c8ce2}{Get\_tMax}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_abc00f7ffadf6b7161d0d4970d85f5d40}{Get\_dt}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_problem_definition_abfc0b0e53aa6d4c397ef88f01fa00340}{Get\_N}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ab7eba20460cb33049ff560929f3a814a}{Get\_Tin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ac5ff94241dd1492051fb625dd691e270}{Get\_Tsur}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_a735fe3db21638f8a510007a506ee1e23}{Get\_thickness}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_problem_definition_ac8dff0fa44e02aee5c97d06003e341f2}{Get\_D}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_a47050f4401f6f922b4291160c1022a3c}{Set\_dx}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_a36985eda4c05a6923dd954cc8e333b78}{Set\_tMax}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_a68ba18a3dd8f098ccc84189ce4ca4bb6}{Set\_dt}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_aac8093d1a76e0ed5e5cfc1b955fd6ea8}{Set\_N}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_ace797691f89806353f5dc3064cf75572}{Set\_Tin}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_a52cb31747cad9f9e398562f1f5ba8a07}{Set\_Tsur}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_acaf3aec504d0f4a72f4f65d0059f94f8}{Set\_thickness}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_problem_definition_a922be315792d5d48197cc168a9eb9910}{Set\_D}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00102}\mbox{\hyperlink{class_problem_definition_a47e5ba92858b8644e0d7cd98e7ee247f}{00102}}\ \ \ \ \ \ \ \ \ vector<vector<double>>\ \mbox{\hyperlink{class_problem_definition_a47e5ba92858b8644e0d7cd98e7ee247f}{Analytic\_Solution}}();}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00103}00103\ \};}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00105}00105\ \textcolor{comment}{/******\ End\ of\ the\ prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_problem_definition_8h_source_l00106}00106\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

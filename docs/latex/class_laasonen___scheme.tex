@@ -1,0 +1,401 @@
+\doxysection{Laasonen\+\_\+\+Scheme Class Reference}
+\hypertarget{class_laasonen___scheme}{}\label{class_laasonen___scheme}\index{Laasonen\_Scheme@{Laasonen\_Scheme}}
+
+
+Implements the Laasonen implicit numerical scheme.  
+
+
+
+
+{\ttfamily \#include $<$Laasonen\+\_\+\+Scheme.\+h$>$}
+
+
+
+Inheritance diagram for Laasonen\+\_\+\+Scheme\+:
+% FIG 0
+
+
+Collaboration diagram for Laasonen\+\_\+\+Scheme\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_laasonen___scheme_afc37faa15bcae253809dd7bb08f5c480}{Laasonen\+\_\+\+Scheme}} (const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&problem)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_laasonen___scheme_a2c814f42df5284172e440891a199d53e}{Solve}} ()
+\begin{DoxyCompactList}\small\item\em Solves the heat equation using the Laasonen scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_laasonen___scheme_afcd97db84e8ff2e2a9d756a649647e53}{solve\+\_\+step}} (std\+::vector$<$ double $>$ \&T\+\_\+current, double T\+\_\+sur)
+\begin{DoxyCompactList}\small\item\em Performs a single time step of the Laasonen scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scheme}{Scheme}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scheme_a0de8cc4bdc3485dfb1969749888db453}{Scheme}} (double \mbox{\hyperlink{class_scheme_af097b27699e98362836ef4632e3bc4ea}{dx}}, int \mbox{\hyperlink{class_scheme_a800bedf8ff6c66727d2b1a4d759fdad9}{N}}, double \mbox{\hyperlink{class_scheme_a88ae9a45d790879c3cb6059a3110c908}{dt}}, double \mbox{\hyperlink{class_scheme_a4048ad2b7e1ad2d269ee7ad6aab70ab4}{D}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
+\begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
+\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Get thermal diffusivity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
+\begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
+\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
+\begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
+\begin{DoxyCompactList}\small\item\em Set thermal diffusivity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\+\_\+\+CFL}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the CFL number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_laasonen___scheme_adfcde4114d2cfb4004f51297e91d98ff}{setup\+\_\+thomas\+\_\+coefficients}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the constant coefficients of the tridiagonal matrix. Laasonen\+: a = -\/r, b = 1+2r, c = -\/r. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_laasonen___scheme_a64fda4dc4834e2721cd30d83a2f229ca}{setup\+\_\+rhs\+\_\+vector}} (const std\+::vector$<$ double $>$ \&T\+\_\+current, double T\+\_\+sur)
+\begin{DoxyCompactList}\small\item\em Computes the RHS vector \textquotesingle{}d\textquotesingle{}. Laasonen RHS is simpler\+: d\+\_\+i = T\+\_\+current\+\_\+i (plus boundary terms). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_laasonen___scheme_a9f3595ab65430e4e5b438a94d5a5fd07}{solve\+\_\+thomas\+\_\+algorithm}} ()
+\begin{DoxyCompactList}\small\item\em Solves the tridiagonal system using Thomas algorithm. Updates T\+\_\+solution\+\_\+ with the new temperature values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_laasonen___scheme_a87d3bf31cdf2138059f01e1bc8dd4929}{r\+\_\+}}
+\begin{DoxyCompactList}\small\item\em CFL number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_laasonen___scheme_ab81c5c9f622847ece44cee073ac79114}{num\+\_\+internal\+\_\+nodes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of internal nodes (N-\/1). \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_laasonen___scheme_a88fcb4bd90dd3b6d8506e20f77321fd4}{a\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Sub-\/diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_laasonen___scheme_abb6d41ce31daec6f2c0d37ba9947dae0}{b\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Main diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_laasonen___scheme_ad130055e6e914c1c9afa6d988ea32029}{c\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Super-\/diagonal elements. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_laasonen___scheme_a20df989b517a697a9cd05d91a96a312a}{d\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Right-\/hand side vector. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_laasonen___scheme_ae4ad707528fb8fd4dc05e0cb33f2eb78}{T\+\_\+solution\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temporary storage for solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Laasonen implicit numerical scheme. 
+
+The Laasonen scheme is a fully implicit method (backward in time, central in space). It is unconditionally stable and first-\/order accurate in time, second-\/order in space. It requires solving a tridiagonal system of linear equations at each time step. 
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00028}{28}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_laasonen___scheme_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_laasonen___scheme_afc37faa15bcae253809dd7bb08f5c480}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\index{Laasonen\_Scheme@{Laasonen\_Scheme}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{Laasonen\_Scheme()}{Laasonen\_Scheme()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_afc37faa15bcae253809dd7bb08f5c480} 
+Laasonen\+\_\+\+Scheme\+::\+Laasonen\+\_\+\+Scheme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_problem_definition}{Problem\+Definition}} \&}]{problem}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem} & The problem definition containing physical parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_laasonen___scheme_8h_source_l00035}{a\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00036}{b\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00037}{c\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00040}{d\+\_\+}}, \mbox{\hyperlink{_scheme_8cpp_source_l00051}{Scheme\+::\+Get\+\_\+\+D()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00046}{Scheme\+::\+Get\+\_\+dt()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00059}{Problem\+Definition\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, \mbox{\hyperlink{_problem_definition_8cpp_source_l00089}{Problem\+Definition\+::\+Get\+\_\+thickness()}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{num\+\_\+internal\+\_\+nodes\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00031}{r\+\_\+}}, \mbox{\hyperlink{_scheme_8cpp_source_l00017}{Scheme\+::\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_laasonen___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\label{doc-func-members}
+\Hypertarget{class_laasonen___scheme_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_laasonen___scheme_a64fda4dc4834e2721cd30d83a2f229ca}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!setup\_rhs\_vector@{setup\_rhs\_vector}}
+\index{setup\_rhs\_vector@{setup\_rhs\_vector}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{setup\_rhs\_vector()}{setup\_rhs\_vector()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a64fda4dc4834e2721cd30d83a2f229ca} 
+void Laasonen\+\_\+\+Scheme\+::setup\+\_\+rhs\+\_\+vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{T\+\_\+current}{, }\item[{double}]{T\+\_\+sur}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the RHS vector \textquotesingle{}d\textquotesingle{}. Laasonen RHS is simpler\+: d\+\_\+i = T\+\_\+current\+\_\+i (plus boundary terms). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+\_\+current} & The temperature distribution at the current time step. \\
+\hline
+{\em T\+\_\+sur} & The surface temperature (boundary condition). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_laasonen___scheme_8h_source_l00040}{d\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_laasonen___scheme_8h_source_l00031}{r\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{solve\+\_\+step()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_laasonen___scheme_adfcde4114d2cfb4004f51297e91d98ff}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!setup\_thomas\_coefficients@{setup\_thomas\_coefficients}}
+\index{setup\_thomas\_coefficients@{setup\_thomas\_coefficients}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{setup\_thomas\_coefficients()}{setup\_thomas\_coefficients()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_adfcde4114d2cfb4004f51297e91d98ff} 
+void Laasonen\+\_\+\+Scheme\+::setup\+\_\+thomas\+\_\+coefficients (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up the constant coefficients of the tridiagonal matrix. Laasonen\+: a = -\/r, b = 1+2r, c = -\/r. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_laasonen___scheme_8h_source_l00035}{a\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00036}{b\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00037}{c\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_laasonen___scheme_8h_source_l00031}{r\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{class_laasonen___scheme_a2c814f42df5284172e440891a199d53e}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!Solve@{Solve}}
+\index{Solve@{Solve}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a2c814f42df5284172e440891a199d53e} 
+vector$<$ vector$<$ double $>$ $>$ Laasonen\+\_\+\+Scheme\+::\+Solve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solves the heat equation using the Laasonen scheme. 
+
+\begin{DoxyReturn}{Returns}
+A 2D vector containing the temperature distribution over time and space. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_scheme_8cpp_source_l00036}{Scheme\+::\+Get\+\_\+dx()}}, \mbox{\hyperlink{_scheme_8cpp_source_l00041}{Scheme\+::\+Get\+\_\+\+N()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{solve\+\_\+step()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{class_laasonen___scheme_afcd97db84e8ff2e2a9d756a649647e53}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!solve\_step@{solve\_step}}
+\index{solve\_step@{solve\_step}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{solve\_step()}{solve\_step()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_afcd97db84e8ff2e2a9d756a649647e53} 
+void Laasonen\+\_\+\+Scheme\+::solve\+\_\+step (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{T\+\_\+current}{, }\item[{double}]{T\+\_\+sur}{}\end{DoxyParamCaption})}
+
+
+
+Performs a single time step of the Laasonen scheme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+\_\+current} & The current temperature distribution (input/output). \\
+\hline
+{\em T\+\_\+sur} & The surface temperature (boundary condition). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{num\+\_\+internal\+\_\+nodes\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00062}{setup\+\_\+rhs\+\_\+vector()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}, and \mbox{\hyperlink{_laasonen___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00122}{Solve()}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{class_laasonen___scheme_a9f3595ab65430e4e5b438a94d5a5fd07}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!solve\_thomas\_algorithm@{solve\_thomas\_algorithm}}
+\index{solve\_thomas\_algorithm@{solve\_thomas\_algorithm}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{solve\_thomas\_algorithm()}{solve\_thomas\_algorithm()}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a9f3595ab65430e4e5b438a94d5a5fd07} 
+void Laasonen\+\_\+\+Scheme\+::solve\+\_\+thomas\+\_\+algorithm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solves the tridiagonal system using Thomas algorithm. Updates T\+\_\+solution\+\_\+ with the new temperature values. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{_laasonen___scheme_8cpp_source}{Laasonen\+\_\+\+Scheme.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_laasonen___scheme_8h_source_l00035}{a\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00036}{b\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00037}{c\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00040}{d\+\_\+}}, \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{num\+\_\+internal\+\_\+nodes\+\_\+}}, and \mbox{\hyperlink{_laasonen___scheme_8h_source_l00043}{T\+\_\+solution\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{solve\+\_\+step()}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+
+
+\label{doc-variable-members}
+\Hypertarget{class_laasonen___scheme_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_laasonen___scheme_a88fcb4bd90dd3b6d8506e20f77321fd4}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!a\_@{a\_}}
+\index{a\_@{a\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{a\_}{a\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a88fcb4bd90dd3b6d8506e20f77321fd4} 
+std\+::vector$<$double$>$ Laasonen\+\_\+\+Scheme\+::a\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sub-\/diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00035}{35}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_laasonen___scheme_abb6d41ce31daec6f2c0d37ba9947dae0}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!b\_@{b\_}}
+\index{b\_@{b\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{b\_}{b\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_abb6d41ce31daec6f2c0d37ba9947dae0} 
+std\+::vector$<$double$>$ Laasonen\+\_\+\+Scheme\+::b\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00036}{36}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_laasonen___scheme_ad130055e6e914c1c9afa6d988ea32029}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!c\_@{c\_}}
+\index{c\_@{c\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{c\_}{c\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_ad130055e6e914c1c9afa6d988ea32029} 
+std\+::vector$<$double$>$ Laasonen\+\_\+\+Scheme\+::c\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Super-\/diagonal elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00037}{37}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_laasonen___scheme_a20df989b517a697a9cd05d91a96a312a}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!d\_@{d\_}}
+\index{d\_@{d\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{d\_}{d\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a20df989b517a697a9cd05d91a96a312a} 
+std\+::vector$<$double$>$ Laasonen\+\_\+\+Scheme\+::d\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Right-\/hand side vector. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00040}{40}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00062}{setup\+\_\+rhs\+\_\+vector()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_laasonen___scheme_ab81c5c9f622847ece44cee073ac79114}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!num\_internal\_nodes\_@{num\_internal\_nodes\_}}
+\index{num\_internal\_nodes\_@{num\_internal\_nodes\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{num\_internal\_nodes\_}{num\_internal\_nodes\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_ab81c5c9f622847ece44cee073ac79114} 
+int Laasonen\+\_\+\+Scheme\+::num\+\_\+internal\+\_\+nodes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of internal nodes (N-\/1). 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00032}{32}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00062}{setup\+\_\+rhs\+\_\+vector()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{solve\+\_\+step()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+\Hypertarget{class_laasonen___scheme_a87d3bf31cdf2138059f01e1bc8dd4929}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!r\_@{r\_}}
+\index{r\_@{r\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{r\_}{r\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_a87d3bf31cdf2138059f01e1bc8dd4929} 
+double Laasonen\+\_\+\+Scheme\+::r\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+CFL number. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00031}{31}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00062}{setup\+\_\+rhs\+\_\+vector()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00047}{setup\+\_\+thomas\+\_\+coefficients()}}.
+
+\Hypertarget{class_laasonen___scheme_ae4ad707528fb8fd4dc05e0cb33f2eb78}\index{Laasonen\_Scheme@{Laasonen\_Scheme}!T\_solution\_@{T\_solution\_}}
+\index{T\_solution\_@{T\_solution\_}!Laasonen\_Scheme@{Laasonen\_Scheme}}
+\doxysubsubsection{\texorpdfstring{T\_solution\_}{T\_solution\_}}
+{\footnotesize\ttfamily \label{class_laasonen___scheme_ae4ad707528fb8fd4dc05e0cb33f2eb78} 
+std\+::vector$<$double$>$ Laasonen\+\_\+\+Scheme\+::\+T\+\_\+solution\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary storage for solution. 
+
+
+
+Definition at line \mbox{\hyperlink{_laasonen___scheme_8h_source_l00043}{43}} of file \mbox{\hyperlink{_laasonen___scheme_8h_source}{Laasonen\+\_\+\+Scheme.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00021}{Laasonen\+\_\+\+Scheme()}}, \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00110}{solve\+\_\+step()}}, and \mbox{\hyperlink{_laasonen___scheme_8cpp_source_l00083}{solve\+\_\+thomas\+\_\+algorithm()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_laasonen___scheme_8h}{Laasonen\+\_\+\+Scheme.\+h}}\item 
+\mbox{\hyperlink{_laasonen___scheme_8cpp}{Laasonen\+\_\+\+Scheme.\+cpp}}\end{DoxyCompactItemize}

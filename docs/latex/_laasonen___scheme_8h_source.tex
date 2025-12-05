@@ -1,0 +1,58 @@
+\doxysection{Laasonen\+\_\+\+Scheme.\+h}
+\hypertarget{_laasonen___scheme_8h_source}{}\label{_laasonen___scheme_8h_source}\mbox{\hyperlink{_laasonen___scheme_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00001}00001\ \textcolor{comment}{/*\ \ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ John\ Hoarau}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 27/11/2025}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ Laasonen\_Scheme.h}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ @description:\ \ \ Header\ for\ the\ Laasonen\ implicit\ scheme.}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00008}00008\ \textcolor{comment}{/******\ Prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ LAASONEN\_SCHEME\_H}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ LAASONEN\_SCHEME\_H}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00012}00012\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scheme_8h}{Scheme.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_problem_definition_8h}{ProblemDefinition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00018}00018\ \textcolor{comment}{/******\ Declaration\ of\ class\ Laasonen\_Scheme\ ******/}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00028}\mbox{\hyperlink{class_laasonen___scheme}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_laasonen___scheme_afc37faa15bcae253809dd7bb08f5c480}{Laasonen\_Scheme}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00031}\mbox{\hyperlink{class_laasonen___scheme_a87d3bf31cdf2138059f01e1bc8dd4929}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_laasonen___scheme_a87d3bf31cdf2138059f01e1bc8dd4929}{r\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00032}\mbox{\hyperlink{class_laasonen___scheme_ab81c5c9f622847ece44cee073ac79114}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_laasonen___scheme_ab81c5c9f622847ece44cee073ac79114}{num\_internal\_nodes\_}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vectors\ for\ the\ tridiagonal\ system\ (Matrix\ A)}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00035}\mbox{\hyperlink{class_laasonen___scheme_a88fcb4bd90dd3b6d8506e20f77321fd4}{00035}}\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_laasonen___scheme_a88fcb4bd90dd3b6d8506e20f77321fd4}{a\_}};\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00036}\mbox{\hyperlink{class_laasonen___scheme_abb6d41ce31daec6f2c0d37ba9947dae0}{00036}}\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_laasonen___scheme_abb6d41ce31daec6f2c0d37ba9947dae0}{b\_}};\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00037}\mbox{\hyperlink{class_laasonen___scheme_ad130055e6e914c1c9afa6d988ea32029}{00037}}\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_laasonen___scheme_ad130055e6e914c1c9afa6d988ea32029}{c\_}};\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vector\ for\ the\ RHS}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00040}\mbox{\hyperlink{class_laasonen___scheme_a20df989b517a697a9cd05d91a96a312a}{00040}}\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_laasonen___scheme_a20df989b517a697a9cd05d91a96a312a}{d\_}};\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Solution\ vector}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00043}\mbox{\hyperlink{class_laasonen___scheme_ae4ad707528fb8fd4dc05e0cb33f2eb78}{00043}}\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_laasonen___scheme_ae4ad707528fb8fd4dc05e0cb33f2eb78}{T\_solution\_}};\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_laasonen___scheme_adfcde4114d2cfb4004f51297e91d98ff}{setup\_thomas\_coefficients}}();}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_laasonen___scheme_a64fda4dc4834e2721cd30d83a2f229ca}{setup\_rhs\_vector}}(\textcolor{keyword}{const}\ std::vector<double>\&\ T\_current,\ \textcolor{keywordtype}{double}\ T\_sur);}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_laasonen___scheme_a9f3595ab65430e4e5b438a94d5a5fd07}{solve\_thomas\_algorithm}}();\ \ \ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_laasonen___scheme_afc37faa15bcae253809dd7bb08f5c480}{Laasonen\_Scheme}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_problem_definition}{ProblemDefinition}}\&\ problem);}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ vector<vector<double>>\ \mbox{\hyperlink{class_laasonen___scheme_a2c814f42df5284172e440891a199d53e}{Solve}}();}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_laasonen___scheme_afcd97db84e8ff2e2a9d756a649647e53}{solve\_step}}(std::vector<double>\&\ T\_current,\ \textcolor{keywordtype}{double}\ T\_sur);}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00084}00084\ \};}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00087}00087\ \textcolor{comment}{/******\ End\ of\ the\ prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_laasonen___scheme_8h_source_l00088}00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAASONEN\_SCHEME\_H}}
+
+\end{DoxyCode}

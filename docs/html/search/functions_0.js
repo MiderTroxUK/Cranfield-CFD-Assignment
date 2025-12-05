@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['analytic_5fsolution_0',['Analytic_Solution',['../class_problem_definition.html#a47e5ba92858b8644e0d7cd98e7ee247f',1,'ProblemDefinition']]]
 ];

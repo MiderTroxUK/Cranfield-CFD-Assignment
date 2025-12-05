@@ -1,0 +1,45 @@
+\doxysection{Output.\+h}
+\hypertarget{_output_8h_source}{}\label{_output_8h_source}\mbox{\hyperlink{_output_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00001}00001\ \textcolor{comment}{/*\ \ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ John\ Hoarau,\ Clémence-\/Philomène\ Hinot}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 16/10/2025}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ Output.h}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00005}00005\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00007}00007\ \textcolor{comment}{/******\ Prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ OUTPUT\_H}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ OUTPUT\_H}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00011}00011\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00017}00017\ \textcolor{comment}{/******\ Declaration\ of\ class\ Output\ ******/}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00024}\mbox{\hyperlink{class_output}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_output_a428c663520336477a12f1a33504eb067}{Output}}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00027}\mbox{\hyperlink{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}{filename}};\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_output_a428c663520336477a12f1a33504eb067}{Output}}();}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_output_a428c663520336477a12f1a33504eb067}{Output}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_output_a696151c33e1b4cb22d3f1b656d65dbfd}{filename}});}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_output_a95f7f624bf31acf0f0606367a80c846e}{Get\_filename}}()\ \textcolor{keyword}{const};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_a0e4d225c2a696f87f139ed87dc062d48}{Set\_filename}}(\textcolor{keywordtype}{string}\ value\_filename);\ \ \ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_af16c676425108a684c0e1336055fcb47}{Generate\_File}}(\textcolor{keyword}{const}\ vector<vector<double>>\&\ solution,\ \textcolor{keywordtype}{string}\ methodName,\ \textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keywordtype}{double}\ tMax,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_a5e941576e7ac6018be45373958ed9710}{Generate\_Diagram}}(\textcolor{keyword}{const}\ vector<vector<double>>\&\ solution,\ \textcolor{keywordtype}{string}\ methodName,\ \textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dt,\ \textcolor{keywordtype}{double}\ tMax,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00077}00077\ \textcolor{comment}{/******\ End\ of\ the\ prevention\ for\ mulitple\ definition\ ******/}}
+\DoxyCodeLine{\Hypertarget{_output_8h_source_l00078}00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

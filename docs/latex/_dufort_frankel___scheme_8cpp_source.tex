@@ -1,0 +1,86 @@
+\doxysection{Dufort\+Frankel\+\_\+\+Scheme.\+cpp}
+\hypertarget{_dufort_frankel___scheme_8cpp_source}{}\label{_dufort_frankel___scheme_8cpp_source}\mbox{\hyperlink{_dufort_frankel___scheme_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ \ Computational\ Methods\ Assignment}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00002}00002\ \textcolor{comment}{\ \ \ \ @author\ :\ \ \ \ \ \ \ Clémence-\/Philomène\ Hinot}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00003}00003\ \textcolor{comment}{\ \ \ \ @date\ :\ \ \ \ \ \ \ \ \ 27/11/2025}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00004}00004\ \textcolor{comment}{\ \ \ \ @file\ :\ \ \ \ \ \ \ \ \ DufortFrankel\_Scheme.cpp}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00005}00005\ \textcolor{comment}{\ \ \ \ @description:\ \ \ Implementation\ of\ the\ Dufort-\/Frankel\ scheme}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00008}00008\ \textcolor{comment}{/*******\ Inclusion\ of\ classes\ ******/}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dufort_frankel___scheme_8h}{DufortFrankel\_Scheme.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_problem_definition_8h}{ProblemDefinition.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00012}00012\ \textcolor{comment}{/******\ Libraries\ and\ other\ inclusions\ ******/}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00017}00017\ \textcolor{comment}{/******\ Methods\ for\ class\ DufortFrankel\_Scheme\ ******/}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00019}00019\ \textcolor{comment}{//\ class\ constructor\ with\ parameters}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00020}00020\ \textcolor{comment}{//\ to\ do}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00021}\mbox{\hyperlink{class_dufort_frankel___scheme_aaa7e8abfcb78113cdf47103791a28b21}{00021}}\ \mbox{\hyperlink{class_dufort_frankel___scheme_aaa7e8abfcb78113cdf47103791a28b21}{DufortFrankel\_Scheme::DufortFrankel\_Scheme}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_problem_definition}{ProblemDefinition}}\&\ \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}})}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00022}00022\ \ \ \ \ :\ \mbox{\hyperlink{class_scheme_aa0b319a6594176dea40ca78562401b53}{Scheme}}(\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.\mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\_dx}}(),\ \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.\mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\_N}}(),\ \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.\mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\_dt}}(),\ \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.\mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\_D}}()),\ \mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}(\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}})\ \textcolor{comment}{//\ use\ of\ the\ Scheme\ class,\ and\ use\ the\ obejct\ probelm\ to\ avoid\ multiple\ variables}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00024}00024\ \ \ \ \ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}}\ =\ this-\/>\mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\_CFL}}();}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00027}\mbox{\hyperlink{class_dufort_frankel___scheme_ae9bf38e38f0935a189385cfd657410d8}{00027}}\ vector<vector<double>>\ \mbox{\hyperlink{class_dufort_frankel___scheme_ae9bf38e38f0935a189385cfd657410d8}{DufortFrankel\_Scheme::dfSolution}}(vector<vector<double>>\ laasonen)\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ size\ of\ the\ solution\ matrix}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_space\_points\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_thickness()\ /\ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_dx())\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_time\_steps\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_tMax()\ /\ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_dt())\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ solution\ matrix\ with\ a\ size\ compose\ of\ time\_index\ and\ space\_index}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00033}00033\ \ \ \ \ vector<vector<double>>\ solution(num\_space\_points,\ vector<double>(num\_time\_steps,\ 0.0));\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ vectors\ to\ store\ the\ different\ T}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00036}00036\ \ \ \ \ vector<double>\ T\_prev(num\_space\_points);\ \textcolor{comment}{//\ T\_n-\/1}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00037}00037\ \ \ \ \ vector<double>\ T\_curr(num\_space\_points);\ \textcolor{comment}{//\ T\_n}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00038}00038\ \ \ \ \ vector<double>\ T\_next(num\_space\_points);\ \textcolor{comment}{//\ T\_n+1}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Boundary\ conditions}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00041}00041\ \ \ \ \ T\_curr[0]\ =\ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_Tsur();}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00042}00042\ \ \ \ \ T\_curr[num\_space\_points-\/1]\ =\ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_Tsur();}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Initialisation\ of\ T\_curr\ \ \ }}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<num\_space\_points-\/1;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ T\_curr[i]\ =\ this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_a5422716670e6b371b7eb73d93520c1da}{problem}}.Get\_Tin();}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Storage\ of\ the\ initial\ condition}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<num\_space\_points;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ solution[i][0]\ =\ T\_curr[i];}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Initialisation\ of\ T\_prev}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00055}00055\ \ \ \ \ T\_prev\ =\ T\_curr;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Creation\ of\ the\ first\ time\_step}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<num\_space\_points;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ T\_curr[i]\ =\ laasonen[i][1];}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ solution[i][1]\ =\ T\_curr[i];}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Loop\ to\ obtain\ all\ the\ other\ time\ steps}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t=2;\ t<num\_time\_steps;\ t++)\ \{\ \textcolor{comment}{//\ time\ steps}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ loop\ to\ obtain\ the\ result\ for\ each\ x}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;\ i<num\_space\_points-\/1;\ i++)\ \{\ \textcolor{comment}{//\ grid\ steps}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ T\_next[i]\ =\ ((1.0-\/2.0*this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}})/(1.0+2.0*\mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}}))\ *\ T\_prev[i]\ +\ (2.0*this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}}/(1.0+2.0*this-\/>\mbox{\hyperlink{class_dufort_frankel___scheme_ace6dea0e8bff96ade01fad1d10e25ada}{r}}))\ *\ (T\_curr[i-\/1]\ +\ T\_curr[i+1]);}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Storage\ of\ the\ current\ step}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<num\_space\_points;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ solution[i][t]\ =\ T\_next[i];}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ of\ the\ T\_xxx}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ T\_prev\ =\ T\_curr;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ T\_curr\ =\ T\_next;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ solution;}
+\DoxyCodeLine{\Hypertarget{_dufort_frankel___scheme_8cpp_source_l00081}00081\ \}}
+
+\end{DoxyCode}
