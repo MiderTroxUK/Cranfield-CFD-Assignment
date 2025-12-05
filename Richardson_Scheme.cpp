@@ -2,7 +2,7 @@
     @author :       Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         Richardson_Scheme.cpp
-    @description:   ...
+    @description:   Implementation of the Richardson scheme
 */
 
 /******* Inclusion of classes ******/

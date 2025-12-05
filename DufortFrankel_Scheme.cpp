@@ -2,7 +2,7 @@
     @author :       Clémence-Philomène Hinot
     @date :         27/11/2025
     @file :         DufortFrankel_Scheme.cpp
-    @description:   ...
+    @description:   Implementation of the Dufort-Frankel scheme
 */
 
 /******* Inclusion of classes ******/

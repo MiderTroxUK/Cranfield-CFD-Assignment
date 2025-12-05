@@ -2,7 +2,7 @@
     @author :       John Hoarau, Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         Richardson_Scheme.h
-    @description:   ...
+    @description:   Header for the Richardson Scheme
 */
 
 /****** Prevention for mulitple definition ******/

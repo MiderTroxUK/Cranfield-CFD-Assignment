@@ -2,7 +2,7 @@
     @author :       Clémence-Philomène Hinot
     @date :         25/11/2025
     @file :         DufortFrankel_Scheme.h
-    @description:   ...
+    @description:   Header for the Dufort-Frankel Scheme
 */
 
 /****** Prevention for mulitple definition ******/

@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       John Hoarau
     @date :         16/10/2025
     @file :         Verification.h
     @description:   Header for verification functions and utilities.

@@ -1,5 +1,5 @@
 /*  Computational Methods Assignment
-    @author :       John Hoarau, Clémence-Philomène Hinot
+    @author :       John Hoarau
     @date :         16/10/2025
     @file :         Verification.cpp
     @description:   This class provides methods for verifying numerical results and conditions.

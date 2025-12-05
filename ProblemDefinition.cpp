@@ -2,7 +2,6 @@
     @author :       Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         ProblemDefinition.cpp
-    @description:   ...
 */
 
 /******* Inclusion of classes ******/

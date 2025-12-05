@@ -2,7 +2,6 @@
     @author :       Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         ProblemDefinition.h
-    @description:   ...
 */
 
 /****** Prevention for mulitple definition ******/

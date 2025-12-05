@@ -2,7 +2,6 @@
     @author :       Clémence-Philomène Hinot & Copilot
     @date :         16/10/2025
     @file :         Output.cpp
-    @description:   ...
 */
 
 /******* Inclusion of classes ******/

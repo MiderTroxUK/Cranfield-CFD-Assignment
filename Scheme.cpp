@@ -2,7 +2,6 @@
     @author :       John Hoarau, Clémence-Philomène Hinot
     @date :         16/10/2025
     @file :         Scheme.cpp
-    @description:   ...
 */
 
 /******* Inclusion of classes ******/
