@@ -38,7 +38,7 @@ int main()
     double tMax = 0.5;
 
     // Number of steps
-    int N = tMax / dt;
+    int N = 100;
 
     /****** Schemes ******/
 
