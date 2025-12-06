@@ -47,7 +47,7 @@ int main()
     for (double dt : dt_values) {
         
         // Calculate Number of steps based on current dt
-        int N = (int)(tMax / dt);
+        int N = 100;
 
         cout << "\n################################################################" << endl;
         cout << "   RUNNING SIMULATION WITH dt = " << dt << " (N = " << N << ")" << endl;
@@ -81,23 +81,23 @@ int main()
 
         // Analytical Solutions
         visualisation.Generate_File(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
-        // visualisation.Generate_Diagram(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
+        visualisation.Generate_Diagram(analyticSolution, "AnalyticSolution", dx, dt, tMax, N);
 
         // Laasonen
         visualisation.Generate_File(laasonenSolution, "Laasonen", dx, dt, tMax, N);
-        // visualisation.Generate_Diagram(laasonenSolution, "Laasonen", dx, dt, tMax, N);
+        visualisation.Generate_Diagram(laasonenSolution, "Laasonen", dx, dt, tMax, N);
 
         // Crank-Nicholson
         visualisation.Generate_File(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
-        // visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
+        visualisation.Generate_Diagram(crankNicholsonSolution, "CrankNicholson", dx, dt, tMax, N);
 
         // Dufort-Frankel
         visualisation.Generate_File(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
-        // visualisation.Generate_Diagram(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
+        visualisation.Generate_Diagram(duforFrankelSolution, "DufortFrankel", dx, dt, tMax, N);
 
         // Richardson
         visualisation.Generate_File(richardsonSolution, "Richardson", dx, dt, tMax, N);
-        // visualisation.Generate_Diagram(richardsonSolution, "Richardson", dx, dt, tMax, N);
+        visualisation.Generate_Diagram(richardsonSolution, "Richardson", dx, dt, tMax, N);
 
         /****** Verification ******/
         Verification verif;
