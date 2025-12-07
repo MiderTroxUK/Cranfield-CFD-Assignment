@@ -35,6 +35,9 @@ int main()
 
     double tMax = 0.5;
 
+    // Fourier Number 
+    int N = 100;
+
     // List of time steps to test
     vector<double> dt_values = {0.1, 0.05, 0.025, 0.01};
 
@@ -46,9 +49,6 @@ int main()
     /****** Main Loop over dt ******/
     for (double dt : dt_values) {
         
-        // Calculate Number of steps based on current dt
-        int N = 100;
-
         cout << "\n################################################################" << endl;
         cout << "   RUNNING SIMULATION WITH dt = " << dt << " (N = " << N << ")" << endl;
         cout << "################################################################" << endl;
