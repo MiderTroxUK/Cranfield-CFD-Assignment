@@ -27,7 +27,7 @@ Collaboration diagram for Scheme\+:
 double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
 \begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
-\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get Fourier Number. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
 \begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
@@ -35,7 +35,7 @@ double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\
 void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
 \begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
-\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set Fourier Number. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
 \begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
@@ -48,7 +48,7 @@ double \mbox{\hyperlink{class_scheme_ac4912ae658f5d8f71dc13e87d31f4629}{Get\+\_\
 double \mbox{\hyperlink{class_scheme_af097b27699e98362836ef4632e3bc4ea}{dx}}
 \begin{DoxyCompactList}\small\item\em Spatial grid spacing (cm). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_scheme_a800bedf8ff6c66727d2b1a4d759fdad9}{N}}
-\begin{DoxyCompactList}\small\item\em Number of time steps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fourier Number. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_a88ae9a45d790879c3cb6059a3110c908}{dt}}
 \begin{DoxyCompactList}\small\item\em Time step size (h). \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_a4048ad2b7e1ad2d269ee7ad6aab70ab4}{D}}
@@ -107,7 +107,7 @@ Parameterized constructor.
 \begin{DoxyParams}{Parameters}
 {\em dx} & Spatial grid spacing (cm) \\
 \hline
-{\em N} & Number of time steps \\
+{\em N} & Fourier Number \\
 \hline
 {\em dt} & Time step size (h) \\
 \hline
@@ -234,7 +234,7 @@ int Scheme\+::\+Get\+\_\+N (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) 
 
 
 
-Get number of time steps. 
+Get Fourier Number. 
 
 
 
@@ -312,7 +312,7 @@ void Scheme\+::\+Set\+\_\+N (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{D
 
 
 
-Set number of time steps. 
+Set Fourier Number. 
 
 
 
@@ -389,7 +389,7 @@ int Scheme\+::N\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Number of time steps. 
+Fourier Number. 
 
 
 

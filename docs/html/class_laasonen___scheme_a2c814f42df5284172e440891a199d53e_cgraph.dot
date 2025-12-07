@@ -10,7 +10,7 @@ digraph "Laasonen_Scheme::Solve"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="Scheme::Get_dx",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scheme.html#a9399334bf11bdfa1181b97665a7c6dfb",tooltip="Get spatial grid spacing."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Scheme::Get_N",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scheme.html#afaafa98c3be135c77fb165458fc2a9d4",tooltip="Get number of time steps."];
+  Node3 [id="Node000003",label="Scheme::Get_N",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scheme.html#afaafa98c3be135c77fb165458fc2a9d4",tooltip="Get Fourier Number."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Laasonen_Scheme::solve_step",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_laasonen___scheme.html#afcd97db84e8ff2e2a9d756a649647e53",tooltip="Performs a single time step of the Laasonen scheme."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];

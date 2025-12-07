@@ -1,3 +1,10 @@
+/*  Computational Methods Assignment
+    @author :       John Hoarau, Clémence-Philomène Hinot
+    @date :         07/12/2025
+    @file :         main.cpp
+    @brief :        Main entry point for the 1D Heat Equation Solver.
+*/
+
 #include "Laasonen_Scheme.h"
 #include "CrankNicholson_Scheme.h"
 #include "DufortFrankel_Scheme.h"

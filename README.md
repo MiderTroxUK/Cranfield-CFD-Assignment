@@ -44,11 +44,11 @@ Detailed caller and collaboration graphs are available in the generated Doxygen 
     ```
 3.  **Compile the project:**
     ```bash
-    g++ -std=c++17 -o solver main.cpp problem_definitions.cpp scheme.cpp output.cpp verif.cpp #... and other.cpp files
+    g++ -Wall *.cpp -o main
     ```
 4.  **Run the program:**
     ```bash
-    ./solver
+    ./main
     ```
 
 

@@ -59,7 +59,7 @@ double \mbox{\hyperlink{class_problem_definition_ad58d0dd4f96f7f6ace8f73992359a7
 double \mbox{\hyperlink{class_problem_definition_a3394cea1ca1e1b1e7ae60611df4c4876}{dt}} = 0.\+0
 \begin{DoxyCompactList}\small\item\em Time step size \mbox{[}s\mbox{]}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_problem_definition_a491789a8d88845e81e5fd37ca46e4f13}{N}} = 0
-\begin{DoxyCompactList}\small\item\em Number of grid points. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fourier Number. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_problem_definition_af086d9df2d8de530ca2f4116bea09a5b}{Tin}} = 0.\+0
 \begin{DoxyCompactList}\small\item\em Initial temperature \mbox{[}K\mbox{]}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_problem_definition_a8f3dcb682a1baef501c5b89df2157ece}{Tsur}} = 0.\+0
@@ -118,7 +118,7 @@ Parameterized constructor.
 \hline
 {\em dt} & Time step size \mbox{[}s\mbox{]} \\
 \hline
-{\em N} & Number of grid points \\
+{\em N} & Fourier Number \\
 \hline
 {\em Tin} & Initial temperature \mbox{[}K\mbox{]} \\
 \hline
@@ -155,7 +155,7 @@ A 2D vector representing the temperature distribution over time and space.
 \end{DoxyReturn}
 
 
-Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00026}{main()}}.
 
 Here is the caller graph for this function\+:
 % FIG 1
@@ -239,7 +239,7 @@ int Problem\+Definition\+::\+Get\+\_\+N (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 Gets the number of grid points. 
 
 \begin{DoxyReturn}{Returns}
-N 
+N (Fourier Number) 
 \end{DoxyReturn}
 
 
@@ -420,7 +420,7 @@ Sets the number of grid points.
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & N \\
+{\em value} & N (Fourier Number) \\
 \hline
 \end{DoxyParams}
 
@@ -590,7 +590,7 @@ int Problem\+Definition\+::N = 0\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Number of grid points. 
+Fourier Number. 
 
 
 

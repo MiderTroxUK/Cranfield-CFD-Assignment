@@ -34,7 +34,7 @@ vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_richardson___scheme_ad
 double \mbox{\hyperlink{class_scheme_a9399334bf11bdfa1181b97665a7c6dfb}{Get\+\_\+dx}} () const
 \begin{DoxyCompactList}\small\item\em Get spatial grid spacing. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_scheme_afaafa98c3be135c77fb165458fc2a9d4}{Get\+\_\+N}} () const
-\begin{DoxyCompactList}\small\item\em Get number of time steps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get Fourier Number. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_aa6bd1e8c60f2b5791bb677282abe5cdd}{Get\+\_\+dt}} () const
 \begin{DoxyCompactList}\small\item\em Get time step size. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\+D}} () const
@@ -42,7 +42,7 @@ double \mbox{\hyperlink{class_scheme_ae27ad4801a7ac8b3caa85c653c4a6049}{Get\+\_\
 void \mbox{\hyperlink{class_scheme_a99a12aed8c1b4ff1afd1d333c21a9119}{Set\+\_\+dx}} (double value)
 \begin{DoxyCompactList}\small\item\em Set spatial grid spacing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_a943033339a2c6cf23196149e70ca6e18}{Set\+\_\+N}} (int value)
-\begin{DoxyCompactList}\small\item\em Set number of time steps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set Fourier Number. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_ab99b9e975a5d94c0e6965e8843b5b1a8}{Set\+\_\+dt}} (double value)
 \begin{DoxyCompactList}\small\item\em Set time step size. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scheme_a37388dd21928192fb89ca39920112041}{Set\+\_\+D}} (double value)
@@ -110,6 +110,11 @@ vector$<$ vector$<$ double $>$ $>$ Richardson\+\_\+\+Scheme\+::richardson\+Solut
 
 Solves the heat equation using the Richardson scheme. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em laasonen} & The solution from the Laasonen scheme (used for the first time step). \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A 2D vector containing the temperature distribution over time and space. 
 \end{DoxyReturn}
@@ -123,7 +128,7 @@ References \mbox{\hyperlink{_richardson___scheme_8h_source_l00032}{problem}}, an
 
 
 
-Referenced by \mbox{\hyperlink{main_8cpp_source_l00019}{main()}}.
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00026}{main()}}.
 
 Here is the caller graph for this function\+:
 % FIG 3

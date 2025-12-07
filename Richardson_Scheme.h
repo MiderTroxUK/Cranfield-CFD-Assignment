@@ -39,6 +39,7 @@ class Richardson_Scheme : public Scheme
 
         /**
          * @brief Solves the heat equation using the Richardson scheme.
+         * @param laasonen The solution from the Laasonen scheme (used for the first time step).
          * @return A 2D vector containing the temperature distribution over time and space.
          */
         vector<vector<double>> richardsonSolution(vector<vector<double>> laasonen);

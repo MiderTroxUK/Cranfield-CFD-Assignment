@@ -21,7 +21,7 @@ class ProblemDefinition
         double dx = 0.0;        ///< Spatial grid spacing [m]
         double tMax = 0.0;      ///< Maximum simulation time [s]
         double dt = 0.0;        ///< Time step size [s]
-        int N = 0;              ///< Number of grid points
+        int N = 0;              ///< Fourier Number
         double Tin = 0.0;       ///< Initial temperature [K]
         double Tsur = 0.0;      ///< Surface temperature [K]
         double thickness = 0.0; ///< Material thickness [m]
@@ -40,7 +40,7 @@ class ProblemDefinition
          * @param dx Spatial grid spacing [m]
          * @param tMax Maximum simulation time [s]
          * @param dt Time step size [s]
-         * @param N Number of grid points
+         * @param N Fourier Number
          * @param Tin Initial temperature [K]
          * @param Tsur Surface temperature [K]
          * @param D Thermal diffusivity [m^2/s]
@@ -56,7 +56,7 @@ class ProblemDefinition
         /** @brief Gets the time step size. @return dt [s] */
         double Get_dt() const;
         
-        /** @brief Gets the number of grid points. @return N */
+        /** @brief Gets the number of grid points. @return N (Fourier Number) */
         int Get_N() const;
         
         /** @brief Gets the initial temperature. @return Tin [K] */
@@ -80,7 +80,7 @@ class ProblemDefinition
         /** @brief Sets the time step size. @param value dt [s] */
         void Set_dt(double value);
         
-        /** @brief Sets the number of grid points. @param value N */
+        /** @brief Sets the number of grid points. @param value N (Fourier Number) */
         void Set_N(int value);
         
         /** @brief Sets the initial temperature. @param value Tin [K] */

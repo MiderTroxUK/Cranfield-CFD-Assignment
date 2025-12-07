@@ -24,7 +24,7 @@ class Scheme
 {
     private:
         double dx;      ///< Spatial grid spacing (cm)
-        int N;          ///< Number of time steps
+        int N;          ///< Fourier Number
         double dt;      ///< Time step size (h)
         double D;       ///< Thermal diffusivity (cm^2/h)
         double r;       ///< CFL number (Courant-Friedrichs-Lewy condition)
@@ -38,7 +38,7 @@ class Scheme
         /**
          * @brief Parameterized constructor.
          * @param dx Spatial grid spacing (cm)
-         * @param N Number of time steps
+         * @param N Fourier Number
          * @param dt Time step size (h)
          * @param D Thermal diffusivity (cm^2/h)
          */
@@ -46,13 +46,13 @@ class Scheme
 
         // Getters
         double Get_dx() const;      ///< Get spatial grid spacing
-        int Get_N() const;          ///< Get number of time steps
+        int Get_N() const;          ///< Get Fourier Number
         double Get_dt() const;      ///< Get time step size
         double Get_D() const;       ///< Get thermal diffusivity
 
         // Setters
         void Set_dx(double value);  ///< Set spatial grid spacing
-        void Set_N(int value);      ///< Set number of time steps
+        void Set_N(int value);      ///< Set Fourier Number
         void Set_dt(double value);  ///< Set time step size
         void Set_D(double value);   ///< Set thermal diffusivity
 

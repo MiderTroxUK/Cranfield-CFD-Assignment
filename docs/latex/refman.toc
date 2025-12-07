@@ -1,0 +1,186 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}1D Heat Equation Solver -\/ Cranfield Assignment }{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Problem Description}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Software Architecture (UML)}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Build and Run Instructions}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Group Members}{2}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Crank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nicholson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme Class Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{11}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}CrankNicholson\_Scheme()}{11}{subsubsection.5.1.2.1}%
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{12}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}setup\_rhs\_vector()}{12}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}setup\_thomas\_coefficients()}{12}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}Solve()}{13}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}solve\_step()}{13}{subsubsection.5.1.3.4}%
+\contentsline {subsubsection}{\numberline {5.1.3.5}solve\_thomas\_algorithm()}{13}{subsubsection.5.1.3.5}%
+\contentsline {subsection}{\numberline {5.1.4}Member Data Documentation}{14}{subsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.1}a\_}{14}{subsubsection.5.1.4.1}%
+\contentsline {subsubsection}{\numberline {5.1.4.2}b\_}{14}{subsubsection.5.1.4.2}%
+\contentsline {subsubsection}{\numberline {5.1.4.3}c\_}{14}{subsubsection.5.1.4.3}%
+\contentsline {subsubsection}{\numberline {5.1.4.4}d\_}{14}{subsubsection.5.1.4.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.5}num\_internal\_nodes\_}{14}{subsubsection.5.1.4.5}%
+\contentsline {subsubsection}{\numberline {5.1.4.6}r\_}{15}{subsubsection.5.1.4.6}%
+\contentsline {subsubsection}{\numberline {5.1.4.7}T\_solution\_}{15}{subsubsection.5.1.4.7}%
+\contentsline {section}{\numberline {5.2}Dufort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frankel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme Class Reference}{15}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{16}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Constructor \& Destructor Documentation}{16}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}DufortFrankel\_Scheme()}{16}{subsubsection.5.2.2.1}%
+\contentsline {subsection}{\numberline {5.2.3}Member Function Documentation}{17}{subsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.1}dfSolution()}{17}{subsubsection.5.2.3.1}%
+\contentsline {subsection}{\numberline {5.2.4}Member Data Documentation}{17}{subsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.4.1}problem}{17}{subsubsection.5.2.4.1}%
+\contentsline {subsubsection}{\numberline {5.2.4.2}r}{18}{subsubsection.5.2.4.2}%
+\contentsline {section}{\numberline {5.3}Laasonen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme Class Reference}{18}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{19}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{19}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Laasonen\_Scheme()}{19}{subsubsection.5.3.2.1}%
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{20}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}setup\_rhs\_vector()}{20}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}setup\_thomas\_coefficients()}{20}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}Solve()}{20}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}solve\_step()}{20}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}solve\_thomas\_algorithm()}{21}{subsubsection.5.3.3.5}%
+\contentsline {subsection}{\numberline {5.3.4}Member Data Documentation}{21}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}a\_}{21}{subsubsection.5.3.4.1}%
+\contentsline {subsubsection}{\numberline {5.3.4.2}b\_}{21}{subsubsection.5.3.4.2}%
+\contentsline {subsubsection}{\numberline {5.3.4.3}c\_}{22}{subsubsection.5.3.4.3}%
+\contentsline {subsubsection}{\numberline {5.3.4.4}d\_}{22}{subsubsection.5.3.4.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.5}num\_internal\_nodes\_}{22}{subsubsection.5.3.4.5}%
+\contentsline {subsubsection}{\numberline {5.3.4.6}r\_}{22}{subsubsection.5.3.4.6}%
+\contentsline {subsubsection}{\numberline {5.3.4.7}T\_solution\_}{22}{subsubsection.5.3.4.7}%
+\contentsline {section}{\numberline {5.4}Output Class Reference}{23}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{23}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{23}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}Output()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{23}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}Output()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{23}{subsubsection.5.4.2.2}%
+\contentsline {subsection}{\numberline {5.4.3}Member Function Documentation}{24}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}Generate\_Diagram()}{24}{subsubsection.5.4.3.1}%
+\contentsline {subsubsection}{\numberline {5.4.3.2}Generate\_File()}{24}{subsubsection.5.4.3.2}%
+\contentsline {subsubsection}{\numberline {5.4.3.3}Get\_filename()}{25}{subsubsection.5.4.3.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.4}Set\_filename()}{25}{subsubsection.5.4.3.4}%
+\contentsline {subsection}{\numberline {5.4.4}Member Data Documentation}{25}{subsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.1}filename}{25}{subsubsection.5.4.4.1}%
+\contentsline {section}{\numberline {5.5}Problem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Definition Class Reference}{26}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{27}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{27}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}ProblemDefinition()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{27}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}ProblemDefinition()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{27}{subsubsection.5.5.2.2}%
+\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{28}{subsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}Analytic\_Solution()}{28}{subsubsection.5.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}Get\_D()}{28}{subsubsection.5.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.5.3.3}Get\_dt()}{29}{subsubsection.5.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.4}Get\_dx()}{29}{subsubsection.5.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.5.3.5}Get\_N()}{29}{subsubsection.5.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.5.3.6}Get\_thickness()}{30}{subsubsection.5.5.3.6}%
+\contentsline {subsubsection}{\numberline {5.5.3.7}Get\_Tin()}{30}{subsubsection.5.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.5.3.8}Get\_tMax()}{30}{subsubsection.5.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.5.3.9}Get\_Tsur()}{30}{subsubsection.5.5.3.9}%
+\contentsline {subsubsection}{\numberline {5.5.3.10}Set\_D()}{30}{subsubsection.5.5.3.10}%
+\contentsline {subsubsection}{\numberline {5.5.3.11}Set\_dt()}{31}{subsubsection.5.5.3.11}%
+\contentsline {subsubsection}{\numberline {5.5.3.12}Set\_dx()}{31}{subsubsection.5.5.3.12}%
+\contentsline {subsubsection}{\numberline {5.5.3.13}Set\_N()}{31}{subsubsection.5.5.3.13}%
+\contentsline {subsubsection}{\numberline {5.5.3.14}Set\_thickness()}{32}{subsubsection.5.5.3.14}%
+\contentsline {subsubsection}{\numberline {5.5.3.15}Set\_Tin()}{32}{subsubsection.5.5.3.15}%
+\contentsline {subsubsection}{\numberline {5.5.3.16}Set\_tMax()}{32}{subsubsection.5.5.3.16}%
+\contentsline {subsubsection}{\numberline {5.5.3.17}Set\_Tsur()}{33}{subsubsection.5.5.3.17}%
+\contentsline {subsection}{\numberline {5.5.4}Member Data Documentation}{34}{subsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.4.1}D}{34}{subsubsection.5.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.5.4.2}dt}{34}{subsubsection.5.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.5.4.3}dx}{34}{subsubsection.5.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.5.4.4}N}{34}{subsubsection.5.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.5.4.5}thickness}{35}{subsubsection.5.5.4.5}%
+\contentsline {subsubsection}{\numberline {5.5.4.6}Tin}{35}{subsubsection.5.5.4.6}%
+\contentsline {subsubsection}{\numberline {5.5.4.7}tMax}{35}{subsubsection.5.5.4.7}%
+\contentsline {subsubsection}{\numberline {5.5.4.8}Tsur}{35}{subsubsection.5.5.4.8}%
+\contentsline {section}{\numberline {5.6}Richardson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme Class Reference}{35}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{36}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Constructor \& Destructor Documentation}{37}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}Richardson\_Scheme()}{37}{subsubsection.5.6.2.1}%
+\contentsline {subsection}{\numberline {5.6.3}Member Function Documentation}{38}{subsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3.1}richardsonSolution()}{38}{subsubsection.5.6.3.1}%
+\contentsline {subsection}{\numberline {5.6.4}Member Data Documentation}{38}{subsection.5.6.4}%
+\contentsline {subsubsection}{\numberline {5.6.4.1}problem}{38}{subsubsection.5.6.4.1}%
+\contentsline {subsubsection}{\numberline {5.6.4.2}r}{39}{subsubsection.5.6.4.2}%
+\contentsline {section}{\numberline {5.7}Scheme Class Reference}{39}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{40}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{40}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}Scheme()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.5.7.2.1}%
+\contentsline {subsubsection}{\numberline {5.7.2.2}Scheme()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{40}{subsubsection.5.7.2.2}%
+\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{41}{subsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.1}Get\_CFL()}{41}{subsubsection.5.7.3.1}%
+\contentsline {subsubsection}{\numberline {5.7.3.2}Get\_D()}{41}{subsubsection.5.7.3.2}%
+\contentsline {subsubsection}{\numberline {5.7.3.3}Get\_dt()}{42}{subsubsection.5.7.3.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.4}Get\_dx()}{42}{subsubsection.5.7.3.4}%
+\contentsline {subsubsection}{\numberline {5.7.3.5}Get\_N()}{42}{subsubsection.5.7.3.5}%
+\contentsline {subsubsection}{\numberline {5.7.3.6}Set\_D()}{42}{subsubsection.5.7.3.6}%
+\contentsline {subsubsection}{\numberline {5.7.3.7}Set\_dt()}{43}{subsubsection.5.7.3.7}%
+\contentsline {subsubsection}{\numberline {5.7.3.8}Set\_dx()}{43}{subsubsection.5.7.3.8}%
+\contentsline {subsubsection}{\numberline {5.7.3.9}Set\_N()}{43}{subsubsection.5.7.3.9}%
+\contentsline {subsection}{\numberline {5.7.4}Member Data Documentation}{43}{subsection.5.7.4}%
+\contentsline {subsubsection}{\numberline {5.7.4.1}D}{43}{subsubsection.5.7.4.1}%
+\contentsline {subsubsection}{\numberline {5.7.4.2}dt}{43}{subsubsection.5.7.4.2}%
+\contentsline {subsubsection}{\numberline {5.7.4.3}dx}{44}{subsubsection.5.7.4.3}%
+\contentsline {subsubsection}{\numberline {5.7.4.4}N}{44}{subsubsection.5.7.4.4}%
+\contentsline {subsubsection}{\numberline {5.7.4.5}r}{44}{subsubsection.5.7.4.5}%
+\contentsline {section}{\numberline {5.8}Verification Class Reference}{44}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{45}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Constructor \& Destructor Documentation}{45}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}Verification()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{45}{subsubsection.5.8.2.1}%
+\contentsline {subsubsection}{\numberline {5.8.2.2}Verification()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{45}{subsubsection.5.8.2.2}%
+\contentsline {subsection}{\numberline {5.8.3}Member Function Documentation}{46}{subsection.5.8.3}%
+\contentsline {subsubsection}{\numberline {5.8.3.1}Calculation\_L2\_Norm()}{46}{subsubsection.5.8.3.1}%
+\contentsline {subsubsection}{\numberline {5.8.3.2}Calculation\_Relative\_Error()}{46}{subsubsection.5.8.3.2}%
+\contentsline {subsubsection}{\numberline {5.8.3.3}Get\_CFL()}{47}{subsubsection.5.8.3.3}%
+\contentsline {subsubsection}{\numberline {5.8.3.4}Set\_CFL()}{47}{subsubsection.5.8.3.4}%
+\contentsline {subsubsection}{\numberline {5.8.3.5}Verify\_Stability()}{47}{subsubsection.5.8.3.5}%
+\contentsline {subsection}{\numberline {5.8.4}Member Data Documentation}{48}{subsection.5.8.4}%
+\contentsline {subsubsection}{\numberline {5.8.4.1}CFL}{48}{subsubsection.5.8.4.1}%
+\contentsline {chapter}{\numberline {6}File Documentation}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Crank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nicholson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{49}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Crank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nicholson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Crank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nicholson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{51}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Crank\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nicholson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{51}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Dufort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frankel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{52}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Dufort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frankel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Dufort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frankel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{53}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Dufort\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frankel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{54}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Laasonen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{54}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Laasonen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{54}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Laasonen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{56}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Laasonen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.6.12}%
+\contentsline {section}{\numberline {6.13}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{57}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Function Documentation}{58}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}main()}{58}{subsubsection.6.13.1.1}%
+\contentsline {section}{\numberline {6.14}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{61}{section.6.15}%
+\contentsline {section}{\numberline {6.16}Output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{61}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{63}{section.6.17}%
+\contentsline {section}{\numberline {6.18}Output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{63}{section.6.18}%
+\contentsline {section}{\numberline {6.19}Problem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Definition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{63}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Macro Definition Documentation}{64}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}M\_PI}{64}{subsubsection.6.19.1.1}%
+\contentsline {section}{\numberline {6.20}Problem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Definition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{64}{section.6.20}%
+\contentsline {section}{\numberline {6.21}Problem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Definition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{66}{section.6.21}%
+\contentsline {section}{\numberline {6.22}Problem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Definition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{66}{section.6.22}%
+\contentsline {section}{\numberline {6.23}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{67}{section.6.23}%
+\contentsline {section}{\numberline {6.24}Richardson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{67}{section.6.24}%
+\contentsline {section}{\numberline {6.25}Richardson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{67}{section.6.25}%
+\contentsline {section}{\numberline {6.26}Richardson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{69}{section.6.26}%
+\contentsline {section}{\numberline {6.27}Richardson\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.27}%
+\contentsline {section}{\numberline {6.28}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{69}{section.6.28}%
+\contentsline {section}{\numberline {6.29}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{70}{section.6.29}%
+\contentsline {section}{\numberline {6.30}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{71}{section.6.30}%
+\contentsline {section}{\numberline {6.31}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{71}{section.6.31}%
+\contentsline {section}{\numberline {6.32}Verification.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{71}{section.6.32}%
+\contentsline {section}{\numberline {6.33}Verification.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{72}{section.6.33}%
+\contentsline {section}{\numberline {6.34}Verification.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{73}{section.6.34}%
+\contentsline {section}{\numberline {6.35}Verification.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{73}{section.6.35}%
+\contentsline {chapter}{Index}{75}{section*.33}%

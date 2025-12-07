@@ -55,7 +55,7 @@ class Output
          * @param dx Spatial grid spacing
          * @param dt Time step size
          * @param tMax Maximum simulation time
-         * @param N Number of time steps
+         * @param N Fourier Number
          */
         void Generate_File(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N);
 
@@ -69,7 +69,7 @@ class Output
          * @param dx Spatial grid spacing
          * @param dt Time step size
          * @param tMax Maximum simulation time
-         * @param N Number of time steps
+         * @param N Fourier Number
          */
         void Generate_Diagram(const vector<vector<double>>& solution, string methodName, double dx, double dt, double tMax, int N);
 };
